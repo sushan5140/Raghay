@@ -21,11 +21,12 @@ export default function ScenarioPractice({
   if (!step) return null;
 
   function choose(index: number) {
-    if (feedback || finished) return;
-    const option = step.options[index];
+    if (feedback || finished || !step) return;
+    const currentStep = step;
+    const option = currentStep.options[index];
     setHistory((current) => [
       ...current,
-      { speaker: step.speaker, line: step.line },
+      { speaker: currentStep.speaker, line: currentStep.line },
       { speaker: "You", line: option.text },
     ]);
     setFeedback(option.feedback);

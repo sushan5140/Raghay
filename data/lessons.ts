@@ -324,7 +324,7 @@ export const lessons: Lesson[] = [
       { marathi: "Mi shikat aahe", devanagari: "मी शिकत आहे", english: "I am learning" },
       { marathi: "Punha bhetu", devanagari: "पुन्हा भेटू", english: "See you again" },
     ],
-  },,
+  },
   {
     slug: "devanagari-basics",
     title: "Devanagari Basics",

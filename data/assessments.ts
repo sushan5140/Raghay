@@ -212,10 +212,84 @@ export const assessments: Assessment[] = [
     ]
   },
   {
+    slug: "independent-comprehension-checkpoint",
+    title: "Independent Comprehension Checkpoint",
+    subtitle: "Check Unit 15: longer listening and Devanagari-first reading",
+    afterUnit: 15,
+    questions: [
+      {
+        question: "What is the best strategy for a longer passage?",
+        options: ["Track anchors and overall meaning", "Stop at every unknown word", "Ignore connectors"],
+        answer: 0,
+        explanation: "Time words, connectors, and repeated ideas keep the message coherent.",
+        skill: "listening-long-form"
+      },
+      {
+        question: "In later units, what should come first when reading?",
+        options: ["Devanagari", "English", "Romanization only"],
+        answer: 0,
+        explanation: "Later units deliberately make Devanagari primary.",
+        skill: "written-marathi"
+      }
+    ],
+    listening: {
+      title: "Long-form checkpoint",
+      devanagari: "आज सकाळी माझी योजना खूप सोपी होती: लायब्ररीत जाऊन दोन तास अभ्यास करायचा आणि मग मित्राला भेटायचं. पण लायब्ररी बंद होती. त्यामुळे मी जवळच्या कॅफेत बसलो. तिथे सुरुवातीला खूप आवाज होता, तरीही थोड्या वेळाने मला शांत जागा मिळाली. मी एक तास अभ्यास केला आणि उरलेलं काम घरी पूर्ण करायचं ठरवलं. मित्राला मेसेज करून मी भेटण्याची वेळही थोडी पुढे ढकलली.",
+      romanized: "Aaj sakaali maajhi yojana khup sopi hoti: libraryt jaaun don taas abhyas karaaycha ani mag mitraala bhetaaycha. Pan library band hoti. Tyamule mi javalchya cafe-t baslo. Tithe suruvatila khup aavaaz hota, tarihi thodya velaane mala shaant jaaga milaali. Mi ek taas abhyas kela ani urlela kaam ghari purna karaaycha tharavla. Mitraala message karun mi bhetnyaachi velhi thodi pudhe dhakalli.",
+      english: "This morning my plan was simple: study for two hours at the library and then meet a friend. But the library was closed. So I sat in a nearby café. At first it was noisy, but after a while I found a quiet place. I studied for an hour and decided to finish the remaining work at home. I also messaged my friend and pushed the meeting time a little later.",
+      maxReplays: 2,
+      questions: [
+        {
+          question: "Why did the speaker go to a café?",
+          options: ["The library was closed", "The friend suggested it", "The bus was late"],
+          answer: 0,
+          explanation: "The closed library caused the change.",
+          skill: "listening-cause"
+        },
+        {
+          question: "What else changed besides the study location?",
+          options: ["The meeting time", "The subject being studied", "The weather"],
+          answer: 0,
+          explanation: "The speaker moved the meeting later.",
+          skill: "listening-detail"
+        }
+      ]
+    }
+  },
+  {
+    slug: "functional-independence-checkpoint",
+    title: "Functional Independence Checkpoint",
+    subtitle: "Check Unit 16: study, travel, messages, and everyday service language",
+    afterUnit: 16,
+    questions: [
+      {
+        question: "Which phrase asks for another option?",
+        options: ["Dusra paryaay aahe ka?", "Mala chaha avadto", "Mi ghari gelo"],
+        answer: 0,
+        explanation: "Paryaay means option or alternative.",
+        skill: "alternative"
+      },
+      {
+        question: "Which reply reschedules naturally?",
+        options: ["Mala sahala jamnar nahi. Saat vajta chalel ka?", "Nahi.", "Kal mi gelo."],
+        answer: 0,
+        explanation: "It declines and proposes another time.",
+        skill: "invitation"
+      },
+      {
+        question: "Which phrase asks for clarification?",
+        options: ["Mhanje nemka kasa?", "He kiti aahe?", "Saral ja"],
+        answer: 0,
+        explanation: "It asks what exactly is meant.",
+        skill: "polite-request"
+      }
+    ]
+  },
+  {
     slug: "final-intermediate",
     title: "Final Intermediate Assessment",
     subtitle: "Reading, listening, grammar, and connected production",
-    afterUnit: 14,
+    afterUnit: 16,
     final: true,
     questions: [
       {

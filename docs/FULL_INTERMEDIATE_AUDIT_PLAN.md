@@ -838,3 +838,187 @@ During implementation of this plan:
   2. there is a genuine blocker requiring user action.
 
 This document is the authoritative intermediate milestone plan for Marathi Mate.
+
+
+---
+
+# Milestone Status — COMPLETE
+
+The authoritative full-intermediate milestone has now been implemented and verified.
+
+## Delivered course
+
+- 16 units
+- 47 lessons
+- 21 multi-turn scenario lessons
+- 8 course checkpoints / assessments
+- staged beginner → connected intermediate progression
+- practical functional-intermediate target rather than a claim of formal CEFR certification
+
+## Grammar delivered
+
+The course now teaches and practices:
+
+- present and present-progressive foundations
+- completed past
+- past narration and follow-up questions
+- negative past
+- practical future
+- negative future / intention
+- want / need
+- obligation and no-need patterns
+- ability and permission
+- pronouns and respectful address
+- possession and having
+- recipient / experiencer forms
+- high-frequency postpositions / relationships
+- adjective and comparison patterns
+- quantity and degree
+- cause and result
+- contrast and concession
+- conditions
+- relative / correlative structures
+
+## Input progression delivered
+
+### Reading
+- supported Romanization + Devanagari in early course
+- equal visual weight in middle units
+- Devanagari-primary later
+- Romanization reveal rather than permanent primary display in later units
+- messages, notices, descriptions, stories, comparisons, and practical service texts
+- main idea / detail / sequence / reason / condition / inference-style comprehension
+
+### Listening
+- phrase playback
+- passage playback
+- replay limits
+- transcript hidden before attempt
+- longer learner-oriented listening
+- segmented dialogue playback
+- alternating Marathi voices when Azure neural speech is configured
+- client-side audio caching
+- Marathi-language browser speech fallback
+
+## Production delivered
+
+- sentence building
+- guided response
+- connected 4–5 sentence writing
+- 5–8 sentence intermediate responses
+- self-check requirements
+- model-answer comparison
+- saved local drafts
+- free-response option inside conversation scenarios
+
+The app intentionally does not pretend unrestricted Marathi can be reliably graded with string matching.
+
+## Functional scenarios delivered
+
+The course now contains more than the required ten practical multi-turn situations, including:
+
+- café ordering and changing an order
+- shopping / exchange / returns
+- asking and clarifying directions
+- meeting a new person
+- invitations and rescheduling
+- explaining lateness
+- asking a teacher for clarification
+- travel delays and missed connections
+- appointment changes
+- study/work problems
+- borrowing an item
+- permission requests
+- planning around weather / conditions
+
+## Adaptive review delivered
+
+Review now tracks:
+
+- phrase recall
+- grammar skills
+- reading errors
+- listening errors
+- scenario performance
+- assessment performance
+- due times with deterministic spacing
+
+The home page also exposes:
+
+- continue-learning state
+- review-due count
+- unit progress
+- checkpoint markers
+
+## Assessments delivered
+
+The course has checkpoints after major stages plus a final intermediate assessment.
+
+The final assessment combines:
+
+- grammar / usage
+- Devanagari reading
+- listening comprehension
+- connected writing
+- skill-by-skill results rather than only one overall percentage
+
+Assessment attempts are persisted locally.
+
+## Language QA delivered
+
+A dedicated QA record exists at:
+
+- docs/LANGUAGE_QA.md
+
+The consistency pass covered:
+
+- Devanagari spelling
+- learner romanization consistency
+- common gender / agreement issues
+- respectful vs informal forms
+- tense / polarity patterns
+- postposition patterns
+- comparison
+- conditionals
+- relative / correlative structures
+- learner-facing translation clarity
+
+The course was cross-checked against established Marathi-learning and grammar reference material. A future native-speaker editorial pass can still refine regional / idiomatic nuance without blocking this functional-intermediate milestone.
+
+## Technical verification
+
+Verified:
+
+- Next.js production build compiles successfully
+- TypeScript / validity checks pass
+- 61 static pages generated in the final build
+- 47 lesson paths generated
+- all 8 checkpoint paths generated
+- stable Vercel production alias remains https://raghay.vercel.app/
+- production deployment is READY
+- representative beginner, intermediate, long-listening, scenario, review, and final-assessment routes return HTTP 200
+- no production runtime errors were reported during the final verification window
+- responsive layout continues to use mobile-safe wrapping / scrolling for step navigation, cards, sentence building, and writing areas
+
+## TTS deployment note
+
+The app retains the Azure Marathi neural TTS integration for:
+
+- mr-IN-AarohiNeural
+- mr-IN-ManoharNeural
+
+The current production environment does not have Azure speech credentials configured, so the API can return HTTP 501 when Azure is requested. This does not leave audio controls dead: the client now falls back to browser speech using Devanagari text with the mr-IN language tag.
+
+Adding AZURE_SPEECH_KEY and AZURE_SPEECH_REGION later will re-enable the native Azure neural path without changing the learning architecture.
+
+## Intentionally post-intermediate
+
+These are not blockers for the completed linguistic milestone:
+
+- Supabase accounts and cross-device progress sync
+- speech recognition / pronunciation scoring
+- advanced grammar beyond functional intermediate
+- substantially longer authentic-media listening
+- native-speaker editorial polish for regional / idiomatic nuance
+
+The full intermediate milestone is therefore complete under the criteria defined in this document.

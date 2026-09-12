@@ -12,47 +12,64 @@ type Exercise = {
   tokens?: string[];
 };
 
-function shuffle<T>(items: T[]) {
-  return [...items].sort(() => Math.random() - 0.5);
+function rotate<T>(items: T[], amount: number) {
+  if (!items.length) return [];
+  const shift = ((amount % items.length) + items.length) % items.length;
+  return [...items.slice(shift), ...items.slice(0, shift)];
 }
 
-function makeOptions(items: VocabItem[], item: VocabItem, field: "english" | "marathi") {
-  const distractors = shuffle(items.filter((candidate) => candidate !== item))
-    .slice(0, 2)
-    .map((candidate) => candidate[field]);
-  return shuffle([item[field], ...distractors]);
+function mixTokens(tokens: string[], round: number) {
+  if (tokens.length < 2) return tokens;
+  const rotated = rotate(tokens, round + 1);
+  return round % 2 === 0 ? [...rotated].reverse() : rotated;
 }
 
-function buildExercises(items: VocabItem[]): Exercise[] {
+function makeOptions(
+  items: VocabItem[],
+  item: VocabItem,
+  field: "english" | "marathi",
+  round: number
+) {
+  const candidates = rotate(
+    items.filter((candidate) => candidate !== item),
+    round + 1
+  );
+  return rotate(
+    [item[field], ...candidates.slice(0, 2).map((candidate) => candidate[field])],
+    round % 3
+  );
+}
+
+function buildExercises(items: VocabItem[], round: number): Exercise[] {
   if (!items.length) return [];
 
-  const pool = shuffle(items);
+  const pool = rotate(items, round);
   const first = pool[0] || items[0];
   const second = pool[1] || items[0];
   const buildItem =
     pool.find((item) => item.marathi.trim().split(/\s+/).length >= 2) || first;
-  const listenItem = pool[3] || second;
+  const listenItem = pool[3] || pool[2] || second;
 
   return [
     {
       mode: "marathi-to-english",
       item: first,
-      options: makeOptions(items, first, "english"),
+      options: makeOptions(items, first, "english", round),
     },
     {
       mode: "english-to-marathi",
       item: second,
-      options: makeOptions(items, second, "marathi"),
+      options: makeOptions(items, second, "marathi", round + 1),
     },
     {
       mode: "build",
       item: buildItem,
-      tokens: shuffle(buildItem.marathi.trim().split(/\s+/)),
+      tokens: mixTokens(buildItem.marathi.trim().split(/\s+/), round),
     },
     {
       mode: "listen",
       item: listenItem,
-      options: makeOptions(items, listenItem, "english"),
+      options: makeOptions(items, listenItem, "english", round + 2),
     },
   ];
 }
@@ -84,14 +101,14 @@ async function playMarathi(devanagari: string, fallback: string) {
 }
 
 export default function MixedPractice({ items }: { items: VocabItem[] }) {
-  const exercises = useMemo(() => buildExercises(items), [items]);
+  const [round, setRound] = useState(0);
+  const exercises = useMemo(() => buildExercises(items, round), [items, round]);
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [built, setBuilt] = useState<string[]>([]);
   const [score, setScore] = useState(0);
   const [answered, setAnswered] = useState(false);
   const [done, setDone] = useState(false);
-  const [round, setRound] = useState(0);
 
   const current = exercises[index];
 
@@ -165,7 +182,6 @@ export default function MixedPractice({ items }: { items: VocabItem[] }) {
             : "Good run — repeat it once and the app will generate a fresh mix."}
         </p>
         <button
-          key={round}
           onClick={restart}
           className="mt-4 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white"
         >
@@ -252,6 +268,7 @@ export default function MixedPractice({ items }: { items: VocabItem[] }) {
                 ?.slice(0, tokenIndex + 1)
                 .filter((word) => word === token).length;
               const used = usedCount >= (beforeCount || 0);
+
               return (
                 <button
                   key={`${token}-source-${tokenIndex}`}

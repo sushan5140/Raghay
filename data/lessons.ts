@@ -18,6 +18,16 @@ export type QuickCheck = {
   explanation: string;
 };
 
+export type IntermediateMaterial = {
+  title: string;
+  marathi: string;
+  devanagari: string;
+  english: string;
+  questions: QuickCheck[];
+  productionPrompt: string;
+  support: string[];
+};
+
 export type Lesson = {
   slug: string;
   title: string;
@@ -27,6 +37,7 @@ export type Lesson = {
   objective: string;
   teaching?: TeachingPoint[];
   checks?: QuickCheck[];
+  intermediate?: IntermediateMaterial;
   items: VocabItem[];
 };
 
@@ -740,6 +751,418 @@ export const lessons: Lesson[] = [
       { marathi: "Bus stop kuthe aahe?", devanagari: "बस स्टॉप कुठे आहे?", english: "Where is the bus stop?" },
       { marathi: "Ithe thamba", devanagari: "इथे थांबा", english: "Stop here" },
       { marathi: "Mala tithe jaycha aahe", devanagari: "मला तिथे जायचं आहे", english: "I want / need to go there" }
+    ]
+  },
+  {
+    slug: "past-events",
+    title: "Talking About the Past",
+    subtitle: "Understand and describe simple completed events",
+    unit: 7,
+    unitTitle: "Control time",
+    objective: "Recognize common past-time patterns and describe what happened",
+    teaching: [
+      {
+        title: "Completed actions often change form",
+        explanation: "Marathi past forms can change with gender and sentence structure. At this stage, focus on high-frequency complete sentences and notice the endings rather than memorizing a full table.",
+        examples: [
+          { marathi: "Mi ghari gelo", devanagari: "मी घरी गेलो", english: "I went home (male speaker)" },
+          { marathi: "Mi ghari gele", devanagari: "मी घरी गेले", english: "I went home (female speaker)" },
+          { marathi: "Mi jevlo", devanagari: "मी जेवलो", english: "I ate / had a meal (male speaker)" }
+        ]
+      },
+      {
+        title: "Time words anchor the event",
+        explanation: "Words such as kaal and sakali make it easier to understand when an action happened, even if the verb form is still new.",
+        examples: [
+          { marathi: "Kaal", devanagari: "काल", english: "Yesterday / past-time word by context" },
+          { marathi: "Kal sakali", devanagari: "काल सकाळी", english: "Yesterday morning" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which sentence clearly describes a completed past action?",
+        options: ["Mi ghari gelo", "Mi ghari jaat aahe", "Mi ghari jaeen"],
+        answer: 0,
+        explanation: "Mi ghari gelo means 'I went home' for a male speaker."
+      },
+      {
+        question: "Which phrase means 'yesterday morning'?",
+        options: ["Kal sakali", "Aaj sakali", "Udya sakali"],
+        answer: 0,
+        explanation: "Kal sakali means yesterday morning."
+      }
+    ],
+    intermediate: {
+      title: "A short day recap",
+      marathi: "Kal mi lavkar uthlo. Sakali mi chaha pyalo ani nantar college-la gelo. Sandhyakali mi mitrala bhetlo. Ratri mi ghari alo ani abhyas kela.",
+      devanagari: "काल मी लवकर उठलो. सकाळी मी चहा प्यायलो आणि नंतर कॉलेजला गेलो. संध्याकाळी मी मित्राला भेटलो. रात्री मी घरी आलो आणि अभ्यास केला.",
+      english: "Yesterday I got up early. In the morning I drank tea and then went to college. In the evening I met a friend. At night I came home and studied.",
+      questions: [
+        {
+          question: "Where did the speaker go after tea?",
+          options: ["College", "Home", "A shop"],
+          answer: 0,
+          explanation: "The speaker says they went to college after tea."
+        },
+        {
+          question: "What happened in the evening?",
+          options: ["They met a friend", "They studied", "They drank tea"],
+          answer: 0,
+          explanation: "Sandhyakali mi mitrala bhetlo means 'In the evening I met a friend.'"
+        }
+      ],
+      productionPrompt: "Write 2–3 simple Marathi sentences about what you did yesterday.",
+      support: ["Kal mi ...", "Sakali mi ...", "Sandhyakali mi ...", "Ratri mi ..."]
+    },
+    items: [
+      { marathi: "Mi ghari gelo", devanagari: "मी घरी गेलो", english: "I went home (male speaker)" },
+      { marathi: "Mi ghari gele", devanagari: "मी घरी गेले", english: "I went home (female speaker)" },
+      { marathi: "Mi chaha pyalo", devanagari: "मी चहा प्यायलो", english: "I drank tea (male speaker)" },
+      { marathi: "Mi mitrala bhetlo", devanagari: "मी मित्राला भेटलो", english: "I met a friend (male speaker)" },
+      { marathi: "Mi abhyas kela", devanagari: "मी अभ्यास केला", english: "I studied" },
+      { marathi: "Mi ghari alo", devanagari: "मी घरी आलो", english: "I came home (male speaker)" },
+      { marathi: "Kal sakali", devanagari: "काल सकाळी", english: "Yesterday morning" },
+      { marathi: "Kal ratri", devanagari: "काल रात्री", english: "Last night" }
+    ]
+  },
+  {
+    slug: "future-intentions",
+    title: "Future & Intentions",
+    subtitle: "Talk about what you will do and what you plan to do",
+    unit: 7,
+    unitTitle: "Control time",
+    objective: "Understand simple future forms and express basic intentions",
+    teaching: [
+      {
+        title: "Future forms signal what will happen",
+        explanation: "Forms such as jaeen, kareen, and bheteen often carry a future meaning for 'I'. Learn the whole pattern first.",
+        examples: [
+          { marathi: "Mi udya jaeen", devanagari: "मी उद्या जाईन", english: "I will go tomorrow" },
+          { marathi: "Mi abhyas kareen", devanagari: "मी अभ्यास करीन", english: "I will study" },
+          { marathi: "Mi tula bheteen", devanagari: "मी तुला भेटीन", english: "I will meet you" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which sentence means 'I will study'?",
+        options: ["Mi abhyas kareen", "Mi abhyas karat aahe", "Mi abhyas kela"],
+        answer: 0,
+        explanation: "Mi abhyas kareen is future-oriented."
+      },
+      {
+        question: "Which word best anchors a plan for tomorrow?",
+        options: ["Udya", "Kal", "Aata"],
+        answer: 0,
+        explanation: "Udya means tomorrow."
+      }
+    ],
+    intermediate: {
+      title: "Weekend plan",
+      marathi: "Udya mi sakali abhyas kareen. Dupari mi ghari jeveen. Sandhyakali mi mitranna bheteen. Vel milala tar amhi baher jau.",
+      devanagari: "उद्या मी सकाळी अभ्यास करीन. दुपारी मी घरी जेवीन. संध्याकाळी मी मित्रांना भेटीन. वेळ मिळाला तर आम्ही बाहेर जाऊ.",
+      english: "Tomorrow I will study in the morning. In the afternoon I will eat at home. In the evening I will meet friends. If we get time, we will go out.",
+      questions: [
+        {
+          question: "When will the speaker meet friends?",
+          options: ["In the evening", "In the morning", "At night"],
+          answer: 0,
+          explanation: "The passage says Sandhyakali mi mitranna bheteen."
+        },
+        {
+          question: "What may happen if there is time?",
+          options: ["They may go out", "They may study", "They may sleep"],
+          answer: 0,
+          explanation: "Vel milala tar amhi baher jau means 'If we get time, we will go out.'"
+        }
+      ],
+      productionPrompt: "Write 2–3 sentences about your plan for tomorrow.",
+      support: ["Udya mi ...", "Sakali mi ...", "Sandhyakali mi ...", "Vel milala tar ..."]
+    },
+    items: [
+      { marathi: "Mi jaeen", devanagari: "मी जाईन", english: "I will go" },
+      { marathi: "Mi yeen", devanagari: "मी येईन", english: "I will come" },
+      { marathi: "Mi kareen", devanagari: "मी करीन", english: "I will do" },
+      { marathi: "Mi bheteen", devanagari: "मी भेटीन", english: "I will meet" },
+      { marathi: "Mi abhyas kareen", devanagari: "मी अभ्यास करीन", english: "I will study" },
+      { marathi: "Udya mi ghari asen", devanagari: "उद्या मी घरी असेन", english: "Tomorrow I will be at home" },
+      { marathi: "Vel milala tar", devanagari: "वेळ मिळाला तर", english: "If there is time" },
+      { marathi: "Nantar baghu", devanagari: "नंतर बघू", english: "We'll see later" }
+    ]
+  },
+  {
+    slug: "postpositions-relations",
+    title: "Postpositions & Relations",
+    subtitle: "Understand forms like to, from, with, in, and near",
+    unit: 8,
+    unitTitle: "Connect ideas",
+    objective: "Recognize high-frequency relationship markers in real sentences",
+    teaching: [
+      {
+        title: "Marathi often marks relationships after the noun",
+        explanation: "Instead of relying on English-style prepositions, Marathi frequently uses endings or postposition-like forms attached to or following nouns.",
+        examples: [
+          { marathi: "Mitrala", devanagari: "मित्राला", english: "To the friend / friend as recipient" },
+          { marathi: "Gharatun", devanagari: "घरातून", english: "From the house" },
+          { marathi: "Mitrabarobar", devanagari: "मित्राबरोबर", english: "With a friend" }
+        ]
+      },
+      {
+        title: "Learn them through contrasts",
+        explanation: "Compare one noun across several relationship patterns to notice how meaning changes.",
+        examples: [
+          { marathi: "Gharat", devanagari: "घरात", english: "In the house" },
+          { marathi: "Gharatun", devanagari: "घरातून", english: "From the house" },
+          { marathi: "Gharajaval", devanagari: "घराजवळ", english: "Near the house" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which form means 'from the house'?",
+        options: ["Gharatun", "Gharat", "Gharajaval"],
+        answer: 0,
+        explanation: "Gharatun means from the house."
+      },
+      {
+        question: "Which form means 'with a friend'?",
+        options: ["Mitrabarobar", "Mitrala", "Mitrakade"],
+        answer: 0,
+        explanation: "Mitrabarobar means with a friend."
+      }
+    ],
+    intermediate: {
+      title: "Where everyone is",
+      marathi: "Aai gharat aahe. Baba kamavar gele aahet. Mi mitrabarobar library-madhe aahe. Library gharajaval aahe, mhanun mi ghari lavkar yeu shakto.",
+      devanagari: "आई घरात आहे. बाबा कामावर गेले आहेत. मी मित्राबरोबर लायब्ररीमध्ये आहे. लायब्ररी घराजवळ आहे, म्हणून मी घरी लवकर येऊ शकतो.",
+      english: "Mother is at home. Father has gone to work. I am in the library with a friend. The library is near home, so I can come home early.",
+      questions: [
+        {
+          question: "Who is the speaker with?",
+          options: ["A friend", "Mother", "Father"],
+          answer: 0,
+          explanation: "Mitrabarobar means with a friend."
+        },
+        {
+          question: "Why can the speaker return home early?",
+          options: ["The library is near home", "Work finished early", "There is no class"],
+          answer: 0,
+          explanation: "The passage says the library is near home."
+        }
+      ],
+      productionPrompt: "Describe where two people are using at least two location/relationship forms.",
+      support: ["... gharat aahe", "... barobar ...", "... javal aahe", "... tun ..."]
+    },
+    items: [
+      { marathi: "Gharat", devanagari: "घरात", english: "In the house" },
+      { marathi: "Gharatun", devanagari: "घरातून", english: "From the house" },
+      { marathi: "Gharajaval", devanagari: "घराजवळ", english: "Near the house" },
+      { marathi: "Mitrala", devanagari: "मित्राला", english: "To the friend" },
+      { marathi: "Mitrabarobar", devanagari: "मित्राबरोबर", english: "With a friend" },
+      { marathi: "Kamavar", devanagari: "कामावर", english: "At / to work" },
+      { marathi: "Library-madhe", devanagari: "लायब्ररीमध्ये", english: "In the library" },
+      { marathi: "Majhyakade", devanagari: "माझ्याकडे", english: "With me / at my place / I have, by context" }
+    ]
+  },
+  {
+    slug: "connectors-reasons",
+    title: "Connectors & Reasons",
+    subtitle: "Join thoughts with because, but, so, and then",
+    unit: 8,
+    unitTitle: "Connect ideas",
+    objective: "Build longer sentences and explain reasons",
+    teaching: [
+      {
+        title: "Connectors make speech sound less fragmented",
+        explanation: "Use pan for 'but', mhanun for 'so/therefore', karan for 'because/reason', and nantar for 'then/after'.",
+        examples: [
+          { marathi: "Mala jaycha hota, pan vel navhta", devanagari: "मला जायचं होतं, पण वेळ नव्हता", english: "I wanted to go, but there was no time" },
+          { marathi: "Paus hota, mhanun mi ghari rahilo", devanagari: "पाऊस होता, म्हणून मी घरी राहिलो", english: "It was raining, so I stayed home" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which connector means 'but'?",
+        options: ["Pan", "Mhanun", "Nantar"],
+        answer: 0,
+        explanation: "Pan means but."
+      },
+      {
+        question: "Which connector introduces a result such as 'so / therefore'?",
+        options: ["Mhanun", "Pan", "Karan"],
+        answer: 0,
+        explanation: "Mhanun commonly marks a result."
+      }
+    ],
+    intermediate: {
+      title: "Why I changed my plan",
+      marathi: "Aaj mala baher jaycha hota, pan paus khup hota. Mhanun mi ghari rahilo. Ghari vel hota, mhanun mi thoda abhyas kela ani nantar cinema pahila.",
+      devanagari: "आज मला बाहेर जायचं होतं, पण पाऊस खूप होता. म्हणून मी घरी राहिलो. घरी वेळ होता, म्हणून मी थोडा अभ्यास केला आणि नंतर सिनेमा पाहिला.",
+      english: "Today I wanted to go out, but it was raining heavily. So I stayed home. I had time at home, so I studied a little and then watched a movie.",
+      questions: [
+        {
+          question: "Why did the speaker stay home?",
+          options: ["Because of heavy rain", "Because of work", "Because of a visitor"],
+          answer: 0,
+          explanation: "The passage contrasts wanting to go out with heavy rain."
+        },
+        {
+          question: "What did the speaker do after studying?",
+          options: ["Watched a movie", "Went out", "Met a friend"],
+          answer: 0,
+          explanation: "Nantar cinema pahila means 'then watched a movie.'"
+        }
+      ],
+      productionPrompt: "Write two connected Marathi sentences using pan or mhanun.",
+      support: ["..., pan ...", "..., mhanun ...", "Karan ...", "Nantar ..."]
+    },
+    items: [
+      { marathi: "Pan", devanagari: "पण", english: "But" },
+      { marathi: "Mhanun", devanagari: "म्हणून", english: "So / therefore" },
+      { marathi: "Karan", devanagari: "कारण", english: "Because / reason" },
+      { marathi: "Nantar", devanagari: "नंतर", english: "Then / after" },
+      { marathi: "Ani", devanagari: "आणि", english: "And" },
+      { marathi: "Mala jaycha hota", devanagari: "मला जायचं होतं", english: "I wanted to go" },
+      { marathi: "Vel navhta", devanagari: "वेळ नव्हता", english: "There was no time" },
+      { marathi: "Mi ghari rahilo", devanagari: "मी घरी राहिलो", english: "I stayed home (male speaker)" }
+    ]
+  },
+  {
+    slug: "opinions-preferences",
+    title: "Opinions & Preferences",
+    subtitle: "Say what you like, think, and prefer",
+    unit: 9,
+    unitTitle: "Speak with more freedom",
+    objective: "Express a simple opinion and support it with a reason",
+    teaching: [
+      {
+        title: "Mala ... avadte expresses liking",
+        explanation: "Mala ... avadte is a high-frequency way to say you like something. Different nouns can affect the exact form, so learn common complete examples.",
+        examples: [
+          { marathi: "Mala Marathi avadte", devanagari: "मला मराठी आवडते", english: "I like Marathi" },
+          { marathi: "Mala chaha avadto", devanagari: "मला चहा आवडतो", english: "I like tea" }
+        ]
+      },
+      {
+        title: "Mala vatate means 'I think / I feel'",
+        explanation: "Use mala vatate to introduce an opinion rather than a hard fact.",
+        examples: [
+          { marathi: "Mala vatate he changle aahe", devanagari: "मला वाटतं हे चांगलं आहे", english: "I think this is good" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which phrase introduces an opinion?",
+        options: ["Mala vatate", "Mala mahit aahe", "Mala pahije"],
+        answer: 0,
+        explanation: "Mala vatate means 'I think / I feel'."
+      },
+      {
+        question: "Which phrase says 'I like Marathi'?",
+        options: ["Mala Marathi avadte", "Mala Marathi pahije", "Mi Marathi aahe"],
+        answer: 0,
+        explanation: "Mala Marathi avadte means I like Marathi."
+      }
+    ],
+    intermediate: {
+      title: "A small opinion",
+      marathi: "Mala Marathi shikayla avadte karan ti khup sundar bhasha aahe. Suruvatila kahi shabda kathin vatle, pan ata mala adhik samajate. Mala vatate roj thoda sarav karane changle aahe.",
+      devanagari: "मला मराठी शिकायला आवडते कारण ती खूप सुंदर भाषा आहे. सुरुवातीला काही शब्द कठीण वाटले, पण आता मला अधिक समजते. मला वाटतं रोज थोडा सराव करणे चांगले आहे.",
+      english: "I like learning Marathi because it is a very beautiful language. At first some words felt difficult, but now I understand more. I think practicing a little every day is good.",
+      questions: [
+        {
+          question: "Why does the speaker like learning Marathi?",
+          options: ["They think it is beautiful", "It is required for work", "It is very easy"],
+          answer: 0,
+          explanation: "The speaker says it is a very beautiful language."
+        },
+        {
+          question: "What does the speaker recommend?",
+          options: ["A little daily practice", "Only reading", "Studying once a week"],
+          answer: 0,
+          explanation: "The final sentence supports daily practice."
+        }
+      ],
+      productionPrompt: "Give your opinion about learning Marathi and one reason.",
+      support: ["Mala ... avadte", "Mala vatate ...", "Karan ...", "Pan ..."]
+    },
+    items: [
+      { marathi: "Mala Marathi avadte", devanagari: "मला मराठी आवडते", english: "I like Marathi" },
+      { marathi: "Mala chaha avadto", devanagari: "मला चहा आवडतो", english: "I like tea" },
+      { marathi: "Mala vatate", devanagari: "मला वाटतं", english: "I think / I feel" },
+      { marathi: "Majhya mate", devanagari: "माझ्या मते", english: "In my opinion" },
+      { marathi: "He changle aahe", devanagari: "हे चांगलं आहे", english: "This is good" },
+      { marathi: "He kathin aahe", devanagari: "हे कठीण आहे", english: "This is difficult" },
+      { marathi: "Mala he jast avadte", devanagari: "मला हे जास्त आवडते", english: "I like this more" },
+      { marathi: "Karan ...", devanagari: "कारण ...", english: "Because ..." }
+    ]
+  },
+  {
+    slug: "clarify-conversation",
+    title: "Clarify & Keep Talking",
+    subtitle: "Repair misunderstandings and keep a conversation going",
+    unit: 9,
+    unitTitle: "Speak with more freedom",
+    objective: "Ask for clarification, repetition, examples, and confirmation",
+    teaching: [
+      {
+        title: "Conversation repair is an intermediate superpower",
+        explanation: "You do not need to understand every word. Strong learners know how to ask for repetition, a slower pace, or a different explanation.",
+        examples: [
+          { marathi: "Punha sanga", devanagari: "पुन्हा सांगा", english: "Please say it again" },
+          { marathi: "Thoda halu bola", devanagari: "थोडं हळू बोला", english: "Please speak a little slowly" },
+          { marathi: "Yacha arth kay?", devanagari: "याचा अर्थ काय?", english: "What does this mean?" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "What should you ask if you do not know the meaning of something?",
+        options: ["Yacha arth kay?", "He kiti aahe?", "Kuthe jaat aahat?"],
+        answer: 0,
+        explanation: "Yacha arth kay? means 'What does this mean?'"
+      },
+      {
+        question: "Which phrase asks someone to speak more slowly?",
+        options: ["Thoda halu bola", "Punha bhetu", "Lavkar bola"],
+        answer: 0,
+        explanation: "Thoda halu bola asks the person to slow down."
+      }
+    ],
+    intermediate: {
+      title: "A real learner conversation",
+      marathi: "A: Tumhala samajla ka? B: Thoda samajla, pan ek shabda samajla nahi. A: Konta shabda? B: 'Nirnay'. Yacha arth kay? A: Nirnay mhanje decision. B: Achha, ata samajla. Dhanyavaad.",
+      devanagari: "अ: तुम्हाला समजलं का? ब: थोडं समजलं, पण एक शब्द समजला नाही. अ: कोणता शब्द? ब: 'निर्णय'. याचा अर्थ काय? अ: निर्णय म्हणजे decision. ब: अच्छा, आता समजलं. धन्यवाद.",
+      english: "A: Did you understand? B: I understood a little, but I did not understand one word. A: Which word? B: 'Nirnay'. What does it mean? A: Nirnay means decision. B: Oh, now I understand. Thank you.",
+      questions: [
+        {
+          question: "What problem did learner B have?",
+          options: ["One word was unclear", "They could not hear anything", "They wanted to leave"],
+          answer: 0,
+          explanation: "B says one word was not understood."
+        },
+        {
+          question: "What did B ask?",
+          options: ["What does this mean?", "How much is this?", "Where are you going?"],
+          answer: 0,
+          explanation: "Yacha arth kay? asks for the meaning."
+        }
+      ],
+      productionPrompt: "Write a two-line mini-dialogue where you ask someone to clarify something.",
+      support: ["Punha sanga", "Thoda halu bola", "Yacha arth kay?", "Mala samajla nahi"]
+    },
+    items: [
+      { marathi: "Yacha arth kay?", devanagari: "याचा अर्थ काय?", english: "What does this mean?" },
+      { marathi: "Punha sanga", devanagari: "पुन्हा सांगा", english: "Please say it again" },
+      { marathi: "Thoda halu bola", devanagari: "थोडं हळू बोला", english: "Please speak a little slowly" },
+      { marathi: "Udaharan dya", devanagari: "उदाहरण द्या", english: "Please give an example" },
+      { marathi: "Mhanje kay?", devanagari: "म्हणजे काय?", english: "What do you mean?" },
+      { marathi: "Barobar ka?", devanagari: "बरोबर का?", english: "Is that correct?" },
+      { marathi: "Ata samajla", devanagari: "आता समजलं", english: "Now I understand" },
+      { marathi: "Mala ajun spashta nahi", devanagari: "मला अजून स्पष्ट नाही", english: "It is still not clear to me" }
     ]
   }
 ];

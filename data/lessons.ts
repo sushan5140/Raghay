@@ -324,7 +324,424 @@ export const lessons: Lesson[] = [
       { marathi: "Mi shikat aahe", devanagari: "मी शिकत आहे", english: "I am learning" },
       { marathi: "Punha bhetu", devanagari: "पुन्हा भेटू", english: "See you again" },
     ],
+  },,
+  {
+    slug: "devanagari-basics",
+    title: "Devanagari Basics",
+    subtitle: "Start recognizing Marathi script through words you already know",
+    unit: 4,
+    unitTitle: "Read & relate",
+    objective: "Recognize common Marathi letters and familiar words without depending only on romanization",
+    teaching: [
+      {
+        title: "Read familiar words first",
+        explanation: "Instead of memorizing the whole alphabet at once, connect shapes to words you already know. This makes the script feel useful immediately.",
+        examples: [
+          { marathi: "Aai", devanagari: "आई", english: "Mother" },
+          { marathi: "Namaskar", devanagari: "नमस्कार", english: "Hello" },
+          { marathi: "Nahi", devanagari: "नाही", english: "No / not" }
+        ]
+      },
+      {
+        title: "Notice repeating sounds",
+        explanation: "Marathi Devanagari combines consonants and vowel marks. For now, notice repeated sound-shape links rather than trying to master every rule.",
+        examples: [
+          { marathi: "ma", devanagari: "म", english: "m sound" },
+          { marathi: "na", devanagari: "न", english: "n sound" },
+          { marathi: "aa", devanagari: "ा", english: "long aa vowel mark" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which script form matches Namaskar?",
+        options: ["नमस्कार", "नाही", "आई"],
+        answer: 0,
+        explanation: "नमस्कार is Namaskar."
+      },
+      {
+        question: "Which familiar word is written आई?",
+        options: ["Aai", "Aaji", "Bahin"],
+        answer: 0,
+        explanation: "आई is Aai, meaning mother."
+      }
+    ],
+    items: [
+      { marathi: "Namaskar", devanagari: "नमस्कार", english: "Hello / greetings" },
+      { marathi: "Aai", devanagari: "आई", english: "Mother" },
+      { marathi: "Nahi", devanagari: "नाही", english: "No / not" },
+      { marathi: "Ho", devanagari: "हो", english: "Yes" },
+      { marathi: "Kay", devanagari: "काय", english: "What" },
+      { marathi: "Kuthe", devanagari: "कुठे", english: "Where" },
+      { marathi: "Paani", devanagari: "पाणी", english: "Water" },
+      { marathi: "Ghar", devanagari: "घर", english: "Home / house" }
+    ]
   },
+  {
+    slug: "pronouns-respect",
+    title: "Pronouns & Respect",
+    subtitle: "Use I, you, we, and respectful forms naturally",
+    unit: 4,
+    unitTitle: "Read & relate",
+    objective: "Choose basic pronouns and recognize respectful address",
+    teaching: [
+      {
+        title: "Tu and tumhi are not the same",
+        explanation: "Tu is informal singular 'you'. Tumhi is respectful singular or plural 'you' and is safer with strangers and elders.",
+        examples: [
+          { marathi: "Tu kasa aahes?", devanagari: "तू कसा आहेस?", english: "How are you? (informal, to a man)" },
+          { marathi: "Tumhi kase aahat?", devanagari: "तुम्ही कसे आहात?", english: "How are you? (respectful / plural)" }
+        ]
+      },
+      {
+        title: "Core pronouns",
+        explanation: "Mi means I, aamhi means we, and te can mean they in many contexts. Learn these as anchors for later verb patterns.",
+        examples: [
+          { marathi: "Mi", devanagari: "मी", english: "I" },
+          { marathi: "Aamhi", devanagari: "आम्ही", english: "We" },
+          { marathi: "Tumhi", devanagari: "तुम्ही", english: "You (respectful / plural)" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which form is safer with an elder or stranger?",
+        options: ["Tu", "Tumhi", "Mi"],
+        answer: 1,
+        explanation: "Tumhi is the respectful form."
+      },
+      {
+        question: "What does Aamhi mean?",
+        options: ["We", "They", "You"],
+        answer: 0,
+        explanation: "Aamhi means we."
+      }
+    ],
+    items: [
+      { marathi: "Mi", devanagari: "मी", english: "I" },
+      { marathi: "Tu", devanagari: "तू", english: "You (informal singular)" },
+      { marathi: "Tumhi", devanagari: "तुम्ही", english: "You (respectful / plural)" },
+      { marathi: "Aamhi", devanagari: "आम्ही", english: "We" },
+      { marathi: "To", devanagari: "तो", english: "He / that (masculine)" },
+      { marathi: "Ti", devanagari: "ती", english: "She / that (feminine)" },
+      { marathi: "Te", devanagari: "ते", english: "They / that (neuter or plural, context dependent)" },
+      { marathi: "Tumhi kase aahat?", devanagari: "तुम्ही कसे आहात?", english: "How are you? (respectful / plural)" }
+    ]
+  },
+  {
+    slug: "possession",
+    title: "Possession",
+    subtitle: "Say my, your, and talk about things that belong to people",
+    unit: 4,
+    unitTitle: "Read & relate",
+    objective: "Recognize common possessive patterns in simple conversation",
+    teaching: [
+      {
+        title: "Possessives can change form",
+        explanation: "Marathi possessives often change to match the noun. At this stage, learn common whole phrases first.",
+        examples: [
+          { marathi: "Majha bhau", devanagari: "माझा भाऊ", english: "My brother" },
+          { marathi: "Majhi bahin", devanagari: "माझी बहीण", english: "My sister" },
+          { marathi: "Majhe ghar", devanagari: "माझं घर", english: "My house" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which phrase means 'my sister'?",
+        options: ["Majhi bahin", "Majha bhau", "Tujhe ghar"],
+        answer: 0,
+        explanation: "Majhi bahin means my sister."
+      },
+      {
+        question: "Which phrase means 'my house'?",
+        options: ["Majhe ghar", "Majha bhau", "Majhi aai"],
+        answer: 0,
+        explanation: "Majhe ghar means my house."
+      }
+    ],
+    items: [
+      { marathi: "Majha bhau", devanagari: "माझा भाऊ", english: "My brother" },
+      { marathi: "Majhi bahin", devanagari: "माझी बहीण", english: "My sister" },
+      { marathi: "Majhe ghar", devanagari: "माझं घर", english: "My house" },
+      { marathi: "Tujha mitra", devanagari: "तुझा मित्र", english: "Your friend (male)" },
+      { marathi: "Tujhi maitrin", devanagari: "तुझी मैत्रीण", english: "Your friend (female)" },
+      { marathi: "Tumcha naav", devanagari: "तुमचं नाव", english: "Your name (respectful)" },
+      { marathi: "He majhe aahe", devanagari: "हे माझं आहे", english: "This is mine" },
+      { marathi: "He tumche aahe ka?", devanagari: "हे तुमचं आहे का?", english: "Is this yours?" }
+    ]
+  },
+  {
+    slug: "places-location",
+    title: "Places & Location",
+    subtitle: "Say where things are and understand simple location phrases",
+    unit: 5,
+    unitTitle: "Everyday life",
+    objective: "Describe basic locations using common Marathi place words",
+    teaching: [
+      {
+        title: "Aahe often closes a location sentence",
+        explanation: "A useful beginner pattern is place or thing + location phrase + aahe.",
+        examples: [
+          { marathi: "Ghar ithe aahe", devanagari: "घर इथे आहे", english: "The house is here" },
+          { marathi: "Station tithe aahe", devanagari: "स्टेशन तिथे आहे", english: "The station is there" }
+        ]
+      },
+      {
+        title: "High-value location words",
+        explanation: "Ithe means here, tithe means there, aat means inside, and baaher means outside.",
+        examples: [
+          { marathi: "Ithe", devanagari: "इथे", english: "Here" },
+          { marathi: "Tithe", devanagari: "तिथे", english: "There" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "What does Ithe mean?",
+        options: ["Here", "There", "Outside"],
+        answer: 0,
+        explanation: "Ithe means here."
+      },
+      {
+        question: "Which phrase means 'The station is there'?",
+        options: ["Station tithe aahe", "Station ithe aahe", "Station kuthe aahe?"],
+        answer: 0,
+        explanation: "Station tithe aahe means the station is there."
+      }
+    ],
+    items: [
+      { marathi: "Ithe", devanagari: "इथे", english: "Here" },
+      { marathi: "Tithe", devanagari: "तिथे", english: "There" },
+      { marathi: "Aat", devanagari: "आत", english: "Inside" },
+      { marathi: "Baaher", devanagari: "बाहेर", english: "Outside" },
+      { marathi: "Ghar", devanagari: "घर", english: "House / home" },
+      { marathi: "Dukaan", devanagari: "दुकान", english: "Shop" },
+      { marathi: "Station kuthe aahe?", devanagari: "स्टेशन कुठे आहे?", english: "Where is the station?" },
+      { marathi: "Ghar ithe aahe", devanagari: "घर इथे आहे", english: "The house is here" }
+    ]
+  },
+  {
+    slug: "daily-routine",
+    title: "Daily Routine",
+    subtitle: "Talk about common actions in your day",
+    unit: 5,
+    unitTitle: "Everyday life",
+    objective: "Recognize common verbs and present-progressive patterns",
+    teaching: [
+      {
+        title: "The -at aahe pattern",
+        explanation: "Many present-progressive phrases use a verb form plus aahe. Learn them as chunks before studying full conjugation tables.",
+        examples: [
+          { marathi: "Mi khat aahe", devanagari: "मी खात आहे", english: "I am eating" },
+          { marathi: "Mi shikat aahe", devanagari: "मी शिकत आहे", english: "I am learning" },
+          { marathi: "Mi jaat aahe", devanagari: "मी जात आहे", english: "I am going" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which phrase means 'I am going'?",
+        options: ["Mi jaat aahe", "Mi khat aahe", "Mi zhopat aahe"],
+        answer: 0,
+        explanation: "Mi jaat aahe means I am going."
+      },
+      {
+        question: "Which word is connected with learning?",
+        options: ["Shikat", "Khat", "Zhopat"],
+        answer: 0,
+        explanation: "Shikat appears in the phrase for 'am learning'."
+      }
+    ],
+    items: [
+      { marathi: "Mi uthto / uthte", devanagari: "मी उठतो / उठते", english: "I get up (male / female)" },
+      { marathi: "Mi khat aahe", devanagari: "मी खात आहे", english: "I am eating" },
+      { marathi: "Mi pit aahe", devanagari: "मी पीत आहे", english: "I am drinking" },
+      { marathi: "Mi jaat aahe", devanagari: "मी जात आहे", english: "I am going" },
+      { marathi: "Mi yet aahe", devanagari: "मी येत आहे", english: "I am coming" },
+      { marathi: "Mi shikat aahe", devanagari: "मी शिकत आहे", english: "I am learning" },
+      { marathi: "Mi kaam karat aahe", devanagari: "मी काम करत आहे", english: "I am working" },
+      { marathi: "Mi zhopat aahe", devanagari: "मी झोपत आहे", english: "I am sleeping" }
+    ]
+  },
+  {
+    slug: "time-plans",
+    title: "Time & Plans",
+    subtitle: "Talk about today, tomorrow, and simple plans",
+    unit: 5,
+    unitTitle: "Everyday life",
+    objective: "Use basic time words and understand simple future-oriented phrases",
+    teaching: [
+      {
+        title: "Time words carry a lot of meaning",
+        explanation: "Aaj, udya, and kaal are extremely common. Context helps distinguish kaal as yesterday or tomorrow in some usage, so beginners should listen to the full sentence.",
+        examples: [
+          { marathi: "Aaj", devanagari: "आज", english: "Today" },
+          { marathi: "Udya", devanagari: "उद्या", english: "Tomorrow" },
+          { marathi: "Aata", devanagari: "आता", english: "Now" }
+        ]
+      },
+      {
+        title: "Simple future awareness",
+        explanation: "You will hear forms like jaeen (I will go) and yeen (I will come). For now, recognize them as future forms.",
+        examples: [
+          { marathi: "Mi udya jaeen", devanagari: "मी उद्या जाईन", english: "I will go tomorrow" },
+          { marathi: "Mi nantar yeen", devanagari: "मी नंतर येईन", english: "I will come later" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "What does Udya mean?",
+        options: ["Tomorrow", "Today", "Now"],
+        answer: 0,
+        explanation: "Udya means tomorrow."
+      },
+      {
+        question: "Which phrase is future-oriented?",
+        options: ["Mi udya jaeen", "Mi jaat aahe", "Mi khat aahe"],
+        answer: 0,
+        explanation: "Mi udya jaeen means I will go tomorrow."
+      }
+    ],
+    items: [
+      { marathi: "Aaj", devanagari: "आज", english: "Today" },
+      { marathi: "Udya", devanagari: "उद्या", english: "Tomorrow" },
+      { marathi: "Aata", devanagari: "आता", english: "Now" },
+      { marathi: "Nantar", devanagari: "नंतर", english: "Later / after" },
+      { marathi: "Sakali", devanagari: "सकाळी", english: "In the morning" },
+      { marathi: "Sandhyakali", devanagari: "संध्याकाळी", english: "In the evening" },
+      { marathi: "Mi udya jaeen", devanagari: "मी उद्या जाईन", english: "I will go tomorrow" },
+      { marathi: "Mi nantar yeen", devanagari: "मी नंतर येईन", english: "I will come later" }
+    ]
+  },
+  {
+    slug: "food-ordering",
+    title: "Food & Ordering",
+    subtitle: "Order simple food and drinks politely",
+    unit: 6,
+    unitTitle: "Real-world Marathi",
+    objective: "Handle a basic food or café interaction",
+    teaching: [
+      {
+        title: "Mala ... pahije is a powerful request pattern",
+        explanation: "Use Mala + item + pahije for 'I want ...'. It is one of the most useful beginner structures in shops and food settings.",
+        examples: [
+          { marathi: "Mala paani pahije", devanagari: "मला पाणी पाहिजे", english: "I want water" },
+          { marathi: "Mala chaha pahije", devanagari: "मला चहा पाहिजे", english: "I want tea" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "How do you say 'I want water'?",
+        options: ["Mala paani pahije", "Paani kuthe aahe?", "Paani nahi"],
+        answer: 0,
+        explanation: "Mala paani pahije means I want water."
+      },
+      {
+        question: "Which word means tea?",
+        options: ["Chaha", "Paani", "Jevan"],
+        answer: 0,
+        explanation: "Chaha means tea."
+      }
+    ],
+    items: [
+      { marathi: "Paani", devanagari: "पाणी", english: "Water" },
+      { marathi: "Chaha", devanagari: "चहा", english: "Tea" },
+      { marathi: "Jevan", devanagari: "जेवण", english: "Meal / food" },
+      { marathi: "Mala paani pahije", devanagari: "मला पाणी पाहिजे", english: "I want water" },
+      { marathi: "Mala chaha pahije", devanagari: "मला चहा पाहिजे", english: "I want tea" },
+      { marathi: "Tikhat nako", devanagari: "तिखट नको", english: "Not spicy / I do not want it spicy" },
+      { marathi: "Khup chhaan aahe", devanagari: "खूप छान आहे", english: "It is very good" },
+      { marathi: "Bill dya", devanagari: "बिल द्या", english: "Please give the bill" }
+    ]
+  },
+  {
+    slug: "shopping-prices",
+    title: "Shopping & Prices",
+    subtitle: "Ask prices, quantities, and make simple purchases",
+    unit: 6,
+    unitTitle: "Real-world Marathi",
+    objective: "Manage a basic shopping interaction",
+    teaching: [
+      {
+        title: "Kiti is your price-and-quantity word",
+        explanation: "Kiti asks how much or how many. Pair it with aahe for many simple price questions.",
+        examples: [
+          { marathi: "He kiti aahe?", devanagari: "हे किती आहे?", english: "How much is this?" },
+          { marathi: "Kiti pahije?", devanagari: "किती पाहिजे?", english: "How much / how many do you want?" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which phrase asks the price of something?",
+        options: ["He kiti aahe?", "He kuthe aahe?", "He majhe aahe"],
+        answer: 0,
+        explanation: "He kiti aahe? asks how much this is."
+      },
+      {
+        question: "What does Swasta mean?",
+        options: ["Cheap / inexpensive", "Expensive", "Large"],
+        answer: 0,
+        explanation: "Swasta means inexpensive."
+      }
+    ],
+    items: [
+      { marathi: "He kiti aahe?", devanagari: "हे किती आहे?", english: "How much is this?" },
+      { marathi: "Khup mahag aahe", devanagari: "खूप महाग आहे", english: "It is very expensive" },
+      { marathi: "Swasta aahe", devanagari: "स्वस्त आहे", english: "It is inexpensive" },
+      { marathi: "Ek dya", devanagari: "एक द्या", english: "Please give me one" },
+      { marathi: "Don dya", devanagari: "दोन द्या", english: "Please give me two" },
+      { marathi: "Mala he pahije", devanagari: "मला हे पाहिजे", english: "I want this" },
+      { marathi: "Dusra aahe ka?", devanagari: "दुसरा आहे का?", english: "Is there another one?" },
+      { marathi: "Bas, dhanyavaad", devanagari: "बस, धन्यवाद", english: "That's enough, thank you" }
+    ]
+  },
+  {
+    slug: "directions-travel",
+    title: "Directions & Travel",
+    subtitle: "Ask where to go and understand basic directions",
+    unit: 6,
+    unitTitle: "Real-world Marathi",
+    objective: "Navigate a simple travel or street interaction",
+    teaching: [
+      {
+        title: "Direction words work well as chunks",
+        explanation: "Learn saral, davikade, ujvikade, and javal as practical navigation chunks before worrying about deeper grammar.",
+        examples: [
+          { marathi: "Saral ja", devanagari: "सरळ जा", english: "Go straight" },
+          { marathi: "Davikade vala", devanagari: "डावीकडे वळा", english: "Turn left" },
+          { marathi: "Ujvikade vala", devanagari: "उजवीकडे वळा", english: "Turn right" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which phrase means 'Go straight'?",
+        options: ["Saral ja", "Davikade vala", "Ithe thamba"],
+        answer: 0,
+        explanation: "Saral ja means go straight."
+      },
+      {
+        question: "What does Javal mean?",
+        options: ["Near", "Far", "Inside"],
+        answer: 0,
+        explanation: "Javal means near."
+      }
+    ],
+    items: [
+      { marathi: "Saral ja", devanagari: "सरळ जा", english: "Go straight" },
+      { marathi: "Davikade vala", devanagari: "डावीकडे वळा", english: "Turn left" },
+      { marathi: "Ujvikade vala", devanagari: "उजवीकडे वळा", english: "Turn right" },
+      { marathi: "Javal", devanagari: "जवळ", english: "Near" },
+      { marathi: "Door", devanagari: "दूर", english: "Far" },
+      { marathi: "Bus stop kuthe aahe?", devanagari: "बस स्टॉप कुठे आहे?", english: "Where is the bus stop?" },
+      { marathi: "Ithe thamba", devanagari: "इथे थांबा", english: "Stop here" },
+      { marathi: "Mala tithe jaycha aahe", devanagari: "मला तिथे जायचं आहे", english: "I want / need to go there" }
+    ]
+  }
 ];
 
 export function getLesson(slug: string) {

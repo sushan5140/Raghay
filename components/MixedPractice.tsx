@@ -94,7 +94,8 @@ async function playMarathi(devanagari: string, fallback: string) {
   } catch {}
 
   if (typeof window !== "undefined" && "speechSynthesis" in window) {
-    const utterance = new SpeechSynthesisUtterance(fallback);
+    const utterance = new SpeechSynthesisUtterance(devanagari);
+    utterance.lang = "mr-IN";
     utterance.rate = 0.85;
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utterance);

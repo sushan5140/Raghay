@@ -67,7 +67,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     listening: {
       title: "A quick past recap",
       devanagari: "काल मी सकाळी लवकर उठलो. नाश्ता केला, बसने कॉलेजला गेलो आणि संध्याकाळी घरी परत आलो.",
-      romanized: "Kaal mi sakaali lavkar uthlo. Naashta kela, basne college-la gelo ani sandhyaakaali ghari parat aalo.",
+      romanized: "Kaal mi sakali lavkar uthlo. Naashta kela, basne college-la gelo ani sandhyakali ghari parat aalo.",
       english: "Yesterday I got up early, had breakfast, went to college by bus, and returned home in the evening.",
       maxReplays: 3,
       questions: [
@@ -83,10 +83,10 @@ export const intermediateCompletionLessons: Lesson[] = [
     production: {
       prompt: "Write 4 sentences about what you did yesterday.",
       minSentences: 4,
-      support: ["Kaal mi ...", "Nantar mi ...", "Sandhyaakaali mi ...", "Shevti mi ..."],
+      support: ["Kaal mi ...", "Nantar mi ...", "Sandhyakali mi ...", "Shevti mi ..."],
       requiredPatterns: ["one past-time word", "at least two completed actions"],
       modelAnswer: {
-        romanized: "Kaal mi lavkar uthlo. Mi naashta kela. Nantar mi college-la gelo. Sandhyaakaali mi ghari aalo.",
+        romanized: "Kaal mi lavkar uthlo. Mi naashta kela. Nantar mi college-la gelo. Sandhyakali mi ghari aalo.",
         devanagari: "काल मी लवकर उठलो. मी नाश्ता केला. नंतर मी कॉलेजला गेलो. संध्याकाळी मी घरी आलो.",
         english: "Yesterday I got up early. I had breakfast. Then I went to college. In the evening I came home."
       }
@@ -158,7 +158,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       },
       {
         question: "Which reply gives an experience plus a detail?",
-        options: ["Mi Pune-la gelo ani Sinhagad pahila.", "Ho.", "Udya jaain."],
+        options: ["Mi Pune-la gelo ani Sinhagad pahila.", "Ho.", "Udya jaeen."],
         answer: 0,
         explanation: "It answers with two connected past details.",
         skill: "past-narration"
@@ -167,7 +167,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     reading: {
       title: "A weekend trip",
       devanagari: "गेल्या रविवारी मी पुण्याला गेलो. सकाळी मी शनिवारवाडा पाहिला. दुपारी मित्रांसोबत जेवलो आणि संध्याकाळी परत आलो. दिवस थकवणारा होता, पण खूप छान गेला.",
-      romanized: "Gelya ravivaari mi Pune-la gelo. Sakaali mi Shaniwarwada pahila. Dupari mitransobat jevlo ani sandhyaakaali parat aalo. Divas thakavanaara hota, pan khup chhaan gela.",
+      romanized: "Gelya ravivaari mi Pune-la gelo. Sakali mi Shaniwarwada pahila. Dupari mitransobat jevlo ani sandhyakali parat aalo. Divas thakavanaara hota, pan khup chhaan gela.",
       english: "Last Sunday I went to Pune. In the morning I saw Shaniwar Wada. In the afternoon I ate with friends and returned in the evening. The day was tiring, but it went very well.",
       questions: [
         {
@@ -198,7 +198,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     production: {
       prompt: "Describe a recent outing in 4–5 sentences.",
       minSentences: 4,
-      support: ["Gelya ... mi ...", "Sakaali ...", "Mag ...", "Pan ..."],
+      support: ["Gelya ... mi ...", "Sakali ...", "Mag ...", "Pan ..."],
       requiredPatterns: ["past event", "sequence word", "one opinion"],
       modelAnswer: {
         romanized: "Gelya shanivaari mi bazaarat gelo. Mi kahi pustake ghetli. Mag mi mitraala bhetlo. Aamhi chaha ghetla. Divas khup chhaan gela.",
@@ -283,14 +283,14 @@ export const intermediateCompletionLessons: Lesson[] = [
     reading: {
       title: "A changed plan",
       devanagari: "काल मी चित्रपटाला जाणार होतो, पण माझ्याकडे वेळ नव्हता. म्हणून मी गेलो नाही. त्याऐवजी मी घरी राहिलो आणि अभ्यास केला.",
-      romanized: "Kaal mi chitrapataala jaanar hoto, pan maajhyaakade vel navhta. Mhanun mi gelo nahi. Tyaaivaji mi ghari rahilo ani abhyas kela.",
+      romanized: "Kaal mi chitrapataala jaanar hoto, pan majhyaakade vel navhta. Mhanun mi gelo nahi. Tyaaivaji mi ghari rahilo ani abhyas kela.",
       english: "Yesterday I was going to go to a movie, but I did not have time. So I did not go. Instead, I stayed home and studied.",
       questions: [
         {
           question: "Why did the speaker not go to the movie?",
           options: ["There was no time", "The movie was full", "It was too expensive"],
           answer: 0,
-          explanation: "The text says maajhyaakade vel navhta.",
+          explanation: "The text says majhyaakade vel navhta.",
           skill: "reading-reason"
         }
       ]
@@ -298,7 +298,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     listening: {
       title: "What did not happen?",
       devanagari: "आज सकाळी बस उशिरा आली. त्यामुळे मी पहिल्या वर्गाला वेळेवर पोहोचलो नाही.",
-      romanized: "Aaj sakaali bas ushira aali. Tyamule mi pahilya vargaala velevar pohachlo nahi.",
+      romanized: "Aaj sakali bas ushira aali. Tyamule mi pahilya vargaala velevar pohachlo nahi.",
       english: "The bus came late this morning. Because of that, I did not reach the first class on time.",
       maxReplays: 2,
       questions: [
@@ -343,10 +343,10 @@ export const intermediateCompletionLessons: Lesson[] = [
     teaching: [
       {
         title: "Future forms become useful when chained",
-        explanation: "Rather than memorizing one future verb at a time, practice a short plan with jaain, karin, bhetein, and asen.",
+        explanation: "Rather than memorizing one future verb at a time, practice a short plan with jaeen, kareen, bheteen, and asen.",
         examples: [
-          { marathi: "Mi udya jaain", devanagari: "मी उद्या जाईन", english: "I will go tomorrow" },
-          { marathi: "Mi abhyas karin", devanagari: "मी अभ्यास करीन", english: "I will study" },
+          { marathi: "Mi udya jaeen", devanagari: "मी उद्या जाईन", english: "I will go tomorrow" },
+          { marathi: "Mi abhyas kareen", devanagari: "मी अभ्यास करीन", english: "I will study" },
           { marathi: "Mi ghari asen", devanagari: "मी घरी असेन", english: "I will be at home" }
         ]
       }
@@ -354,9 +354,9 @@ export const intermediateCompletionLessons: Lesson[] = [
     checks: [
       {
         question: "Which sentence means “I will study”?",
-        options: ["Mi abhyas karin", "Mi abhyas kela", "Mi abhyas karat aahe"],
+        options: ["Mi abhyas kareen", "Mi abhyas kela", "Mi abhyas karat aahe"],
         answer: 0,
-        explanation: "Karin is a future form in this pattern.",
+        explanation: "Kareen is a future form in this pattern.",
         skill: "future"
       },
       {
@@ -370,7 +370,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     reading: {
       title: "Tomorrow's schedule",
       devanagari: "उद्या मी सकाळी दोन तास अभ्यास करीन. दुपारी मी कॉलेजला जाईन. वर्गानंतर मित्राला भेटीन. वेळ मिळाला तर आम्ही बाहेर जेवायला जाऊ.",
-      romanized: "Udya mi sakaali don taas abhyas karin. Dupari mi college-la jaain. Vargaanantar mitraala bhetein. Vel milala tar aamhi baaher jevaayla jaau.",
+      romanized: "Udya mi sakali don taas abhyas kareen. Dupari mi college-la jaeen. Vargaanantar mitraala bheteen. Vel milala tar aamhi baaher jevaayla jaau.",
       english: "Tomorrow I will study for two hours in the morning. In the afternoon I will go to college. After class I will meet a friend. If there is time, we will go out to eat.",
       questions: [
         {
@@ -385,7 +385,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     listening: {
       title: "A changed evening plan",
       devanagari: "आज संध्याकाळी मी जिमला जाईन. पण जर पाऊस आला तर मी घरी व्यायाम करीन.",
-      romanized: "Aaj sandhyaakaali mi gym-la jaain. Pan jar paus aala tar mi ghari vyaayaam karin.",
+      romanized: "Aaj sandhyakali mi gym-la jaeen. Pan jar paus aala tar mi ghari vyaayaam kareen.",
       english: "This evening I will go to the gym. But if it rains, I will exercise at home.",
       maxReplays: 2,
       questions: [
@@ -404,7 +404,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       support: ["Udya mi ...", "Nantar ...", "Vargaanantar ...", "Vel milala tar ..."],
       requiredPatterns: ["future form", "time expression", "one condition"],
       modelAnswer: {
-        romanized: "Udya mi lavkar uthain. Sakaali mi abhyas karin. Dupari mi college-la jaain. Vargaanantar mi mitraala bhetein. Vel milala tar aamhi chaha gheu.",
+        romanized: "Udya mi lavkar uthain. Sakali mi abhyas kareen. Dupari mi college-la jaeen. Vargaanantar mi mitraala bheteen. Vel milala tar aamhi chaha gheu.",
         devanagari: "उद्या मी लवकर उठेन. सकाळी मी अभ्यास करीन. दुपारी मी कॉलेजला जाईन. वर्गानंतर मी मित्राला भेटीन. वेळ मिळाला तर आम्ही चहा घेऊ.",
         english: "Tomorrow I will get up early. In the morning I will study. In the afternoon I will go to college. After class I will meet a friend. If there is time, we will have tea."
       }
@@ -439,9 +439,9 @@ export const intermediateCompletionLessons: Lesson[] = [
       ]
     },
     items: [
-      { marathi: "Mi jaain", devanagari: "मी जाईन", english: "I will go" },
-      { marathi: "Mi karin", devanagari: "मी करीन", english: "I will do" },
-      { marathi: "Mi bhetein", devanagari: "मी भेटीन", english: "I will meet" },
+      { marathi: "Mi jaeen", devanagari: "मी जाईन", english: "I will go" },
+      { marathi: "Mi kareen", devanagari: "मी करीन", english: "I will do" },
+      { marathi: "Mi bheteen", devanagari: "मी भेटीन", english: "I will meet" },
       { marathi: "Mi asen", devanagari: "मी असेन", english: "I will be" },
       { marathi: "Vel milala tar", devanagari: "वेळ मिळाला तर", english: "If there is time" },
       { marathi: "Vargaanantar", devanagari: "वर्गानंतर", english: "After class" }
@@ -477,7 +477,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       },
       {
         question: "Which sentence means “I want/need to study”?",
-        options: ["Mala abhyas karaycha aahe", "Mi abhyas kela", "Mi abhyas karin"],
+        options: ["Mala abhyas karaycha aahe", "Mi abhyas kela", "Mi abhyas kareen"],
         answer: 0,
         explanation: "Karaycha aahe is the target intention/need pattern here.",
         skill: "desire"
@@ -486,7 +486,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     reading: {
       title: "A busy day",
       devanagari: "आज मला अनेक गोष्टी करायच्या आहेत. सकाळी मला प्रोजेक्ट पूर्ण करायचा आहे. दुपारी मला बँकेत जायचं आहे. संध्याकाळी मला लवकर घरी यावं लागेल कारण पाहुणे येणार आहेत.",
-      romanized: "Aaj mala anek goshti karaychya aahet. Sakaali mala project purna karaycha aahe. Dupari mala banket jaaycha aahe. Sandhyaakaali mala lavkar ghari yaav lagel kaaran pahune yenaar aahet.",
+      romanized: "Aaj mala anek goshti karaychya aahet. Sakali mala project purna karaycha aahe. Dupari mala banket jaaycha aahe. Sandhyakali mala lavkar ghari yaav lagel kaaran pahune yenaar aahet.",
       english: "Today I have many things to do. In the morning I need to finish a project. In the afternoon I need to go to the bank. In the evening I will have to come home early because guests are coming.",
       questions: [
         {
@@ -520,7 +520,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       support: ["Mala ... pahije", "Mala ... karaycha aahe", "Mala ... karav lagel", "Tyanantar ..."],
       requiredPatterns: ["one desire", "one obligation"],
       modelAnswer: {
-        romanized: "Mala ya aathavdyat project purna karaycha aahe. Mala navin notebook pahije. Shukravaari mala lavkar uthav lagel. Tyanantar mi mitranna bhetein.",
+        romanized: "Mala ya aathavdyat project purna karaycha aahe. Mala navin notebook pahije. Shukravaari mala lavkar uthav lagel. Tyanantar mi mitranna bheteen.",
         devanagari: "मला या आठवड्यात प्रोजेक्ट पूर्ण करायचा आहे. मला नवीन नोटबुक पाहिजे. शुक्रवारी मला लवकर उठावं लागेल. त्यानंतर मी मित्रांना भेटीन.",
         english: "This week I need to finish a project. I want a new notebook. On Friday I will have to get up early. After that I will meet friends."
       }
@@ -761,7 +761,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       support: ["Gharatun ...", "... javal aahe", "... kade jaato/jaate", "... barobar ..."],
       requiredPatterns: ["source/from", "near or in", "with or toward"],
       modelAnswer: {
-        romanized: "Mi gharatun sakaali nighato. Busstop gharajaval aahe. Mi basne college-kade jaato. College-madhe mi mitrabarobar vargaat jaato.",
+        romanized: "Mi gharatun sakali nighato. Busstop gharajaval aahe. Mi basne college-kade jaato. College-madhe mi mitrabarobar vargaat jaato.",
         devanagari: "मी घरातून सकाळी निघतो. बसस्टॉप घराजवळ आहे. मी बसने कॉलेजकडे जातो. कॉलेजमध्ये मी मित्राबरोबर वर्गात जातो.",
         english: "I leave home in the morning. The bus stop is near my house. I go toward college by bus. At college I go to class with a friend."
       }
@@ -847,7 +847,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     reading: {
       title: "Sharing things",
       devanagari: "माझ्याकडे दोन पेन आहेत. मला एकच पेन पाहिजे, म्हणून मी दुसरं पेन मित्राला दिलं. त्याला ते आवडलं. नंतर त्याने मला एक नोटबुक दिलं.",
-      romanized: "Maajhyaakade don pen aahet. Mala ekach pen pahije, mhanun mi dusra pen mitraala dila. Tyaala te aavdla. Nantar tyaane mala ek notebook dila.",
+      romanized: "Majhyaakade don pen aahet. Mala ekach pen pahije, mhanun mi dusra pen mitraala dila. Tyaala te aavdla. Nantar tyaane mala ek notebook dila.",
       english: "I have two pens. I only need one pen, so I gave the other pen to a friend. He liked it. Later he gave me a notebook.",
       questions: [
         {
@@ -881,7 +881,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       support: ["Mala ...", "Tula ...", "Tyaala ...", "Tila ...", "Tumhaala ..."],
       requiredPatterns: ["three recipient/experiencer forms"],
       modelAnswer: {
-        romanized: "Mala chaha pahije. Tula coffee pahije ka? Tila pustak dya. Tyaala ha cinema aavadto.",
+        romanized: "Mala chaha pahije. Tula coffee pahije ka? Tila pustak dya. Tyaala ha cinema avadto.",
         devanagari: "मला चहा पाहिजे. तुला कॉफी पाहिजे का? तिला पुस्तक द्या. त्याला हा सिनेमा आवडतो.",
         english: "I want tea. Do you want coffee? Give her the book. He likes this movie."
       }
@@ -942,7 +942,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     reading: {
       title: "What I have with me",
       devanagari: "माझ्याकडे आज दोन पुस्तके, एक पेन आणि एक नोटबुक आहेत. माझं मोठं पुस्तक घरी आहे, पण माझी छोटी वही बॅगेत आहे.",
-      romanized: "Maajhyaakade aaj don pustake, ek pen ani ek notebook aahet. Maajha motha pustak ghari aahe, pan maajhi chhoti vahi baget aahe.",
+      romanized: "Majhyaakade aaj don pustake, ek pen ani ek notebook aahet. Majha motha pustak ghari aahe, pan majhi chhoti vahi baget aahe.",
       english: "Today I have two books, a pen, and a notebook with me. My big book is at home, but my small notebook is in the bag.",
       questions: [
         {
@@ -957,7 +957,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     listening: {
       title: "Do you have a charger?",
       devanagari: "तुझ्याकडे चार्जर आहे का? हो, माझ्याकडे एक अतिरिक्त चार्जर आहे.",
-      romanized: "Tujhyaakade charger aahe ka? Ho, maajhyaakade ek atirikt charger aahe.",
+      romanized: "Tujhyaakade charger aahe ka? Ho, majhyaakade ek atirikt charger aahe.",
       english: "Do you have a charger? Yes, I have an extra charger.",
       maxReplays: 2,
       questions: [
@@ -973,10 +973,10 @@ export const intermediateCompletionLessons: Lesson[] = [
     production: {
       prompt: "Describe 4 things you have or where your things are.",
       minSentences: 4,
-      support: ["Maajhyaakade ... aahe", "Maajha ...", "Maajhi ...", "... ghari aahe", "... baget aahe"],
+      support: ["Majhyaakade ... aahe", "Majha ...", "Majhi ...", "... ghari aahe", "... baget aahe"],
       requiredPatterns: ["having pattern", "possessive agreement"],
       modelAnswer: {
-        romanized: "Maajhyaakade ek laptop aahe. Maajha phone tablevar aahe. Maajhi notebook baget aahe. Maajhyaakade aaj thoda vel aahe.",
+        romanized: "Majhyaakade ek laptop aahe. Majha phone tablevar aahe. Majhi notebook baget aahe. Majhyaakade aaj thoda vel aahe.",
         devanagari: "माझ्याकडे एक लॅपटॉप आहे. माझा फोन टेबलवर आहे. माझी नोटबुक बॅगेत आहे. माझ्याकडे आज थोडा वेळ आहे.",
         english: "I have a laptop. My phone is on the table. My notebook is in the bag. I have a little time today."
       }
@@ -1065,7 +1065,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     reading: {
       title: "Choosing a phone",
       devanagari: "दुकानात दोन फोन होते. पहिला फोन स्वस्त होता, पण त्याची बॅटरी छोटी होती. दुसरा फोन महाग होता, पण बॅटरी जास्त चांगली होती. मला दुसरा फोन जास्त आवडला.",
-      romanized: "Dukanaat don phone hote. Pahila phone swasta hota, pan tyaachi battery chhoti hoti. Dusra phone mahag hota, pan battery jast changli hoti. Mala dusra phone jast aavadla.",
+      romanized: "Dukanaat don phone hote. Pahila phone swasta hota, pan tyaachi battery chhoti hoti. Dusra phone mahag hota, pan battery jast changli hoti. Mala dusra phone jast avadla.",
       english: "There were two phones in the shop. The first was cheaper, but its battery was smaller. The second was expensive, but the battery was better. I preferred the second phone.",
       questions: [
         {
@@ -1080,7 +1080,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     listening: {
       title: "Two travel options",
       devanagari: "बस ट्रेनपेक्षा स्वस्त आहे, पण ट्रेन जास्त वेगवान आहे. मला वेळ कमी असेल तर मी ट्रेनने जाईन.",
-      romanized: "Bas trainpeksha swasta aahe, pan train jast vegvaan aahe. Mala vel kami asel tar mi trainne jaain.",
+      romanized: "Bas trainpeksha swasta aahe, pan train jast vegvaan aahe. Mala vel kami asel tar mi trainne jaeen.",
       english: "The bus is cheaper than the train, but the train is faster. If I have less time, I will go by train.",
       maxReplays: 2,
       questions: [
@@ -1099,7 +1099,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       support: ["... peksha ...", "Jast ...", "Kami ...", "Pan ...", "Mala ... jast avadte"],
       requiredPatterns: ["one peksha comparison", "one contrast", "one preference"],
       modelAnswer: {
-        romanized: "Train baspeksha vegvaan aahe. Bas kami mahag aahe. Pan train jast aaraamdaayak aahe. Mala train jast aavadte. Vel kami asel tar mi train nivaden.",
+        romanized: "Train baspeksha vegvaan aahe. Bas kami mahag aahe. Pan train jast aaraamdaayak aahe. Mala train jast avadte. Vel kami asel tar mi train nivaden.",
         devanagari: "ट्रेन बसपेक्षा वेगवान आहे. बस कमी महाग आहे. पण ट्रेन जास्त आरामदायक आहे. मला ट्रेन जास्त आवडते. वेळ कमी असेल तर मी ट्रेन निवडेन.",
         english: "The train is faster than the bus. The bus is less expensive. But the train is more comfortable. I prefer the train. If time is limited, I will choose the train."
       }
@@ -1215,7 +1215,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       support: ["Puresa ...", "Khup ...", "Thoda/thodi ...", "Kami ...", "Jast nako"],
       requiredPatterns: ["at least three quantity words"],
       modelAnswer: {
-        romanized: "Maajhyaakade aaj puresa vel aahe. Maajhyaakade khup kaam nahi. Mala thoda abhyas karaycha aahe. Coffee jast nako. Thoda chaha puresa aahe.",
+        romanized: "Majhyaakade aaj puresa vel aahe. Majhyaakade khup kaam nahi. Mala thoda abhyas karaycha aahe. Coffee jast nako. Thoda chaha puresa aahe.",
         devanagari: "माझ्याकडे आज पुरेसा वेळ आहे. माझ्याकडे खूप काम नाही. मला थोडा अभ्यास करायचा आहे. कॉफी जास्त नको. थोडा चहा पुरेसा आहे.",
         english: "I have enough time today. I do not have a lot of work. I need to study a little. I do not want too much coffee. A little tea is enough."
       }
@@ -1499,7 +1499,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     listening: {
       title: "Conditional invitation",
       devanagari: "तुला वेळ असेल तर संध्याकाळी ये. आपण एकत्र जेवू.",
-      romanized: "Tula vel asel tar sandhyaakaali ye. Aapan ekatra jevu.",
+      romanized: "Tula vel asel tar sandhyakali ye. Aapan ekatra jevu.",
       english: "If you have time, come in the evening. We will eat together.",
       maxReplays: 2,
       questions: [
@@ -1518,7 +1518,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       support: ["Jar ... tar ...", "Vel milala tar ...", "Paus aala tar ...", "... asel tar ..."],
       requiredPatterns: ["two conditions", "future/result clause"],
       modelAnswer: {
-        romanized: "Jar mala vel milala tar mi gym-la jaain. Jar paus aala tar mi ghari vyaayaam karin. Mitra mokla asel tar aamhi chaha gheu. Vel kami asel tar mi lavkar parat yein. Jar sagla purna jhala tar mi cinema pahin.",
+        romanized: "Jar mala vel milala tar mi gym-la jaeen. Jar paus aala tar mi ghari vyaayaam kareen. Mitra mokla asel tar aamhi chaha gheu. Vel kami asel tar mi lavkar parat yein. Jar sagla purna jhala tar mi cinema pahin.",
         devanagari: "जर मला वेळ मिळाला तर मी जिमला जाईन. जर पाऊस आला तर मी घरी व्यायाम करीन. मित्र मोकळा असेल तर आम्ही चहा घेऊ. वेळ कमी असेल तर मी लवकर परत येईन. जर सगळं पूर्ण झालं तर मी सिनेमा पाहीन.",
         english: "If I get time, I will go to the gym. If it rains, I will exercise at home. If my friend is free, we will have tea. If time is short, I will return early. If everything is finished, I will watch a movie."
       }
@@ -1634,7 +1634,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       support: ["Je ... te ...", "Jithe ... tithe ...", "Jo ... to ..."],
       requiredPatterns: ["one relative/correlative pair"],
       modelAnswer: {
-        romanized: "Je mala samajat nahi, te mi punha vaachto. Jithe shaantata aste, tithe mi abhyas karto. Jo roj saraav karto, to lavkar sudhaarto. Mala hi paddhat aavadte.",
+        romanized: "Je mala samajat nahi, te mi punha vaachto. Jithe shaantata aste, tithe mi abhyas karto. Jo roj saraav karto, to lavkar sudhaarto. Mala hi paddhat avadte.",
         devanagari: "जे मला समजत नाही, ते मी पुन्हा वाचतो. जिथे शांतता असते, तिथे मी अभ्यास करतो. जो रोज सराव करतो, तो लवकर सुधारतो. मला ही पद्धत आवडते.",
         english: "What I do not understand, I read again. Where it is quiet, I study. Whoever practices daily improves quickly. I like this method."
       }
@@ -1708,7 +1708,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     listening: {
       title: "A plan that changed twice",
       devanagari: "शनिवारी सकाळी मी आणि माझा मित्र लवकर उठलो कारण आम्हाला जवळच्या किल्ल्यावर जायचं होतं. आम्ही नाश्ता केला आणि बसस्टॉपकडे निघालो. तिथे पोहोचल्यानंतर कळलं की बस उशिरा येणार होती. सुरुवातीला आम्ही थांबायचं ठरवलं, पण थोड्या वेळाने पाऊस सुरू झाला. त्यामुळे आम्ही किल्ल्यावर जाण्याचा विचार बदलला. माझ्या मित्राने शहरातल्या संग्रहालयात जाऊ या असं सुचवलं. संग्रहालय बसस्टॉपपासून फार दूर नव्हतं, म्हणून आम्ही तिकडे चालत गेलो. तिथे दोन तास घालवल्यानंतर आम्ही जवळच्या कॅफेत चहा घेतला. दिवस आमच्या योजनेप्रमाणे गेला नाही, तरीही आम्हाला खूप मजा आली. शेवटी आम्ही ठरवलं की पुढच्या आठवड्यात हवामान चांगलं असेल तर किल्ल्यावर नक्की जाऊ.",
-      romanized: "Shanivaari sakaali mi ani maajha mitra lavkar uthlo kaaran aamhaala javalchya killyavar jaaycha hota. Aamhi naashta kela ani busstopkade nighalo. Tithe pohachlyanantar kalala ki bas ushira yenaar hoti. Suruvatila aamhi thaambaaycha tharavla, pan thodya velaane paus suru jhala. Tyamule aamhi killyavar jaanyacha vichaar badalla. Maajhya mitraane shaharaatlya sangrahaalayaat jaau ya asa suchavla. Sangrahaalay busstoppaasun phaar dur navhta, mhanun aamhi tikade chalat gelo. Tithe don taas ghaalavlyanantar aamhi javalchya cafe-t chaha ghetla. Divas aamchya yojanepramaane gela nahi, tarihi aamhaala khup maja aali. Shevti aamhi tharavla ki pudhchya aathavdyat havaamaan changla asel tar killyavar nakki jaau.",
+      romanized: "Shanivaari sakali mi ani majha mitra lavkar uthlo kaaran aamhaala javalchya killyavar jaaycha hota. Aamhi naashta kela ani busstopkade nighalo. Tithe pohachlyanantar kalala ki bas ushira yenaar hoti. Suruvatila aamhi thaambaaycha tharavla, pan thodya velaane paus suru jhala. Tyamule aamhi killyavar jaanyacha vichaar badalla. Majhya mitraane shaharaatlya sangrahaalayaat jaau ya asa suchavla. Sangrahaalay busstoppaasun phaar dur navhta, mhanun aamhi tikade chalat gelo. Tithe don taas ghaalavlyanantar aamhi javalchya cafe-t chaha ghetla. Divas aamchya yojanepramaane gela nahi, tarihi aamhaala khup maja aali. Shevti aamhi tharavla ki pudhchya aathavdyat havaamaan changla asel tar killyavar nakki jaau.",
       english: "On Saturday morning my friend and I got up early because we wanted to go to a nearby fort. We had breakfast and left for the bus stop. After arriving we learned the bus would be late. At first we decided to wait, but after a while it started raining. So we changed the plan to go to the fort. My friend suggested going to the city museum. The museum was not far from the bus stop, so we walked there. After spending two hours there, we had tea at a nearby café. The day did not go according to plan, but we still had a lot of fun. Finally we decided that if the weather is good next week, we will definitely go to the fort.",
       maxReplays: 2,
       questions: [
@@ -1847,7 +1847,7 @@ export const intermediateCompletionLessons: Lesson[] = [
         examples: [
           { marathi: "Mala ek adchan aahe", devanagari: "मला एक अडचण आहे", english: "I have a problem" },
           { marathi: "Kripaya punha samjaavun saanga", devanagari: "कृपया पुन्हा समजावून सांगा", english: "Please explain it again" },
-          { marathi: "Mi udya purna karin", devanagari: "मी उद्या पूर्ण करीन", english: "I will finish it tomorrow" }
+          { marathi: "Mi udya purna kareen", devanagari: "मी उद्या पूर्ण करीन", english: "I will finish it tomorrow" }
         ]
       }
     ],
@@ -1894,10 +1894,10 @@ export const intermediateCompletionLessons: Lesson[] = [
     production: {
       prompt: "Write a 5–6 sentence message explaining a study/work problem and asking for a practical solution.",
       minSentences: 5,
-      support: ["Mala ... baddal adchan aahe", "Kaaran ...", "Tyamule ... shaklo/shakle nahi", "Mala ... milel ka?", "Mi ... karin"],
+      support: ["Mala ... baddal adchan aahe", "Kaaran ...", "Tyamule ... shaklo/shakle nahi", "Mala ... milel ka?", "Mi ... kareen"],
       requiredPatterns: ["problem", "reason", "polite request", "next step"],
       modelAnswer: {
-        romanized: "Mala assignmentbaddal ek adchan aahe. Kaal maajha laptop chalat navhta. Tyamule mi kaam purna karu shaklo nahi. Mala aaj sandhyaakaalparyant vel milel ka? Mi file purna karun lagech pathaven.",
+        romanized: "Mala assignmentbaddal ek adchan aahe. Kaal majha laptop chalat navhta. Tyamule mi kaam purna karu shaklo nahi. Mala aaj sandhyaakaalparyant vel milel ka? Mi file purna karun lagech pathaven.",
         devanagari: "मला असाइनमेंटबद्दल एक अडचण आहे. काल माझा लॅपटॉप चालत नव्हता. त्यामुळे मी काम पूर्ण करू शकलो नाही. मला आज संध्याकाळपर्यंत वेळ मिळेल का? मी फाइल पूर्ण करून लगेच पाठवेन.",
         english: "I have a problem with the assignment. My laptop was not working yesterday. So I could not finish the work. Can I have until this evening? I will finish the file and send it immediately."
       }
@@ -1937,7 +1937,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       { marathi: "Velevar", devanagari: "वेळेवर", english: "On time" },
       { marathi: "Lavkaraat lavkar", devanagari: "लवकरात लवकर", english: "As soon as possible" },
       { marathi: "Mhanje nemka kasa?", devanagari: "म्हणजे नेमकं कसं?", english: "What exactly do you mean / how exactly?" },
-      { marathi: "Mi purna karin", devanagari: "मी पूर्ण करीन", english: "I will finish it" }
+      { marathi: "Mi purna kareen", devanagari: "मी पूर्ण करीन", english: "I will finish it" }
     ]
   }),
 
@@ -1972,7 +1972,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     reading: {
       title: "A missed connection",
       devanagari: "माझी ट्रेन वीस मिनिटं उशिरा आली, त्यामुळे माझी पुढची बस चुकली. मी तिकीट काउंटरवर जाऊन दुसरा पर्याय विचारला. कर्मचाऱ्याने सांगितलं की अर्ध्या तासाने दुसरी बस आहे आणि जुनं तिकीट त्यासाठी वापरता येईल.",
-      romanized: "Maajhi train vees minita ushira aali, tyamule maajhi pudhchi bas chukli. Mi tikit countervar jaaun dusra paryaay vicharla. Karmacharyaane saangitla ki ardhya taasane dusri bas aahe ani juna tikit tyaasaathi vaaparta yeil.",
+      romanized: "Majhi train vees minita ushira aali, tyamule majhi pudhchi bas chukli. Mi tikit countervar jaaun dusra paryaay vicharla. Karmacharyaane saangitla ki ardhya taasane dusri bas aahe ani juna tikit tyaasaathi vaaparta yeil.",
       english: "My train arrived twenty minutes late, so I missed my next bus. I went to the ticket counter and asked for another option. The employee said there is another bus in half an hour and the old ticket can be used for it.",
       questions: [
         {
@@ -2006,7 +2006,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       support: ["... ushira aali", "Tyamule ... chukli", "Dusra paryaay ...", "Pudhchi ...", "Shevti ..."],
       requiredPatterns: ["problem", "cause/result", "alternative", "resolution"],
       modelAnswer: {
-        romanized: "Maajhi bas ushira aali. Tyamule maajhi train chukli. Mi countervar dusra paryaay vicharla. Pudhchi train eka taasane hoti. Mi navin vel svikarla. Shevti mi gantavyasthaani pohachlo.",
+        romanized: "Majhi bas ushira aali. Tyamule majhi train chukli. Mi countervar dusra paryaay vicharla. Pudhchi train eka taasane hoti. Mi navin vel svikarla. Shevti mi gantavyasthaani pohachlo.",
         devanagari: "माझी बस उशिरा आली. त्यामुळे माझी ट्रेन चुकली. मी काउंटरवर दुसरा पर्याय विचारला. पुढची ट्रेन एका तासाने होती. मी नवीन वेळ स्वीकारली. शेवटी मी गंतव्यस्थानी पोहोचलो.",
         english: "My bus was late. So I missed my train. I asked at the counter for another option. The next train was in an hour. I accepted the new timing. Finally I reached my destination."
       }
@@ -2081,7 +2081,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     reading: {
       title: "Group chat",
       devanagari: "आदित्य: आज संध्याकाळी सातला कॅफेत भेटू या? नेहा: मला सातला जमणार नाही. माझा क्लास साडेसातपर्यंत आहे. आठ वाजता चालेल का? आदित्य: हो, चालेल. मी थोडा आधी पोहोचलो तर टेबल घेऊन ठेवतो. नेहा: छान, मी निघाले की मेसेज करते.",
-      romanized: "Aditya: Aaj sandhyaakaali saatla cafe-t bhetu ya? Neha: Mala saatla jamnaar nahi. Maajha class saadesaatparyant aahe. Aath vaajta chalel ka? Aditya: Ho, chalel. Mi thoda aadhi pohachlo tar table gheun thevto. Neha: Chhaan, mi nighaale ki message karte.",
+      romanized: "Aditya: Aaj sandhyakali saatla cafe-t bhetu ya? Neha: Mala saatla jamnaar nahi. Majha class saadesaatparyant aahe. Aath vaajta chalel ka? Aditya: Ho, chalel. Mi thoda aadhi pohachlo tar table gheun thevto. Neha: Chhaan, mi nighaale ki message karte.",
       english: "Aditya: Shall we meet at the café at seven this evening? Neha: Seven won't work for me. My class is until 7:30. Will eight work? Aditya: Yes. If I arrive a little early, I'll get a table. Neha: Great, I'll message when I leave.",
       questions: [
         {
@@ -2115,7 +2115,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       support: ["Bhetu ya?", "Mala ... jamnaar nahi", "... chalel ka?", "Ho, chalel", "Mi ... ki message karto/karte"],
       requiredPatterns: ["invitation", "reason", "reschedule", "confirmation"],
       modelAnswer: {
-        romanized: "A: Aaj cafe-t bhetu ya? B: Mala saaha vaajta jamnaar nahi. Maajha class aahe. Saat vaajta chalel ka? A: Ho, chalel. B: Mi nighaale ki message karte.",
+        romanized: "A: Aaj cafe-t bhetu ya? B: Mala saaha vaajta jamnaar nahi. Majha class aahe. Saat vaajta chalel ka? A: Ho, chalel. B: Mi nighaale ki message karte.",
         devanagari: "अ: आज कॅफेत भेटू या? ब: मला सहा वाजता जमणार नाही. माझा क्लास आहे. सात वाजता चालेल का? अ: हो, चालेल. ब: मी निघाले की मेसेज करते.",
         english: "A: Shall we meet at the café today? B: Six won't work for me. I have class. Will seven work? A: Yes. B: I'll message when I leave."
       }
@@ -2190,7 +2190,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     reading: {
       title: "Appointment message",
       devanagari: "नमस्कार. माझी आज दुपारी चार वाजता अपॉइंटमेंट आहे. मला थोडा उशीर होईल. मी चार वाजून पंधरा मिनिटांनी पोहोचेन. वेळ बदलणे आवश्यक असेल तर कृपया मला कळवा.",
-      romanized: "Namaskaar. Maajhi aaj dupari chaar vaajta appointment aahe. Mala thoda ushir hoil. Mi chaar vaajun pandhara minitaanni pohachen. Vel badalne aavashyak asel tar kripaya mala kalava.",
+      romanized: "Namaskaar. Majhi aaj dupari chaar vaajta appointment aahe. Mala thoda ushir hoil. Mi chaar vaajun pandhara minitaanni pohachen. Vel badalne aavashyak asel tar kripaya mala kalava.",
       english: "Hello. I have an appointment today at 4 PM. I will be a little late. I will arrive at 4:15. If the time needs to be changed, please let me know.",
       questions: [
         {
@@ -2305,7 +2305,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     reading: {
       title: "A schedule that will not work",
       devanagari: "उद्या मला सकाळी बाहेर जाता येणार नाही कारण माझा ऑनलाइन क्लास आहे. दुपारी मी मोकळा असेन, पण तीन वाजता भेटणं मला जमणार नाही. चार वाजता मात्र मी येऊ शकेन.",
-      romanized: "Udya mala sakaali baaher jaata yenaar nahi kaaran maajha online class aahe. Dupari mi mokla asen, pan teen vaajta bhetna mala jamnaar nahi. Chaar vaajta maatra mi yeu shaken.",
+      romanized: "Udya mala sakali baaher jaata yenaar nahi kaaran majha online class aahe. Dupari mi mokla asen, pan teen vaajta bhetna mala jamnaar nahi. Chaar vaajta maatra mi yeu shaken.",
       english: "Tomorrow I will not be able to go out in the morning because I have an online class. I will be free in the afternoon, but meeting at three will not work for me. I will be able to come at four.",
       questions: [
         {
@@ -2320,7 +2320,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     listening: {
       title: "Cannot finish today",
       devanagari: "मी आज हे काम पूर्ण करू शकणार नाही. मला अजून दोन तास लागतील, म्हणून मी उद्या सकाळी पाठवेन.",
-      romanized: "Mi aaj he kaam purna karu shaknaar nahi. Mala ajun don taas laagtil, mhanun mi udya sakaali pathaven.",
+      romanized: "Mi aaj he kaam purna karu shaknaar nahi. Mala ajun don taas laagtil, mhanun mi udya sakali pathaven.",
       english: "I will not be able to finish this work today. I need two more hours, so I will send it tomorrow morning.",
       maxReplays: 2,
       questions: [
@@ -2339,7 +2339,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       support: ["Mi ... jaanar nahi", "Mala ... jamnaar nahi", "Mi ... karu shaknaar nahi", "Pan ... chalel", "Mhanun ..."],
       requiredPatterns: ["negative future/intention", "alternative"],
       modelAnswer: {
-        romanized: "Mi udya sakaali baaher jaanar nahi. Mala daha vaajta bhetna jamnaar nahi. Mi te kaam sakaali purna karu shaknaar nahi. Pan dupari don vaajta chalel. Mhanun aapan dupari bhetu.",
+        romanized: "Mi udya sakali baaher jaanar nahi. Mala daha vaajta bhetna jamnaar nahi. Mi te kaam sakali purna karu shaknaar nahi. Pan dupari don vaajta chalel. Mhanun aapan dupari bhetu.",
         devanagari: "मी उद्या सकाळी बाहेर जाणार नाही. मला दहा वाजता भेटणं जमणार नाही. मी ते काम सकाळी पूर्ण करू शकणार नाही. पण दुपारी दोन वाजता चालेल. म्हणून आपण दुपारी भेटू.",
         english: "I am not going out tomorrow morning. Meeting at ten will not work for me. I will not be able to finish that work in the morning. But two in the afternoon works. So we can meet in the afternoon."
       }
@@ -2504,7 +2504,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     checks: [
       {
         question: "Which phrase asks whether an item can be exchanged?",
-        options: ["He badalta yeil ka?", "He kuthe aahe?", "Mi ghari jaain"],
+        options: ["He badalta yeil ka?", "He kuthe aahe?", "Mi ghari jaeen"],
         answer: 0,
         explanation: "Badalta yeil ka? asks whether changing/exchanging is possible.",
         skill: "returns"
@@ -2528,10 +2528,10 @@ export const intermediateCompletionLessons: Lesson[] = [
     production: {
       prompt: "Write 5 sentences explaining a problem with a purchase and asking for an exchange or alternative.",
       minSentences: 5,
-      support: ["Mi he kaal ghetla", "Pan ...", "Dusra ... aahe ka?", "Badalta yeil ka?", "Bil maajhyaakade aahe"],
+      support: ["Mi he kaal ghetla", "Pan ...", "Dusra ... aahe ka?", "Badalta yeil ka?", "Bil majhyaakade aahe"],
       requiredPatterns: ["problem", "alternative request", "possession/having"],
       modelAnswer: {
-        romanized: "Mi ha shirt kaal ghetla. Pan ha size lahan aahe. Dusra size aahe ka? He badalta yeil ka? Bil maajhyaakade aahe.",
+        romanized: "Mi ha shirt kaal ghetla. Pan ha size lahan aahe. Dusra size aahe ka? He badalta yeil ka? Bil majhyaakade aahe.",
         devanagari: "मी हा शर्ट काल घेतला. पण हा साइज लहान आहे. दुसरा साइज आहे का? हे बदलता येईल का? बिल माझ्याकडे आहे.",
         english: "I bought this shirt yesterday. But this size is small. Is there another size? Can this be exchanged? I have the bill."
       }
@@ -2700,13 +2700,13 @@ export const intermediateCompletionLessons: Lesson[] = [
     listening: {
       title: "First meeting dialogue",
       devanagari: "अ: नमस्कार, माझं नाव रोहन आहे. तुमचं नाव काय? ब: माझं नाव सायली. भेटून आनंद झाला. अ: मलाही. तुम्ही काय शिकता? ब: मी संगणकशास्त्र शिकते. तुम्ही? अ: मी डिझाइन शिकतो. मला तंत्रज्ञानातही रस आहे.",
-      romanized: "A: Namaskaar, maajha naav Rohan aahe. Tumcha naav kaay? B: Maajha naav Sayali. Bhetun aanand jhala. A: Malaahi. Tumhi kaay shikta? B: Mi sanganakshaastra shikte. Tumhi? A: Mi design shikto. Mala tantradnyaanaathi ras aahe.",
+      romanized: "A: Namaskaar, majha naav Rohan aahe. Tumcha naav kay? B: Majha naav Sayali. Bhetun aanand jhala. A: Malaahi. Tumhi kay shikta? B: Mi sanganakshaastra shikte. Tumhi? A: Mi design shikto. Mala tantradnyaanaathi ras aahe.",
       english: "A: Hello, my name is Rohan. What is your name? B: My name is Sayali. Nice to meet you. A: Me too. What do you study? B: I study computer science. You? A: I study design. I'm also interested in technology.",
       maxReplays: 2,
       segments: [
-        { text: "नमस्कार, माझं नाव रोहन आहे. तुमचं नाव काय?", romanized: "Namaskaar, maajha naav Rohan aahe. Tumcha naav kaay?", voice: "male" },
-        { text: "माझं नाव सायली. भेटून आनंद झाला.", romanized: "Maajha naav Sayali. Bhetun aanand jhala.", voice: "female" },
-        { text: "मलाही. तुम्ही काय शिकता?", romanized: "Malaahi. Tumhi kaay shikta?", voice: "male" },
+        { text: "नमस्कार, माझं नाव रोहन आहे. तुमचं नाव काय?", romanized: "Namaskaar, majha naav Rohan aahe. Tumcha naav kay?", voice: "male" },
+        { text: "माझं नाव सायली. भेटून आनंद झाला.", romanized: "Majha naav Sayali. Bhetun aanand jhala.", voice: "female" },
+        { text: "मलाही. तुम्ही काय शिकता?", romanized: "Malaahi. Tumhi kay shikta?", voice: "male" },
         { text: "मी संगणकशास्त्र शिकते. तुम्ही?", romanized: "Mi sanganakshaastra shikte. Tumhi?", voice: "female" },
         { text: "मी डिझाइन शिकतो. मला तंत्रज्ञानातही रस आहे.", romanized: "Mi design shikto. Mala tantradnyaanaathi ras aahe.", voice: "male" }
       ],
@@ -2723,10 +2723,10 @@ export const intermediateCompletionLessons: Lesson[] = [
     production: {
       prompt: "Write a 6-line first-meeting conversation: names, one follow-up about study/work, one interest, and a natural close.",
       minSentences: 6,
-      support: ["Maajha naav ...", "Tumhi ...?", "Mi ... shikto/shikte", "Mala ... avadte", "Malaahi", "Punha bhetu"],
+      support: ["Majha naav ...", "Tumhi ...?", "Mi ... shikto/shikte", "Mala ... avadte", "Malaahi", "Punha bhetu"],
       requiredPatterns: ["introduction", "follow-up question", "reaction", "closing"],
       modelAnswer: {
-        romanized: "A: Namaskaar, maajha naav Amit aahe. B: Maajha naav Neha. Bhetun aanand jhala. A: Malaahi. Tumhi kaay shikta? B: Mi engineering shikte. A: Chhaan. Malaahi technology avadte. Punha bhetu.",
+        romanized: "A: Namaskaar, majha naav Amit aahe. B: Majha naav Neha. Bhetun aanand jhala. A: Malaahi. Tumhi kay shikta? B: Mi engineering shikte. A: Chhaan. Malaahi technology avadte. Punha bhetu.",
         devanagari: "अ: नमस्कार, माझं नाव अमित आहे. ब: माझं नाव नेहा. भेटून आनंद झाला. अ: मलाही. तुम्ही काय शिकता? ब: मी इंजिनिअरिंग शिकते. अ: छान. मलाही टेक्नॉलॉजी आवडते. पुन्हा भेटू.",
         english: "A: Hello, my name is Amit. B: My name is Neha. Nice to meet you. A: Me too. What do you study? B: I study engineering. A: Nice. I like technology too. See you again."
       }

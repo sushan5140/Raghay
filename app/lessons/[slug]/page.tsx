@@ -4,6 +4,7 @@ import { getLesson, lessons } from "@/data/lessons";
 import Practice from "@/components/Practice";
 import CompleteLessonButton from "@/components/CompleteLessonButton";
 import QuickCheck from "@/components/QuickCheck";
+import MixedPractice from "@/components/MixedPractice";
 
 export function generateStaticParams() {
   return lessons.map((lesson) => ({ slug: lesson.slug }));
@@ -84,7 +85,7 @@ export default function LessonPage({ params }: { params: { slug: string } }) {
       {lesson.checks?.length ? (
         <section className="mt-10">
           <h2 className="font-display text-xl font-semibold text-ink">Check your understanding</h2>
-          <p className="mt-1 text-sm text-muted">Two quick questions before flashcards.</p>
+          <p className="mt-1 text-sm text-muted">Two quick questions before active recall.</p>
           <div className="mt-4">
             <QuickCheck checks={lesson.checks} />
           </div>
@@ -92,15 +93,26 @@ export default function LessonPage({ params }: { params: { slug: string } }) {
       ) : null}
 
       <section className="mt-10">
-        <h2 className="font-display text-xl font-semibold text-ink">Practice</h2>
-        <p className="mt-1 text-sm text-muted">Test yourself without looking at the English meaning first.</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Practice lab</p>
+        <h2 className="mt-1 font-display text-xl font-semibold text-ink">Use what you learned</h2>
+        <p className="mt-1 text-sm text-muted">
+          Switch between translation, sentence building, and listening so recall is not tied to one exercise style.
+        </p>
+        <div className="mt-4">
+          <MixedPractice items={lesson.items} />
+        </div>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="font-display text-xl font-semibold text-ink">Flashcard review</h2>
+        <p className="mt-1 text-sm text-muted">Finish with a fast confidence check across the full lesson.</p>
         <div className="mt-4">
           <Practice items={lesson.items} />
         </div>
       </section>
 
       <div className="mt-8 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-black/5 bg-white p-4">
-        <p className="text-sm text-muted">Finished the explanation, check, and practice?</p>
+        <p className="text-sm text-muted">Finished the explanation, checks, practice lab, and review?</p>
         <CompleteLessonButton slug={lesson.slug} />
       </div>
     </div>

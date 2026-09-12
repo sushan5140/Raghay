@@ -40,6 +40,12 @@ export type ReadingMaterial = {
   questions: QuickCheck[];
 };
 
+export type ListeningSegment = {
+  text: string;
+  romanized?: string;
+  voice?: "female" | "male";
+};
+
 export type ListeningMaterial = {
   title: string;
   devanagari: string;
@@ -47,6 +53,7 @@ export type ListeningMaterial = {
   english?: string;
   questions: QuickCheck[];
   maxReplays?: number;
+  segments?: ListeningSegment[];
 };
 
 export type ProductionTask = {

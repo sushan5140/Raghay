@@ -1,39 +1,92 @@
 "use client";
 
 import { useState } from "react";
-import type { ListeningMaterial } from "@/data/lessons";
+import type { ListeningMaterial, ListeningSegment } from "@/data/lessons";
 import { recordSkillResult } from "@/lib/progress";
+
+const audioCache = new Map<string, string>();
+
+async function playAzure(text: string, voice: "female" | "male" = "female") {
+  const voiceName = voice === "male" ? "mr-IN-ManoharNeural" : "mr-IN-AarohiNeural";
+  const key = `${voiceName}::${text}`;
+  const cached = audioCache.get(key);
+
+  if (cached) {
+    const audio = new Audio(cached);
+    await audio.play();
+    await new Promise<void>((resolve) => {
+      audio.onended = () => resolve();
+      audio.onerror = () => resolve();
+    });
+    return true;
+  }
+
+  const response = await fetch("/api/tts", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text, voice: voiceName }),
+  });
+  if (!response.ok) return false;
+
+  const blob = await response.blob();
+  const url = URL.createObjectURL(blob);
+  audioCache.set(key, url);
+  const audio = new Audio(url);
+  await audio.play();
+  await new Promise<void>((resolve) => {
+    audio.onended = () => resolve();
+    audio.onerror = () => resolve();
+  });
+  return true;
+}
+
+async function speakFallback(text: string) {
+  if (!("speechSynthesis" in window)) return;
+  await new Promise<void>((resolve) => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 0.82;
+    utterance.onend = () => resolve();
+    utterance.onerror = () => resolve();
+    window.speechSynthesis.speak(utterance);
+  });
+}
+
+async function playSegments(segments: ListeningSegment[]) {
+  window.speechSynthesis?.cancel();
+  for (const segment of segments) {
+    try {
+      const played = await playAzure(segment.text, segment.voice || "female");
+      if (!played) await speakFallback(segment.romanized || segment.text);
+    } catch {
+      await speakFallback(segment.romanized || segment.text);
+    }
+  }
+}
 
 export default function ListeningLab({ listening }: { listening: ListeningMaterial }) {
   const [plays, setPlays] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [showTranscript, setShowTranscript] = useState(false);
   const [showEnglish, setShowEnglish] = useState(false);
+  const [playing, setPlaying] = useState(false);
   const max = listening.maxReplays || 3;
 
   async function play() {
-    if (plays >= max) return;
+    if (plays >= max || playing) return;
     setPlays((value) => value + 1);
+    setPlaying(true);
+
     try {
-      const response = await fetch("/api/tts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: listening.devanagari }),
-      });
-      if (response.ok) {
-        const blob = await response.blob();
-        const url = URL.createObjectURL(blob);
-        const audio = new Audio(url);
-        audio.onended = () => URL.revokeObjectURL(url);
-        await audio.play();
-        return;
+      if (listening.segments?.length) {
+        await playSegments(listening.segments);
+      } else {
+        const played = await playAzure(listening.devanagari);
+        if (!played) await speakFallback(listening.romanized);
       }
-    } catch {}
-    if ("speechSynthesis" in window) {
-      const utterance = new SpeechSynthesisUtterance(listening.romanized);
-      utterance.rate = 0.82;
-      window.speechSynthesis.cancel();
-      window.speechSynthesis.speak(utterance);
+    } catch {
+      await speakFallback(listening.romanized);
+    } finally {
+      setPlaying(false);
     }
   }
 
@@ -54,18 +107,16 @@ export default function ListeningLab({ listening }: { listening: ListeningMateri
     <div className="rounded-xl border border-black/5 bg-white p-5">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-            Listening
-          </p>
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Listening</p>
           <h3 className="mt-1 font-display text-lg font-semibold text-ink">{listening.title}</h3>
           <p className="mt-1 text-xs text-muted">{plays} / {max} plays used</p>
         </div>
         <button
           onClick={play}
-          disabled={plays >= max}
+          disabled={plays >= max || playing}
           className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white disabled:opacity-40"
         >
-          ▶ Play passage
+          {playing ? "Playing…" : "▶ Play passage"}
         </button>
       </div>
 
@@ -95,9 +146,7 @@ export default function ListeningLab({ listening }: { listening: ListeningMateri
                   );
                 })}
               </div>
-              {selected !== undefined && (
-                <p className="mt-2 text-sm text-muted">{question.explanation}</p>
-              )}
+              {selected !== undefined && <p className="mt-2 text-sm text-muted">{question.explanation}</p>}
             </div>
           );
         })}

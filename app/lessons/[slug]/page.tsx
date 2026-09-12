@@ -5,6 +5,7 @@ import Practice from "@/components/Practice";
 import CompleteLessonButton from "@/components/CompleteLessonButton";
 import QuickCheck from "@/components/QuickCheck";
 import MixedPractice from "@/components/MixedPractice";
+import IntermediateLab from "@/components/IntermediateLab";
 
 export function generateStaticParams() {
   return lessons.map((lesson) => ({ slug: lesson.slug }));
@@ -88,6 +89,23 @@ export default function LessonPage({ params }: { params: { slug: string } }) {
           <p className="mt-1 text-sm text-muted">Two quick questions before active recall.</p>
           <div className="mt-4">
             <QuickCheck checks={lesson.checks} />
+          </div>
+        </section>
+      ) : null}
+
+      {lesson.intermediate ? (
+        <section className="mt-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+            Intermediate lab
+          </p>
+          <h2 className="mt-1 font-display text-xl font-semibold text-ink">
+            Read, listen, understand, produce
+          </h2>
+          <p className="mt-1 text-sm text-muted">
+            Work with connected Marathi instead of isolated phrases, then produce your own response.
+          </p>
+          <div className="mt-4">
+            <IntermediateLab material={lesson.intermediate} />
           </div>
         </section>
       ) : null}

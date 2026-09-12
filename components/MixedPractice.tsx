@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { VocabItem } from "@/data/lessons";
+import { recordPhraseResult } from "@/lib/progress";
 
 type Mode = "marathi-to-english" | "english-to-marathi" | "build" | "listen";
 
@@ -130,13 +131,16 @@ export default function MixedPractice({ items }: { items: VocabItem[] }) {
       current.mode === "english-to-marathi"
         ? option === current.item.marathi
         : option === current.item.english;
+    recordPhraseResult(current.item, correct);
     if (correct) setScore((value) => value + 1);
   }
 
   function submitBuild() {
     if (answered || !built.length) return;
     setAnswered(true);
-    if (builtAnswer === current.item.marathi) setScore((value) => value + 1);
+    const correct = builtAnswer === current.item.marathi;
+    recordPhraseResult(current.item, correct);
+    if (correct) setScore((value) => value + 1);
   }
 
   function next() {

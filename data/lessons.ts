@@ -1220,7 +1220,7 @@ export const lessons: Lesson[] = [
       { marathi: "Ata samajla", devanagari: "आता समजलं", english: "Now I understand" },
       { marathi: "Mala ajun spashta nahi", devanagari: "मला अजून स्पष्ट नाही", english: "It is still not clear to me" }
     ]
-  }
+  },
   ...intermediateCompletionLessons,
 ];
 

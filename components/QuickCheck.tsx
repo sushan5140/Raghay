@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { QuickCheck as QuickCheckType } from "@/data/lessons";
+import { recordSkillResult } from "@/lib/progress";
 
 export default function QuickCheck({ checks }: { checks: QuickCheckType[] }) {
   const [index, setIndex] = useState(0);
@@ -16,8 +17,10 @@ export default function QuickCheck({ checks }: { checks: QuickCheckType[] }) {
 
   function choose(optionIndex: number) {
     if (selected !== null) return;
+    const isCorrect = optionIndex === current.answer;
     setSelected(optionIndex);
-    if (optionIndex === current.answer) setScore((value) => value + 1);
+    if (current.skill) recordSkillResult(current.skill, isCorrect, "grammar");
+    if (isCorrect) setScore((value) => value + 1);
   }
 
   function next() {
@@ -44,7 +47,7 @@ export default function QuickCheck({ checks }: { checks: QuickCheckType[] }) {
           {score} / {checks.length}
         </p>
         <p className="mt-2 text-sm text-muted">
-          {score === checks.length ? "Nice — you caught the key ideas." : "Review the lesson once more, then try again."}
+          {score === checks.length ? "Nice — you caught the key ideas." : "Review the explanation once more, then try again."}
         </p>
         <button onClick={restart} className="mt-4 rounded-lg border border-black/10 px-4 py-2 text-sm font-semibold text-ink">
           Try again

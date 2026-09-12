@@ -1,3 +1,5 @@
+import { intermediateCompletionLessons } from "./intermediate-completion";
+
 export type VocabItem = {
   marathi: string;
   devanagari: string;
@@ -16,6 +18,7 @@ export type QuickCheck = {
   options: string[];
   answer: number;
   explanation: string;
+  skill?: string;
 };
 
 export type IntermediateMaterial = {
@@ -28,6 +31,54 @@ export type IntermediateMaterial = {
   support: string[];
 };
 
+export type ReadingMaterial = {
+  title: string;
+  devanagari: string;
+  romanized: string;
+  english: string;
+  glossary?: { term: string; meaning: string }[];
+  questions: QuickCheck[];
+};
+
+export type ListeningMaterial = {
+  title: string;
+  devanagari: string;
+  romanized: string;
+  english?: string;
+  questions: QuickCheck[];
+  maxReplays?: number;
+};
+
+export type ProductionTask = {
+  prompt: string;
+  minSentences: number;
+  support?: string[];
+  requiredPatterns?: string[];
+  modelAnswer?: { romanized: string; devanagari: string; english: string };
+};
+
+export type ScenarioOption = {
+  text: string;
+  feedback: string;
+  acceptable: boolean;
+  nextStep?: string;
+};
+
+export type ScenarioStep = {
+  id: string;
+  speaker: string;
+  line: string;
+  prompt: string;
+  options: ScenarioOption[];
+};
+
+export type Scenario = {
+  title: string;
+  context: string;
+  startStep: string;
+  steps: ScenarioStep[];
+};
+
 export type Lesson = {
   slug: string;
   title: string;
@@ -38,6 +89,11 @@ export type Lesson = {
   teaching?: TeachingPoint[];
   checks?: QuickCheck[];
   intermediate?: IntermediateMaterial;
+  grammarSkills?: string[];
+  reading?: ReadingMaterial;
+  listening?: ListeningMaterial;
+  production?: ProductionTask;
+  scenario?: Scenario;
   items: VocabItem[];
 };
 
@@ -1165,6 +1221,7 @@ export const lessons: Lesson[] = [
       { marathi: "Mala ajun spashta nahi", devanagari: "मला अजून स्पष्ट नाही", english: "It is still not clear to me" }
     ]
   }
+  ...intermediateCompletionLessons,
 ];
 
 export function getLesson(slug: string) {

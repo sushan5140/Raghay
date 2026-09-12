@@ -2375,5 +2375,391 @@ export const intermediateCompletionLessons: Lesson[] = [
       { marathi: "Maatra", devanagari: "मात्र", english: "However / though / specifically" },
       { marathi: "Mokla / mokli", devanagari: "मोकळा / मोकळी", english: "Free / available (male / female)" }
     ]
+  }),
+  L({
+    slug: "cafe-order-capstone",
+    title: "Café Order & Changes",
+    subtitle: "Order, modify a request, and explain a food preference",
+    unit: 16,
+    unitTitle: "Functional independence",
+    objective: "Handle a café interaction from ordering through changing a request",
+    grammarSkills: ["cafe-service", "request-modification"],
+    teaching: [
+      {
+        title: "A complete service interaction needs more than one request",
+        explanation: "Order the item, modify it if needed, confirm what you understood, and close politely.",
+        examples: [
+          { marathi: "Mala ek chaha dya", devanagari: "मला एक चहा द्या", english: "Please give me one tea" },
+          { marathi: "Sakhar kami theva", devanagari: "साखर कमी ठेवा", english: "Please keep the sugar low" },
+          { marathi: "Dudh nako", devanagari: "दूध नको", english: "No milk / I don't want milk" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which phrase modifies the amount of sugar?",
+        options: ["Sakhar kami theva", "Bill dya", "Saral ja"],
+        answer: 0,
+        explanation: "It asks for less sugar.",
+        skill: "request-modification"
+      }
+    ],
+    listening: {
+      title: "Two-person café exchange",
+      devanagari: "ग्राहक: नमस्कार, मला एक चहा द्या. साखर थोडी कमी ठेवा. कर्मचारी: ठीक आहे. दूध चालेल का? ग्राहक: हो, दूध चालेल. आणि एक वडा पावही द्या.",
+      romanized: "Graahak: Namaskaar, mala ek chaha dya. Saakhar thodi kami theva. Karmachaari: Thik aahe. Dudh chalel ka? Graahak: Ho, dudh chalel. Ani ek vada paavhi dya.",
+      english: "Customer: Hello, please give me one tea. Keep the sugar a little low. Staff: Okay. Is milk fine? Customer: Yes, milk is fine. And please give me one vada pav too.",
+      maxReplays: 2,
+      segments: [
+        { text: "नमस्कार, मला एक चहा द्या. साखर थोडी कमी ठेवा.", romanized: "Namaskaar, mala ek chaha dya. Saakhar thodi kami theva.", voice: "male" },
+        { text: "ठीक आहे. दूध चालेल का?", romanized: "Thik aahe. Dudh chalel ka?", voice: "female" },
+        { text: "हो, दूध चालेल. आणि एक वडा पावही द्या.", romanized: "Ho, dudh chalel. Ani ek vada paavhi dya.", voice: "male" }
+      ],
+      questions: [
+        {
+          question: "What change does the customer request?",
+          options: ["Less sugar", "No tea", "Extra salt"],
+          answer: 0,
+          explanation: "The customer says saakhar thodi kami theva.",
+          skill: "listening-service"
+        }
+      ]
+    },
+    production: {
+      prompt: "Write a 5-line café order including one modification and one polite closing.",
+      minSentences: 5,
+      support: ["Mala ... dya", "... kami theva", "... nako", "Ajun ...", "Dhanyavaad"],
+      requiredPatterns: ["order", "modification", "polite closing"],
+      modelAnswer: {
+        romanized: "Namaskaar. Mala ek chaha dya. Saakhar kami theva. Mala dudh nako. Ajun ek vada paav dya. Dhanyavaad.",
+        devanagari: "नमस्कार. मला एक चहा द्या. साखर कमी ठेवा. मला दूध नको. अजून एक वडा पाव द्या. धन्यवाद.",
+        english: "Hello. Please give me one tea. Keep the sugar low. I don't want milk. Please give me one more vada pav. Thank you."
+      }
+    },
+    scenario: {
+      title: "Café order",
+      context: "Order a drink and then change one detail.",
+      startStep: "s1",
+      steps: [
+        {
+          id: "s1",
+          speaker: "Staff",
+          line: "नमस्कार. काय घेणार?",
+          prompt: "Place an order.",
+          options: [
+            { text: "मला एक चहा द्या.", feedback: "Good — direct and polite.", acceptable: true, nextStep: "s2" },
+            { text: "स्टेशन कुठे आहे?", feedback: "Wrong context.", acceptable: false, nextStep: "s2" },
+            { text: "मी काल गेलो.", feedback: "Wrong context.", acceptable: false, nextStep: "s2" }
+          ]
+        },
+        {
+          id: "s2",
+          speaker: "Staff",
+          line: "साखर नेहमीसारखी ठेवू?",
+          prompt: "Modify the order.",
+          options: [
+            { text: "साखर थोडी कमी ठेवा.", feedback: "Good — clear modification.", acceptable: true },
+            { text: "हो, पण बिल कुठे आहे?", feedback: "Possible later, but it does not answer the sugar question well.", acceptable: false },
+            { text: "उद्या येईन.", feedback: "Wrong context.", acceptable: false }
+          ]
+        }
+      ]
+    },
+    items: [
+      { marathi: "Mala ... dya", devanagari: "मला ... द्या", english: "Please give me ..." },
+      { marathi: "Kami theva", devanagari: "कमी ठेवा", english: "Keep it less / reduce it" },
+      { marathi: "Nako", devanagari: "नको", english: "Don't want / no" },
+      { marathi: "Chalel ka?", devanagari: "चालेल का?", english: "Is it okay?" },
+      { marathi: "Ajun ek", devanagari: "अजून एक", english: "One more" },
+      { marathi: "Bill dya", devanagari: "बिल द्या", english: "Please give the bill" }
+    ]
+  }),
+
+  L({
+    slug: "shopping-return-capstone",
+    title: "Shopping, Returns & Alternatives",
+    subtitle: "Buy an item, compare options, and handle a simple return",
+    unit: 16,
+    unitTitle: "Functional independence",
+    objective: "Manage a basic shop interaction including an alternative or return request",
+    grammarSkills: ["shopping-service", "returns"],
+    teaching: [
+      {
+        title: "State the problem before asking for a solution",
+        explanation: "For a return or exchange, identify the item/problem and then ask whether another option is possible.",
+        examples: [
+          { marathi: "Ha size lahan aahe", devanagari: "हा साइज लहान आहे", english: "This size is small" },
+          { marathi: "Dusra size aahe ka?", devanagari: "दुसरा साइज आहे का?", english: "Is there another size?" },
+          { marathi: "He badalta yeil ka?", devanagari: "हे बदलता येईल का?", english: "Can this be exchanged?" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which phrase asks whether an item can be exchanged?",
+        options: ["He badalta yeil ka?", "He kuthe aahe?", "Mi ghari jaain"],
+        answer: 0,
+        explanation: "Badalta yeil ka? asks whether changing/exchanging is possible.",
+        skill: "returns"
+      }
+    ],
+    reading: {
+      title: "Return policy notice",
+      devanagari: "परतावा किंवा बदल सात दिवसांच्या आत करता येईल. बिल आवश्यक आहे. वापरलेली वस्तू परत घेतली जाणार नाही. योग्य साइज उपलब्ध असेल तर वस्तू बदलता येईल.",
+      romanized: "Parataava kiwa badal saat divasaanchya aat karta yeil. Bil aavashyak aahe. Vaaparleli vastu parat ghetli jaanar nahi. Yogya size upalabdh asel tar vastu badalta yeil.",
+      english: "A return or exchange can be made within seven days. The bill is required. Used items will not be taken back. If the correct size is available, the item can be exchanged.",
+      questions: [
+        {
+          question: "What is required for a return or exchange?",
+          options: ["The bill", "A photo", "Cash only"],
+          answer: 0,
+          explanation: "The notice explicitly says bil aavashyak aahe.",
+          skill: "reading-notice"
+        }
+      ]
+    },
+    production: {
+      prompt: "Write 5 sentences explaining a problem with a purchase and asking for an exchange or alternative.",
+      minSentences: 5,
+      support: ["Mi he kaal ghetla", "Pan ...", "Dusra ... aahe ka?", "Badalta yeil ka?", "Bil maajhyaakade aahe"],
+      requiredPatterns: ["problem", "alternative request", "possession/having"],
+      modelAnswer: {
+        romanized: "Mi ha shirt kaal ghetla. Pan ha size lahan aahe. Dusra size aahe ka? He badalta yeil ka? Bil maajhyaakade aahe.",
+        devanagari: "मी हा शर्ट काल घेतला. पण हा साइज लहान आहे. दुसरा साइज आहे का? हे बदलता येईल का? बिल माझ्याकडे आहे.",
+        english: "I bought this shirt yesterday. But this size is small. Is there another size? Can this be exchanged? I have the bill."
+      }
+    },
+    scenario: {
+      title: "Return or exchange an item",
+      context: "A shirt you bought is too small.",
+      startStep: "s1",
+      steps: [
+        {
+          id: "s1",
+          speaker: "Shopkeeper",
+          line: "काय अडचण आहे?",
+          prompt: "Explain the problem.",
+          options: [
+            { text: "मी हा शर्ट काल घेतला, पण हा साइज लहान आहे.", feedback: "Good — purchase + problem.", acceptable: true, nextStep: "s2" },
+            { text: "मला चहा पाहिजे.", feedback: "Wrong context.", acceptable: false, nextStep: "s2" },
+            { text: "स्टेशन कुठे आहे?", feedback: "Wrong context.", acceptable: false, nextStep: "s2" }
+          ]
+        },
+        {
+          id: "s2",
+          speaker: "Shopkeeper",
+          line: "बिल आहे का?",
+          prompt: "Confirm and ask for an exchange.",
+          options: [
+            { text: "हो, बिल माझ्याकडे आहे. दुसरा साइज मिळेल का?", feedback: "Good — confirms possession and asks for an alternative.", acceptable: true },
+            { text: "नाही, मी ट्रेनने आलो.", feedback: "Unrelated.", acceptable: false },
+            { text: "उद्या पाऊस येईल.", feedback: "Unrelated.", acceptable: false }
+          ]
+        }
+      ]
+    },
+    items: [
+      { marathi: "Badal", devanagari: "बदल", english: "Exchange / change" },
+      { marathi: "Parataava", devanagari: "परतावा", english: "Return / refund" },
+      { marathi: "Dusra size", devanagari: "दुसरा साइज", english: "Another size" },
+      { marathi: "Badalta yeil ka?", devanagari: "बदलता येईल का?", english: "Can it be exchanged?" },
+      { marathi: "Bil aavashyak aahe", devanagari: "बिल आवश्यक आहे", english: "The bill is required" },
+      { marathi: "Upalabdh", devanagari: "उपलब्ध", english: "Available" }
+    ]
+  }),
+
+  L({
+    slug: "directions-capstone",
+    title: "Directions with Follow-up",
+    subtitle: "Ask for directions, clarify a step, and confirm the route",
+    unit: 16,
+    unitTitle: "Functional independence",
+    objective: "Handle a directions conversation even when the first explanation is not enough",
+    grammarSkills: ["directions", "clarification"],
+    teaching: [
+      {
+        title: "Ask, clarify, confirm",
+        explanation: "A real directions conversation often needs more than 'where?': ask the route, clarify a landmark, and repeat the key step back.",
+        examples: [
+          { marathi: "Stationla kasa jaaycha?", devanagari: "स्टेशनला कसं जायचं?", english: "How do I get to the station?" },
+          { marathi: "Mhanje signalnantar davikade?", devanagari: "म्हणजे सिग्नलनंतर डावीकडे?", english: "So, left after the signal?" },
+          { marathi: "Kiti vel lagel?", devanagari: "किती वेळ लागेल?", english: "How long will it take?" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which phrase confirms a direction you just heard?",
+        options: ["Mhanje signalnantar davikade?", "Bill dya", "Mala bara vatat nahi"],
+        answer: 0,
+        explanation: "It repeats the key direction as a confirmation.",
+        skill: "clarification"
+      }
+    ],
+    listening: {
+      title: "Street directions",
+      devanagari: "सरळ पाच मिनिटं जा. मोठा सिग्नल दिसला की डावीकडे वळा. तिथून स्टेशन दोन मिनिटांच्या अंतरावर आहे.",
+      romanized: "Saral paach minita ja. Motha signal disla ki daavikade vala. Tithun station don minitaanchya antaraavar aahe.",
+      english: "Go straight for five minutes. When you see the big signal, turn left. From there the station is two minutes away.",
+      maxReplays: 2,
+      questions: [
+        {
+          question: "When should the listener turn left?",
+          options: ["At the big signal", "Immediately", "At the station"],
+          answer: 0,
+          explanation: "The landmark is the big signal.",
+          skill: "listening-directions"
+        }
+      ]
+    },
+    production: {
+      prompt: "Write 5 directions from a familiar place to another place, including one landmark.",
+      minSentences: 5,
+      support: ["Saral ja", "... disla ki ...", "Daavikade/ujvikade vala", "Tithun ...", "... javal aahe"],
+      requiredPatterns: ["sequence", "landmark", "direction"],
+      modelAnswer: {
+        romanized: "Gharaatun saral ja. Don minitaanni ek motha signal disel. Signalnantar ujvikade vala. Tithun busstopjaval ja. Station busstopchya pudhe aahe.",
+        devanagari: "घरातून सरळ जा. दोन मिनिटांनी एक मोठा सिग्नल दिसेल. सिग्नलनंतर उजवीकडे वळा. तिथून बसस्टॉपजवळ जा. स्टेशन बसस्टॉपच्या पुढे आहे.",
+        english: "Go straight from the house. After two minutes you will see a big signal. Turn right after the signal. From there go near the bus stop. The station is beyond the bus stop."
+      }
+    },
+    scenario: {
+      title: "Ask for directions",
+      context: "You are near a market and need to reach the station.",
+      startStep: "s1",
+      steps: [
+        {
+          id: "s1",
+          speaker: "You",
+          line: "माफ करा, स्टेशनला कसं जायचं?",
+          prompt: "A local gives several steps. Ask to clarify the turn.",
+          options: [
+            { text: "म्हणजे मोठ्या सिग्नलनंतर डावीकडे वळायचं?", feedback: "Good — you confirm the exact turn.", acceptable: true, nextStep: "s2" },
+            { text: "मला एक चहा द्या.", feedback: "Wrong context.", acceptable: false, nextStep: "s2" },
+            { text: "मी काल स्टेशनला गेलो.", feedback: "Does not clarify the route.", acceptable: false, nextStep: "s2" }
+          ]
+        },
+        {
+          id: "s2",
+          speaker: "Local",
+          line: "हो. मग दोन मिनिटं सरळ जा.",
+          prompt: "Ask roughly how long the whole route takes.",
+          options: [
+            { text: "एकूण किती वेळ लागेल?", feedback: "Good follow-up.", acceptable: true },
+            { text: "हे किती रुपये?", feedback: "Asks price, not travel time.", acceptable: false },
+            { text: "मला झोप येते.", feedback: "Unrelated.", acceptable: false }
+          ]
+        }
+      ]
+    },
+    items: [
+      { marathi: "Kasa jaaycha?", devanagari: "कसं जायचं?", english: "How do I get there?" },
+      { marathi: "Signalnantar", devanagari: "सिग्नलनंतर", english: "After the signal" },
+      { marathi: "Mhanje ...?", devanagari: "म्हणजे ...?", english: "So you mean ...?" },
+      { marathi: "Ekuna", devanagari: "एकूण", english: "In total" },
+      { marathi: "Kiti vel lagel?", devanagari: "किती वेळ लागेल?", english: "How long will it take?" },
+      { marathi: "Antar", devanagari: "अंतर", english: "Distance" }
+    ]
+  }),
+
+  L({
+    slug: "meeting-new-person-capstone",
+    title: "Meeting Someone New",
+    subtitle: "Introduce yourself and sustain a short social conversation",
+    unit: 16,
+    unitTitle: "Functional independence",
+    objective: "Move beyond greetings into follow-up questions, interests, and a natural close",
+    grammarSkills: ["social-introduction", "follow-up"],
+    teaching: [
+      {
+        title: "A conversation needs follow-up questions",
+        explanation: "After names and basic greetings, ask about place, study/work, language, or interests, then react to the answer.",
+        examples: [
+          { marathi: "Tumhi kuthe rahta?", devanagari: "तुम्ही कुठे राहता?", english: "Where do you live? (respectful)" },
+          { marathi: "Tumhi kay shikta?", devanagari: "तुम्ही काय शिकता?", english: "What do you study? (respectful)" },
+          { marathi: "Mala suddha te avadte", devanagari: "मलासुद्धा ते आवडतं", english: "I like that too" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which is a useful respectful follow-up after introductions?",
+        options: ["Tumhi kay shikta?", "Bill dya", "Saral ja"],
+        answer: 0,
+        explanation: "It naturally continues a first meeting.",
+        skill: "follow-up"
+      }
+    ],
+    listening: {
+      title: "First meeting dialogue",
+      devanagari: "अ: नमस्कार, माझं नाव रोहन आहे. तुमचं नाव काय? ब: माझं नाव सायली. भेटून आनंद झाला. अ: मलाही. तुम्ही काय शिकता? ब: मी संगणकशास्त्र शिकते. तुम्ही? अ: मी डिझाइन शिकतो. मला तंत्रज्ञानातही रस आहे.",
+      romanized: "A: Namaskaar, maajha naav Rohan aahe. Tumcha naav kaay? B: Maajha naav Sayali. Bhetun aanand jhala. A: Malaahi. Tumhi kaay shikta? B: Mi sanganakshaastra shikte. Tumhi? A: Mi design shikto. Mala tantradnyaanaathi ras aahe.",
+      english: "A: Hello, my name is Rohan. What is your name? B: My name is Sayali. Nice to meet you. A: Me too. What do you study? B: I study computer science. You? A: I study design. I'm also interested in technology.",
+      maxReplays: 2,
+      segments: [
+        { text: "नमस्कार, माझं नाव रोहन आहे. तुमचं नाव काय?", romanized: "Namaskaar, maajha naav Rohan aahe. Tumcha naav kaay?", voice: "male" },
+        { text: "माझं नाव सायली. भेटून आनंद झाला.", romanized: "Maajha naav Sayali. Bhetun aanand jhala.", voice: "female" },
+        { text: "मलाही. तुम्ही काय शिकता?", romanized: "Malaahi. Tumhi kaay shikta?", voice: "male" },
+        { text: "मी संगणकशास्त्र शिकते. तुम्ही?", romanized: "Mi sanganakshaastra shikte. Tumhi?", voice: "female" },
+        { text: "मी डिझाइन शिकतो. मला तंत्रज्ञानातही रस आहे.", romanized: "Mi design shikto. Mala tantradnyaanaathi ras aahe.", voice: "male" }
+      ],
+      questions: [
+        {
+          question: "What does Sayali study?",
+          options: ["Computer science", "Design", "Marathi literature"],
+          answer: 0,
+          explanation: "She says mi sanganakshaastra shikte.",
+          skill: "listening-social"
+        }
+      ]
+    },
+    production: {
+      prompt: "Write a 6-line first-meeting conversation: names, one follow-up about study/work, one interest, and a natural close.",
+      minSentences: 6,
+      support: ["Maajha naav ...", "Tumhi ...?", "Mi ... shikto/shikte", "Mala ... avadte", "Malaahi", "Punha bhetu"],
+      requiredPatterns: ["introduction", "follow-up question", "reaction", "closing"],
+      modelAnswer: {
+        romanized: "A: Namaskaar, maajha naav Amit aahe. B: Maajha naav Neha. Bhetun aanand jhala. A: Malaahi. Tumhi kaay shikta? B: Mi engineering shikte. A: Chhaan. Malaahi technology avadte. Punha bhetu.",
+        devanagari: "अ: नमस्कार, माझं नाव अमित आहे. ब: माझं नाव नेहा. भेटून आनंद झाला. अ: मलाही. तुम्ही काय शिकता? ब: मी इंजिनिअरिंग शिकते. अ: छान. मलाही टेक्नॉलॉजी आवडते. पुन्हा भेटू.",
+        english: "A: Hello, my name is Amit. B: My name is Neha. Nice to meet you. A: Me too. What do you study? B: I study engineering. A: Nice. I like technology too. See you again."
+      }
+    },
+    scenario: {
+      title: "Meet a new person",
+      context: "You are introduced to another student for the first time.",
+      startStep: "s1",
+      steps: [
+        {
+          id: "s1",
+          speaker: "Student",
+          line: "नमस्कार, माझं नाव सायली आहे. तुमचं नाव काय?",
+          prompt: "Introduce yourself and ask a follow-up.",
+          options: [
+            { text: "नमस्कार, माझं नाव अमित आहे. तुम्ही काय शिकता?", feedback: "Good — introduction plus follow-up.", acceptable: true, nextStep: "s2" },
+            { text: "बिल द्या.", feedback: "Wrong context.", acceptable: false, nextStep: "s2" },
+            { text: "स्टेशन कुठे आहे?", feedback: "Possible in another situation, but not a natural first response here.", acceptable: false, nextStep: "s2" }
+          ]
+        },
+        {
+          id: "s2",
+          speaker: "Student",
+          line: "मी संगणकशास्त्र शिकते. मला AI मध्ये रस आहे.",
+          prompt: "React and share a related interest.",
+          options: [
+            { text: "छान. मलाही AI आणि तंत्रज्ञान आवडतं.", feedback: "Good — reaction plus shared interest.", acceptable: true },
+            { text: "मी काल बाजारात गेलो.", feedback: "Abrupt topic change.", acceptable: false },
+            { text: "साखर कमी ठेवा.", feedback: "Wrong context.", acceptable: false }
+          ]
+        }
+      ]
+    },
+    items: [
+      { marathi: "Tumhi kuthe rahta?", devanagari: "तुम्ही कुठे राहता?", english: "Where do you live? (respectful)" },
+      { marathi: "Tumhi kay shikta?", devanagari: "तुम्ही काय शिकता?", english: "What do you study? (respectful)" },
+      { marathi: "Mala ... madhe ras aahe", devanagari: "मला ... मध्ये रस आहे", english: "I am interested in ..." },
+      { marathi: "Malaahi", devanagari: "मलाही", english: "Me too / I also" },
+      { marathi: "Chhaan", devanagari: "छान", english: "Nice / great" },
+      { marathi: "Punha bhetu", devanagari: "पुन्हा भेटू", english: "See you again" }
+    ]
   })
 ];

@@ -1670,5 +1670,595 @@ export const intermediateCompletionLessons: Lesson[] = [
       { marathi: "Niyamit", devanagari: "नियमित", english: "Regular" },
       { marathi: "Adchan", devanagari: "अडचण", english: "Difficulty / problem" }
     ]
+  }),
+  L({
+    slug: "long-listening-story",
+    title: "Long Listening: A Changed Day",
+    subtitle: "Follow a longer sequence without seeing the transcript first",
+    unit: 15,
+    unitTitle: "Independent comprehension",
+    objective: "Understand the main idea, sequence, reason, and decision in a longer learner-oriented passage",
+    grammarSkills: ["listening-long-form", "sequence"],
+    teaching: [
+      {
+        title: "Listen for anchors, not every word",
+        explanation: "At intermediate level, use time words, connectors, names, places, and repeated ideas to follow a passage even when a few words are unfamiliar.",
+        examples: [
+          { marathi: "Suruvatila", devanagari: "सुरुवातीला", english: "At first" },
+          { marathi: "Tyamule", devanagari: "त्यामुळे", english: "Because of that" },
+          { marathi: "Shevti", devanagari: "शेवटी", english: "Finally" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "When listening to a longer passage, which strategy is most useful?",
+        options: ["Track time words and connectors", "Stop at every unknown word", "Translate every sound immediately"],
+        answer: 0,
+        explanation: "Anchors help you keep the overall meaning.",
+        skill: "listening-long-form"
+      }
+    ],
+    listening: {
+      title: "A plan that changed twice",
+      devanagari: "शनिवारी सकाळी मी आणि माझा मित्र लवकर उठलो कारण आम्हाला जवळच्या किल्ल्यावर जायचं होतं. आम्ही नाश्ता केला आणि बसस्टॉपकडे निघालो. तिथे पोहोचल्यानंतर कळलं की बस उशिरा येणार होती. सुरुवातीला आम्ही थांबायचं ठरवलं, पण थोड्या वेळाने पाऊस सुरू झाला. त्यामुळे आम्ही किल्ल्यावर जाण्याचा विचार बदलला. माझ्या मित्राने शहरातल्या संग्रहालयात जाऊ या असं सुचवलं. संग्रहालय बसस्टॉपपासून फार दूर नव्हतं, म्हणून आम्ही तिकडे चालत गेलो. तिथे दोन तास घालवल्यानंतर आम्ही जवळच्या कॅफेत चहा घेतला. दिवस आमच्या योजनेप्रमाणे गेला नाही, तरीही आम्हाला खूप मजा आली. शेवटी आम्ही ठरवलं की पुढच्या आठवड्यात हवामान चांगलं असेल तर किल्ल्यावर नक्की जाऊ.",
+      romanized: "Shanivaari sakaali mi ani maajha mitra lavkar uthlo kaaran aamhaala javalchya killyavar jaaycha hota. Aamhi naashta kela ani busstopkade nighalo. Tithe pohachlyanantar kalala ki bas ushira yenaar hoti. Suruvatila aamhi thaambaaycha tharavla, pan thodya velaane paus suru jhala. Tyamule aamhi killyavar jaanyacha vichaar badalla. Maajhya mitraane shaharaatlya sangrahaalayaat jaau ya asa suchavla. Sangrahaalay busstoppaasun phaar dur navhta, mhanun aamhi tikade chalat gelo. Tithe don taas ghaalavlyanantar aamhi javalchya cafe-t chaha ghetla. Divas aamchya yojanepramaane gela nahi, tarihi aamhaala khup maja aali. Shevti aamhi tharavla ki pudhchya aathavdyat havaamaan changla asel tar killyavar nakki jaau.",
+      english: "On Saturday morning my friend and I got up early because we wanted to go to a nearby fort. We had breakfast and left for the bus stop. After arriving we learned the bus would be late. At first we decided to wait, but after a while it started raining. So we changed the plan to go to the fort. My friend suggested going to the city museum. The museum was not far from the bus stop, so we walked there. After spending two hours there, we had tea at a nearby café. The day did not go according to plan, but we still had a lot of fun. Finally we decided that if the weather is good next week, we will definitely go to the fort.",
+      maxReplays: 2,
+      questions: [
+        {
+          question: "Why did the original fort plan change?",
+          options: ["The bus was late and it started raining", "The museum was closed", "The friend felt sick"],
+          answer: 0,
+          explanation: "Both the delay and rain pushed them to change the plan.",
+          skill: "listening-cause"
+        },
+        {
+          question: "What did they do after the museum?",
+          options: ["Had tea at a café", "Went home immediately", "Took a train"],
+          answer: 0,
+          explanation: "They spent two hours there and then had tea.",
+          skill: "listening-sequence"
+        },
+        {
+          question: "What is their future condition for visiting the fort?",
+          options: ["If the weather is good", "If the museum is open", "If they find cheaper tickets"],
+          answer: 0,
+          explanation: "The final sentence uses a weather condition.",
+          skill: "listening-condition"
+        }
+      ]
+    },
+    production: {
+      prompt: "Retell the listening passage in 6 sentences using your own simpler Marathi.",
+      minSentences: 6,
+      support: ["Suruvatila ...", "Nantar ...", "Pan ...", "Tyamule ...", "Shevti ..."],
+      requiredPatterns: ["sequence", "reason/result", "final decision"],
+      modelAnswer: {
+        romanized: "Aamhi killyavar jaaycha plan kela hota. Bas ushira hoti. Nantar paus suru jhala. Tyamule aamhi sangrahaalayaat gelo. Tithe don taas hoto ani nantar chaha ghetla. Shevti pudhchya aathavdyat punha prayatna karaaycha tharavla.",
+        devanagari: "आम्ही किल्ल्यावर जायचा प्लॅन केला होता. बस उशिरा होती. नंतर पाऊस सुरू झाला. त्यामुळे आम्ही संग्रहालयात गेलो. तिथे दोन तास होतो आणि नंतर चहा घेतला. शेवटी पुढच्या आठवड्यात पुन्हा प्रयत्न करायचा ठरवला.",
+        english: "We had planned to go to the fort. The bus was late. Then it started raining. So we went to the museum. We were there for two hours and then had tea. Finally we decided to try again next week."
+      }
+    },
+    items: [
+      { marathi: "Suruvatila", devanagari: "सुरुवातीला", english: "At first" },
+      { marathi: "Yojanepramaane", devanagari: "योजनेप्रमाणे", english: "According to the plan" },
+      { marathi: "Vichaar badalne", devanagari: "विचार बदलणे", english: "To change one's mind/plan" },
+      { marathi: "Suchavne", devanagari: "सुचवणे", english: "To suggest" },
+      { marathi: "Nakki", devanagari: "नक्की", english: "Definitely / certainly" },
+      { marathi: "Tarihi", devanagari: "तरीही", english: "Nevertheless / still" }
+    ]
+  }),
+
+  L({
+    slug: "devanagari-reading-messages",
+    title: "Devanagari Reading: Messages & Notices",
+    subtitle: "Read practical written Marathi with romanization hidden",
+    unit: 15,
+    unitTitle: "Independent comprehension",
+    objective: "Understand short messages, notices, and updates directly in Devanagari",
+    grammarSkills: ["reading-authentic-style", "written-marathi"],
+    teaching: [
+      {
+        title: "Written Marathi can be shorter than textbook sentences",
+        explanation: "Messages and notices often omit information that is obvious from context. Look for time, place, action, and instruction.",
+        examples: [
+          { marathi: "Udya band", devanagari: "उद्या बंद", english: "Closed tomorrow" },
+          { marathi: "Vel badalli aahe", devanagari: "वेळ बदलली आहे", english: "The time has changed" },
+          { marathi: "Kripaya laksh dya", devanagari: "कृपया लक्ष द्या", english: "Please note / pay attention" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "In a short notice, what should you identify first?",
+        options: ["Time, place, and required action", "Every grammar rule", "A word-for-word translation"],
+        answer: 0,
+        explanation: "Practical reading starts with the action and context.",
+        skill: "reading-authentic-style"
+      }
+    ],
+    reading: {
+      title: "Three short messages",
+      devanagari: "१) सूचना: उद्या सकाळचा वर्ग दहा वाजता सुरू होईल. कृपया पंधरा मिनिटं आधी या. २) संदेश: मी स्टेशनला पोहोचलो आहे. तू मुख्य गेटजवळ आलास की मला फोन कर. ३) दुकानाची सूचना: आज दुकान रात्री आठ वाजता बंद होईल. परताव्यासाठी बिल आवश्यक आहे.",
+      romanized: "1) Suchana: Udya sakaalcha varg daha vaajta suru hoil. Kripaya pandhara minita aadhi ya. 2) Sandesh: Mi stationla pohachlo aahe. Tu mukhya gatejaval aalas ki mala phone kar. 3) Dukanaachi suchana: Aaj dukaan raatri aath vaajta band hoil. Parataavyaasathi bil aavashyak aahe.",
+      english: "1) Notice: Tomorrow's morning class will start at ten. Please come fifteen minutes early. 2) Message: I have reached the station. Call me when you come near the main gate. 3) Shop notice: Today the shop will close at 8 PM. A bill is required for returns.",
+      glossary: [
+        { term: "सूचना", meaning: "notice / information" },
+        { term: "परतावा", meaning: "return/refund" },
+        { term: "आवश्यक", meaning: "required" }
+      ],
+      questions: [
+        {
+          question: "When should students arrive?",
+          options: ["Fifteen minutes before ten", "At eleven", "After the class starts"],
+          answer: 0,
+          explanation: "The notice asks students to arrive fifteen minutes early.",
+          skill: "reading-time"
+        },
+        {
+          question: "What is required for a return at the shop?",
+          options: ["The bill", "A passport", "Cash only"],
+          answer: 0,
+          explanation: "Bil aavashyak aahe means the bill is required.",
+          skill: "reading-notice"
+        }
+      ]
+    },
+    production: {
+      prompt: "Write one short Marathi message and one short notice, 3–4 sentences total.",
+      minSentences: 3,
+      support: ["Suchana:", "Mi ... pohachlo/pohachle aahe", "Kripaya ...", "... aavashyak aahe"],
+      requiredPatterns: ["one time/place detail", "one instruction"],
+      modelAnswer: {
+        romanized: "Suchana: Udya class akara vaajta suru hoil. Kripaya daha minita aadhi ya. Mi gatejaval thamblo aahe. Aalas ki mala phone kar.",
+        devanagari: "सूचना: उद्या क्लास अकरा वाजता सुरू होईल. कृपया दहा मिनिटं आधी या. मी गेटजवळ थांबलो आहे. आलास की मला फोन कर.",
+        english: "Notice: Tomorrow class starts at eleven. Please come ten minutes early. I am waiting near the gate. Call me when you arrive."
+      }
+    },
+    items: [
+      { marathi: "Suchana", devanagari: "सूचना", english: "Notice / information" },
+      { marathi: "Sandesh", devanagari: "संदेश", english: "Message" },
+      { marathi: "Aavashyak", devanagari: "आवश्यक", english: "Required / necessary" },
+      { marathi: "Band hoil", devanagari: "बंद होईल", english: "Will close / be closed" },
+      { marathi: "Aadhi ya", devanagari: "आधी या", english: "Come earlier" },
+      { marathi: "Phone kar", devanagari: "फोन कर", english: "Call (informal)" }
+    ]
+  }),
+
+  L({
+    slug: "study-work-problems",
+    title: "Study & Work Problems",
+    subtitle: "Explain delays, ask for help, and clarify instructions",
+    unit: 16,
+    unitTitle: "Functional independence",
+    objective: "Handle a familiar study/work problem with a reason, request, and solution",
+    grammarSkills: ["problem-solving", "polite-request"],
+    teaching: [
+      {
+        title: "A useful problem-solving structure",
+        explanation: "State the problem, give the reason, make a request, and confirm the next step.",
+        examples: [
+          { marathi: "Mala ek adchan aahe", devanagari: "मला एक अडचण आहे", english: "I have a problem" },
+          { marathi: "Kripaya punha samjaavun saanga", devanagari: "कृपया पुन्हा समजावून सांगा", english: "Please explain it again" },
+          { marathi: "Mi udya purna karin", devanagari: "मी उद्या पूर्ण करीन", english: "I will finish it tomorrow" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which phrase politely asks for another explanation?",
+        options: ["Kripaya punha samjaavun saanga", "Mala bil dya", "Saral ja"],
+        answer: 0,
+        explanation: "It directly requests another explanation.",
+        skill: "polite-request"
+      }
+    ],
+    reading: {
+      title: "Deadline message",
+      devanagari: "सर, मला प्रोजेक्टबद्दल एक अडचण आहे. काल इंटरनेट बंद होतं, त्यामुळे मी फाइल वेळेवर अपलोड करू शकलो नाही. काम जवळजवळ पूर्ण आहे. मला उद्या सकाळपर्यंत वेळ मिळेल का? मी फाइल लवकरात लवकर पाठवेन.",
+      romanized: "Sir, mala projectbaddal ek adchan aahe. Kaal internet band hota, tyamule mi file velevar upload karu shaklo nahi. Kaam javaljaval purna aahe. Mala udya sakaalparyant vel milel ka? Mi file lavkaraat lavkar pathaven.",
+      english: "Sir, I have a problem regarding the project. The internet was down yesterday, so I could not upload the file on time. The work is almost complete. Can I have until tomorrow morning? I will send the file as soon as possible.",
+      questions: [
+        {
+          question: "What caused the delay?",
+          options: ["The internet was down", "The file was lost", "The teacher changed the topic"],
+          answer: 0,
+          explanation: "The message explicitly gives the internet outage as the reason.",
+          skill: "reading-problem"
+        }
+      ]
+    },
+    listening: {
+      title: "Clarify an instruction",
+      devanagari: "हा भाग आधी पूर्ण करा आणि मग दुसऱ्या फाइलमध्ये उत्तर लिहा. काही समजलं नाही तर लगेच विचारा.",
+      romanized: "Ha bhaag aadhi purna kara ani mag dusrya filemadhe uttar liha. Kahi samajla nahi tar lagech vichaara.",
+      english: "Complete this part first and then write the answer in the second file. If you do not understand something, ask immediately.",
+      maxReplays: 2,
+      questions: [
+        {
+          question: "What should be done first?",
+          options: ["Complete this part", "Write in the second file", "Ask for a break"],
+          answer: 0,
+          explanation: "Aadhi marks the first action.",
+          skill: "listening-instruction"
+        }
+      ]
+    },
+    production: {
+      prompt: "Write a 5–6 sentence message explaining a study/work problem and asking for a practical solution.",
+      minSentences: 5,
+      support: ["Mala ... baddal adchan aahe", "Kaaran ...", "Tyamule ... shaklo/shakle nahi", "Mala ... milel ka?", "Mi ... karin"],
+      requiredPatterns: ["problem", "reason", "polite request", "next step"],
+      modelAnswer: {
+        romanized: "Mala assignmentbaddal ek adchan aahe. Kaal maajha laptop chalat navhta. Tyamule mi kaam purna karu shaklo nahi. Mala aaj sandhyaakaalparyant vel milel ka? Mi file purna karun lagech pathaven.",
+        devanagari: "मला असाइनमेंटबद्दल एक अडचण आहे. काल माझा लॅपटॉप चालत नव्हता. त्यामुळे मी काम पूर्ण करू शकलो नाही. मला आज संध्याकाळपर्यंत वेळ मिळेल का? मी फाइल पूर्ण करून लगेच पाठवेन.",
+        english: "I have a problem with the assignment. My laptop was not working yesterday. So I could not finish the work. Can I have until this evening? I will finish the file and send it immediately."
+      }
+    },
+    scenario: {
+      title: "Ask a teacher for clarification",
+      context: "An instruction is unclear and you need help without stopping the conversation.",
+      startStep: "s1",
+      steps: [
+        {
+          id: "s1",
+          speaker: "Teacher",
+          line: "हा प्रश्न दुसऱ्या पद्धतीने सोडवा.",
+          prompt: "Ask what the teacher means.",
+          options: [
+            { text: "माफ करा, 'दुसऱ्या पद्धतीने' म्हणजे नेमकं कसं?", feedback: "Good — precise clarification request.", acceptable: true, nextStep: "s2" },
+            { text: "मला चहा पाहिजे.", feedback: "Unrelated.", acceptable: false, nextStep: "s2" },
+            { text: "काल मी केला.", feedback: "Not a clarification request.", acceptable: false, nextStep: "s2" }
+          ]
+        },
+        {
+          id: "s2",
+          speaker: "Teacher",
+          line: "पहिलं सूत्र वापरू नको. दुसरं सूत्र वापर.",
+          prompt: "Confirm what you understood.",
+          options: [
+            { text: "ठीक आहे, म्हणजे दुसरं सूत्र वापरायचं.", feedback: "Good — concise confirmation.", acceptable: true },
+            { text: "किती पैसे?", feedback: "Wrong context.", acceptable: false },
+            { text: "सरळ जा.", feedback: "Wrong context.", acceptable: false }
+          ]
+        }
+      ]
+    },
+    items: [
+      { marathi: "Adchan", devanagari: "अडचण", english: "Problem / difficulty" },
+      { marathi: "Samjaavun saanga", devanagari: "समजावून सांगा", english: "Please explain" },
+      { marathi: "Velevar", devanagari: "वेळेवर", english: "On time" },
+      { marathi: "Lavkaraat lavkar", devanagari: "लवकरात लवकर", english: "As soon as possible" },
+      { marathi: "Mhanje nemka kasa?", devanagari: "म्हणजे नेमकं कसं?", english: "What exactly do you mean / how exactly?" },
+      { marathi: "Mi purna karin", devanagari: "मी पूर्ण करीन", english: "I will finish it" }
+    ]
+  }),
+
+  L({
+    slug: "travel-service-problems",
+    title: "Travel & Service Problems",
+    subtitle: "Handle delays, wrong stops, tickets, and alternatives",
+    unit: 16,
+    unitTitle: "Functional independence",
+    objective: "Explain a travel problem, ask for an alternative, and understand the solution",
+    grammarSkills: ["travel-problem", "alternative"],
+    teaching: [
+      {
+        title: "Problem + alternative is the key pattern",
+        explanation: "Say what went wrong, then ask what else is possible: dusra paryaay aahe ka?",
+        examples: [
+          { marathi: "Majhi train chukli", devanagari: "माझी ट्रेन चुकली", english: "I missed my train" },
+          { marathi: "Dusra paryaay aahe ka?", devanagari: "दुसरा पर्याय आहे का?", english: "Is there another option?" },
+          { marathi: "Pudhchi bus kadhi aahe?", devanagari: "पुढची बस कधी आहे?", english: "When is the next bus?" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which phrase asks for another option?",
+        options: ["Dusra paryaay aahe ka?", "Bil dya", "Mala chaha avadto"],
+        answer: 0,
+        explanation: "Paryaay means option/alternative.",
+        skill: "alternative"
+      }
+    ],
+    reading: {
+      title: "A missed connection",
+      devanagari: "माझी ट्रेन वीस मिनिटं उशिरा आली, त्यामुळे माझी पुढची बस चुकली. मी तिकीट काउंटरवर जाऊन दुसरा पर्याय विचारला. कर्मचाऱ्याने सांगितलं की अर्ध्या तासाने दुसरी बस आहे आणि जुनं तिकीट त्यासाठी वापरता येईल.",
+      romanized: "Maajhi train vees minita ushira aali, tyamule maajhi pudhchi bas chukli. Mi tikit countervar jaaun dusra paryaay vicharla. Karmacharyaane saangitla ki ardhya taasane dusri bas aahe ani juna tikit tyaasaathi vaaparta yeil.",
+      english: "My train arrived twenty minutes late, so I missed my next bus. I went to the ticket counter and asked for another option. The employee said there is another bus in half an hour and the old ticket can be used for it.",
+      questions: [
+        {
+          question: "What solution did the employee give?",
+          options: ["Use the old ticket for the next bus", "Buy a new train ticket", "Take a taxi"],
+          answer: 0,
+          explanation: "The old ticket remains usable for the next bus.",
+          skill: "reading-solution"
+        }
+      ]
+    },
+    listening: {
+      title: "Wrong stop",
+      devanagari: "माफ करा, मी चुकीच्या स्टॉपवर उतरलो. स्टेशनला जाण्यासाठी इथून कोणती बस घ्यायची?",
+      romanized: "Maaf kara, mi chukichya stopvar utarlo. Stationla jaanyasaathi ithun konti bas ghyaaychi?",
+      english: "Excuse me, I got off at the wrong stop. Which bus should I take from here to go to the station?",
+      maxReplays: 2,
+      questions: [
+        {
+          question: "What happened?",
+          options: ["The speaker got off at the wrong stop", "The speaker lost a ticket", "The station closed"],
+          answer: 0,
+          explanation: "Chukichya stopvar utarlo states the problem.",
+          skill: "listening-travel"
+        }
+      ]
+    },
+    production: {
+      prompt: "Write 5–6 sentences about a travel problem and the alternative you found.",
+      minSentences: 5,
+      support: ["... ushira aali", "Tyamule ... chukli", "Dusra paryaay ...", "Pudhchi ...", "Shevti ..."],
+      requiredPatterns: ["problem", "cause/result", "alternative", "resolution"],
+      modelAnswer: {
+        romanized: "Maajhi bas ushira aali. Tyamule maajhi train chukli. Mi countervar dusra paryaay vicharla. Pudhchi train eka taasane hoti. Mi navin vel svikarla. Shevti mi gantavyasthaani pohachlo.",
+        devanagari: "माझी बस उशिरा आली. त्यामुळे माझी ट्रेन चुकली. मी काउंटरवर दुसरा पर्याय विचारला. पुढची ट्रेन एका तासाने होती. मी नवीन वेळ स्वीकारली. शेवटी मी गंतव्यस्थानी पोहोचलो.",
+        english: "My bus was late. So I missed my train. I asked at the counter for another option. The next train was in an hour. I accepted the new timing. Finally I reached my destination."
+      }
+    },
+    scenario: {
+      title: "Missed bus connection",
+      context: "Your train was late and the connecting bus has left.",
+      startStep: "s1",
+      steps: [
+        {
+          id: "s1",
+          speaker: "Staff",
+          line: "काय मदत हवी आहे?",
+          prompt: "Explain the problem.",
+          options: [
+            { text: "माझी ट्रेन उशिरा आली, त्यामुळे माझी बस चुकली.", feedback: "Good — problem plus reason.", acceptable: true, nextStep: "s2" },
+            { text: "मला कॉफी आवडते.", feedback: "Unrelated.", acceptable: false, nextStep: "s2" },
+            { text: "मी काल घरी होतो.", feedback: "Unrelated.", acceptable: false, nextStep: "s2" }
+          ]
+        },
+        {
+          id: "s2",
+          speaker: "Staff",
+          line: "पुढची बस अर्ध्या तासाने आहे.",
+          prompt: "Ask about the ticket.",
+          options: [
+            { text: "हेच तिकीट वापरता येईल का?", feedback: "Good — practical follow-up.", acceptable: true },
+            { text: "किल्ला कुठे आहे?", feedback: "Wrong context.", acceptable: false },
+            { text: "मला पाणी पाहिजे.", feedback: "Wrong context.", acceptable: false }
+          ]
+        }
+      ]
+    },
+    items: [
+      { marathi: "Train chukli", devanagari: "ट्रेन चुकली", english: "Missed the train" },
+      { marathi: "Chukicha stop", devanagari: "चुकीचा स्टॉप", english: "Wrong stop" },
+      { marathi: "Dusra paryaay", devanagari: "दुसरा पर्याय", english: "Another option" },
+      { marathi: "Pudhchi bus", devanagari: "पुढची बस", english: "Next bus" },
+      { marathi: "Vaaparta yeil ka?", devanagari: "वापरता येईल का?", english: "Can it be used?" },
+      { marathi: "Ardhya taasane", devanagari: "अर्ध्या तासाने", english: "In half an hour" }
+    ]
+  }),
+
+  L({
+    slug: "social-invitations-messages",
+    title: "Invitations & Everyday Messages",
+    subtitle: "Invite, accept, decline, reschedule, and explain why",
+    unit: 16,
+    unitTitle: "Functional independence",
+    objective: "Manage a short social plan through spoken or written Marathi",
+    grammarSkills: ["invitation", "social-messaging"],
+    teaching: [
+      {
+        title: "A good decline keeps the conversation open",
+        explanation: "Decline politely, give a short reason, and suggest another time.",
+        examples: [
+          { marathi: "Aaj jamnar nahi", devanagari: "आज जमणार नाही", english: "Today will not work" },
+          { marathi: "Udya chalel ka?", devanagari: "उद्या चालेल का?", english: "Will tomorrow work?" },
+          { marathi: "Mala thoda ushira hoil", devanagari: "मला थोडा उशीर होईल", english: "I will be a little late" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which reply politely reschedules?",
+        options: ["Aaj jamnar nahi. Udya chalel ka?", "Nahi.", "Bil dya."],
+        answer: 0,
+        explanation: "It declines and proposes a new time.",
+        skill: "invitation"
+      }
+    ],
+    reading: {
+      title: "Group chat",
+      devanagari: "आदित्य: आज संध्याकाळी सातला कॅफेत भेटू या? नेहा: मला सातला जमणार नाही. माझा क्लास साडेसातपर्यंत आहे. आठ वाजता चालेल का? आदित्य: हो, चालेल. मी थोडा आधी पोहोचलो तर टेबल घेऊन ठेवतो. नेहा: छान, मी निघाले की मेसेज करते.",
+      romanized: "Aditya: Aaj sandhyaakaali saatla cafe-t bhetu ya? Neha: Mala saatla jamnaar nahi. Maajha class saadesaatparyant aahe. Aath vaajta chalel ka? Aditya: Ho, chalel. Mi thoda aadhi pohachlo tar table gheun thevto. Neha: Chhaan, mi nighaale ki message karte.",
+      english: "Aditya: Shall we meet at the café at seven this evening? Neha: Seven won't work for me. My class is until 7:30. Will eight work? Aditya: Yes. If I arrive a little early, I'll get a table. Neha: Great, I'll message when I leave.",
+      questions: [
+        {
+          question: "Why can't Neha meet at seven?",
+          options: ["Her class lasts until 7:30", "She is travelling", "The café is closed"],
+          answer: 0,
+          explanation: "She gives the class timing as the reason.",
+          skill: "reading-message"
+        }
+      ]
+    },
+    listening: {
+      title: "Running late",
+      devanagari: "मला दहा मिनिटं उशीर होईल. तुम्ही आधी ऑर्डर करा. मी पोहोचलो की फोन करतो.",
+      romanized: "Mala daha minita ushir hoil. Tumhi aadhi order kara. Mi pohachlo ki phone karto.",
+      english: "I will be ten minutes late. You order first. I'll call when I arrive.",
+      maxReplays: 2,
+      questions: [
+        {
+          question: "What should the others do first?",
+          options: ["Order", "Leave", "Wait outside"],
+          answer: 0,
+          explanation: "Tumhi aadhi order kara tells them to order first.",
+          skill: "listening-message"
+        }
+      ]
+    },
+    production: {
+      prompt: "Write a 5-message mini chat: invite someone, get a scheduling problem, suggest a new time, and confirm.",
+      minSentences: 5,
+      support: ["Bhetu ya?", "Mala ... jamnaar nahi", "... chalel ka?", "Ho, chalel", "Mi ... ki message karto/karte"],
+      requiredPatterns: ["invitation", "reason", "reschedule", "confirmation"],
+      modelAnswer: {
+        romanized: "A: Aaj cafe-t bhetu ya? B: Mala saaha vaajta jamnaar nahi. Maajha class aahe. Saat vaajta chalel ka? A: Ho, chalel. B: Mi nighaale ki message karte.",
+        devanagari: "अ: आज कॅफेत भेटू या? ब: मला सहा वाजता जमणार नाही. माझा क्लास आहे. सात वाजता चालेल का? अ: हो, चालेल. ब: मी निघाले की मेसेज करते.",
+        english: "A: Shall we meet at the café today? B: Six won't work for me. I have class. Will seven work? A: Yes. B: I'll message when I leave."
+      }
+    },
+    scenario: {
+      title: "Reschedule an invitation",
+      context: "A friend invites you at a time that does not work.",
+      startStep: "s1",
+      steps: [
+        {
+          id: "s1",
+          speaker: "Friend",
+          line: "आज सहा वाजता भेटू या?",
+          prompt: "Decline and propose another time.",
+          options: [
+            { text: "मला सहाला जमणार नाही. सात वाजता चालेल का?", feedback: "Good — reason is optional, and you propose a clear alternative.", acceptable: true, nextStep: "s2" },
+            { text: "नाही.", feedback: "Understandable but it closes the conversation and does not reschedule.", acceptable: false, nextStep: "s2" },
+            { text: "माझ्याकडे पेन आहे.", feedback: "Unrelated.", acceptable: false, nextStep: "s2" }
+          ]
+        },
+        {
+          id: "s2",
+          speaker: "Friend",
+          line: "हो, सात चालेल.",
+          prompt: "Confirm and say you'll message.",
+          options: [
+            { text: "ठीक आहे. मी निघालो की मेसेज करतो.", feedback: "Good — confirmation plus next action.", acceptable: true },
+            { text: "मी काल गेलो.", feedback: "Past statement, not confirmation.", acceptable: false },
+            { text: "किती तिखट?", feedback: "Wrong context.", acceptable: false }
+          ]
+        }
+      ]
+    },
+    items: [
+      { marathi: "Bhetu ya?", devanagari: "भेटू या?", english: "Shall we meet?" },
+      { marathi: "Jamnar nahi", devanagari: "जमणार नाही", english: "It won't work / I can't make it" },
+      { marathi: "Chalel ka?", devanagari: "चालेल का?", english: "Will that work?" },
+      { marathi: "Ushir hoil", devanagari: "उशीर होईल", english: "Will be late" },
+      { marathi: "Pohachlo ki", devanagari: "पोहोचलो की", english: "When I arrive" },
+      { marathi: "Message karto/karte", devanagari: "मेसेज करतो/करते", english: "I message (male/female)" }
+    ]
+  }),
+
+  L({
+    slug: "everyday-health-language",
+    title: "Everyday Health Language",
+    subtitle: "Explain simple discomfort and understand basic service instructions",
+    unit: 16,
+    unitTitle: "Functional independence",
+    objective: "Use everyday Marathi to say you feel unwell and navigate a simple pharmacy/appointment interaction",
+    grammarSkills: ["everyday-health-language", "instruction"],
+    teaching: [
+      {
+        title: "Keep health language simple and descriptive",
+        explanation: "This lesson is language practice only. Learn how to say you do not feel well, where something hurts, and how to ask for instructions to be repeated.",
+        examples: [
+          { marathi: "Mala bara vatat nahi", devanagari: "मला बरं वाटत नाही", english: "I don't feel well" },
+          { marathi: "Majha doka dukhat aahe", devanagari: "माझं डोकं दुखत आहे", english: "My head hurts" },
+          { marathi: "Kripaya punha saanga", devanagari: "कृपया पुन्हा सांगा", english: "Please say it again" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which phrase means “I don't feel well”?",
+        options: ["Mala bara vatat nahi", "Mala chaha pahije", "Mi ghari gelo"],
+        answer: 0,
+        explanation: "Mala bara vatat nahi is a common everyday phrase.",
+        skill: "everyday-health-language"
+      }
+    ],
+    reading: {
+      title: "Appointment message",
+      devanagari: "नमस्कार. माझी आज दुपारी चार वाजता अपॉइंटमेंट आहे. मला थोडा उशीर होईल. मी चार वाजून पंधरा मिनिटांनी पोहोचेन. वेळ बदलणे आवश्यक असेल तर कृपया मला कळवा.",
+      romanized: "Namaskaar. Maajhi aaj dupari chaar vaajta appointment aahe. Mala thoda ushir hoil. Mi chaar vaajun pandhara minitaanni pohachen. Vel badalne aavashyak asel tar kripaya mala kalava.",
+      english: "Hello. I have an appointment today at 4 PM. I will be a little late. I will arrive at 4:15. If the time needs to be changed, please let me know.",
+      questions: [
+        {
+          question: "When will the person arrive?",
+          options: ["4:15", "3:45", "5:00"],
+          answer: 0,
+          explanation: "The message states four fifteen.",
+          skill: "reading-time"
+        }
+      ]
+    },
+    listening: {
+      title: "Ask to repeat an instruction",
+      devanagari: "ही सूचना नीट ऐका. काही समजलं नाही तर पुन्हा विचारायला हरकत नाही.",
+      romanized: "Hi suchana nit aika. Kahi samajla nahi tar punha vichaaraayla harakat nahi.",
+      english: "Listen carefully to this instruction. If you do not understand something, it is okay to ask again.",
+      maxReplays: 2,
+      questions: [
+        {
+          question: "What should you do if something is unclear?",
+          options: ["Ask again", "Guess silently", "Leave immediately"],
+          answer: 0,
+          explanation: "The passage explicitly says it is okay to ask again.",
+          skill: "listening-instruction"
+        }
+      ]
+    },
+    production: {
+      prompt: "Write a 4–5 sentence everyday message saying you do not feel well and need to change a plan or appointment.",
+      minSentences: 4,
+      support: ["Mala bara vatat nahi", "Tyamule ...", "Vel badalta yeil ka?", "Kripaya mala kalava"],
+      requiredPatterns: ["simple description", "result/change", "polite request"],
+      modelAnswer: {
+        romanized: "Namaskaar. Mala aaj bara vatat nahi. Tyamule mi velevar yeu shaknaar nahi. Appointment paach vaajta badalta yeil ka? Kripaya mala kalava.",
+        devanagari: "नमस्कार. मला आज बरं वाटत नाही. त्यामुळे मी वेळेवर येऊ शकणार नाही. अपॉइंटमेंट पाच वाजता बदलता येईल का? कृपया मला कळवा.",
+        english: "Hello. I don't feel well today. So I won't be able to come on time. Can the appointment be changed to five? Please let me know."
+      }
+    },
+    scenario: {
+      title: "Change an appointment time",
+      context: "You will be late and need to ask whether the time can change.",
+      startStep: "s1",
+      steps: [
+        {
+          id: "s1",
+          speaker: "Reception",
+          line: "नमस्कार, कशी मदत करू?",
+          prompt: "Explain that you will be late.",
+          options: [
+            { text: "मला थोडा उशीर होईल. वेळ बदलता येईल का?", feedback: "Good — clear, practical request.", acceptable: true, nextStep: "s2" },
+            { text: "मला चहा आवडतो.", feedback: "Unrelated.", acceptable: false, nextStep: "s2" },
+            { text: "मी काल आलो.", feedback: "Past statement, not the current problem.", acceptable: false, nextStep: "s2" }
+          ]
+        },
+        {
+          id: "s2",
+          speaker: "Reception",
+          line: "हो, पाच वाजता चालेल.",
+          prompt: "Confirm politely.",
+          options: [
+            { text: "धन्यवाद. मी पाच वाजता येईन.", feedback: "Good — polite confirmation.", acceptable: true },
+            { text: "सरळ जा.", feedback: "Wrong context.", acceptable: false },
+            { text: "किती पैसे?", feedback: "Wrong context.", acceptable: false }
+          ]
+        }
+      ]
+    },
+    items: [
+      { marathi: "Mala bara vatat nahi", devanagari: "मला बरं वाटत नाही", english: "I don't feel well" },
+      { marathi: "Doka dukhat aahe", devanagari: "डोकं दुखत आहे", english: "Head hurts" },
+      { marathi: "Ushir hoil", devanagari: "उशीर होईल", english: "Will be late" },
+      { marathi: "Vel badalta yeil ka?", devanagari: "वेळ बदलता येईल का?", english: "Can the time be changed?" },
+      { marathi: "Kripaya mala kalava", devanagari: "कृपया मला कळवा", english: "Please let me know" },
+      { marathi: "Punha vichara", devanagari: "पुन्हा विचारा", english: "Ask again" }
+    ]
   })
 ];

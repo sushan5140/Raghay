@@ -45,3 +45,31 @@ Add Units 7–9 while preserving all earlier lessons, adaptive review, and local
 - Learners receive guided free-production prompts.
 - Existing adaptive review still builds.
 - Production reaches READY.
+
+
+## Milestone status — completed
+
+Implemented:
+- Units 7–9 with six true-intermediate lessons
+- past-event awareness and narration
+- future forms and intentions
+- postpositions / relationship patterns
+- connectors and reasons
+- opinions and preferences
+- conversation clarification / repair
+- connected reading passages in every intermediate lesson
+- full-passage Marathi listening through the existing TTS route
+- context-comprehension questions attached to passages
+- guided free-response production with support patterns
+- intermediate lab integrated into lesson pages
+- course positioning updated toward true intermediate progression
+- stable production route verified serving Units 7–9
+- live intermediate lesson verified rendering connected input, listening, comprehension, and production sections
+
+The milestone deliberately stops before advanced-intermediate work such as:
+- full tense/person paradigms
+- richer case/postposition system
+- relative clauses and embedded clauses
+- longer authentic reading texts
+- open-ended speech recognition / pronunciation scoring
+- cross-device account sync

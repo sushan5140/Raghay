@@ -109,3 +109,23 @@ Intermediate-ready milestone is complete when:
 4. Personalized Review page works.
 5. Existing TTS and exercises remain intact.
 6. Production deployment is READY.
+
+
+## Milestone status — completed
+
+Implemented through the intermediate-ready milestone:
+- Units 4–6 added, extending the course to 15 lessons total
+- Devanagari Basics script bridge added
+- Pronouns/respect, possession, location, routine, time/plans, food, shopping, and directions added
+- Phrase-level local learning memory added
+- Flashcards and mixed practice now record phrase performance
+- Personalized /review route added for weak phrases
+- Learn / Review navigation added
+- Production build verified READY on Vercel
+- Stable production URL verified serving the expanded curriculum
+
+Known next-stage work is intentionally outside this milestone:
+- account sync / Supabase persistence
+- more advanced grammar (full tense paradigms, case/postposition system, relative clauses)
+- longer-form listening and conversation scenarios
+- intermediate reading passages and free-response production

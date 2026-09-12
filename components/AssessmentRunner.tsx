@@ -1,9 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { Assessment } from "@/data/assessments";
 import ProductionTask from "@/components/ProductionTask";
-import { recordSkillResult } from "@/lib/progress";
+import { recordAssessmentAttempt, recordSkillResult } from "@/lib/progress";
 
 type Section = "usage" | "reading" | "listening" | "writing" | "results";
 
@@ -24,6 +24,7 @@ export default function AssessmentRunner({ assessment }: { assessment: Assessmen
   const [plays, setPlays] = useState(0);
   const [showReadingRoman, setShowReadingRoman] = useState(false);
   const [showListeningTranscript, setShowListeningTranscript] = useState(false);
+  const savedResult = useRef(false);
 
   const usageScore = Object.entries(usageAnswers).filter(
     ([index, answer]) => assessment.questions[Number(index)]?.answer === answer
@@ -38,6 +39,40 @@ export default function AssessmentRunner({ assessment }: { assessment: Assessmen
         ([index, answer]) => assessment.listening?.questions[Number(index)]?.answer === answer
       ).length
     : 0;
+
+
+  useEffect(() => {
+    if (section !== "results" || savedResult.current) return;
+
+    const usageComplete = Object.keys(usageAnswers).length === assessment.questions.length;
+    const readingComplete =
+      !assessment.reading ||
+      Object.keys(readingAnswers).length === assessment.reading.questions.length;
+    const listeningComplete =
+      !assessment.listening ||
+      Object.keys(listeningAnswers).length === assessment.listening.questions.length;
+
+    if (!usageComplete || !readingComplete || !listeningComplete) return;
+
+    recordAssessmentAttempt(assessment.slug, {
+      usageCorrect: usageScore,
+      usageTotal: assessment.questions.length,
+      readingCorrect: assessment.reading ? readingScore : undefined,
+      readingTotal: assessment.reading ? assessment.reading.questions.length : undefined,
+      listeningCorrect: assessment.listening ? listeningScore : undefined,
+      listeningTotal: assessment.listening ? assessment.listening.questions.length : undefined,
+    });
+    savedResult.current = true;
+  }, [
+    section,
+    assessment,
+    usageAnswers,
+    readingAnswers,
+    listeningAnswers,
+    usageScore,
+    readingScore,
+    listeningScore,
+  ]);
 
   function answerUsage(index: number, answer: number) {
     if (usageAnswers[index] !== undefined) return;

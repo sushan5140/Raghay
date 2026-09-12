@@ -56,9 +56,9 @@ async function playSegments(segments: ListeningSegment[]) {
   for (const segment of segments) {
     try {
       const played = await playAzure(segment.text, segment.voice || "female");
-      if (!played) await speakFallback(segment.romanized || segment.text);
+      if (!played) await speakFallback(segment.text);
     } catch {
-      await speakFallback(segment.romanized || segment.text);
+      await speakFallback(segment.text);
     }
   }
 }
@@ -81,10 +81,10 @@ export default function ListeningLab({ listening }: { listening: ListeningMateri
         await playSegments(listening.segments);
       } else {
         const played = await playAzure(listening.devanagari);
-        if (!played) await speakFallback(listening.romanized);
+        if (!played) await speakFallback(listening.devanagari);
       }
     } catch {
-      await speakFallback(listening.romanized);
+      await speakFallback(listening.devanagari);
     } finally {
       setPlaying(false);
     }

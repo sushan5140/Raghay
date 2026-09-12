@@ -41,6 +41,17 @@ function PhraseCard({ lesson, item }: { lesson: Lesson; item: Lesson["items"][nu
     );
   }
 
+  if (lesson.unit >= 5) {
+    return (
+      <div className="rounded-xl border border-black/5 bg-white p-4">
+        <p className="font-display text-lg font-semibold text-ink">{item.marathi}</p>
+        <p className="mt-1 font-display text-lg font-semibold text-ink/80">{item.devanagari}</p>
+        <p className="mt-2 text-sm text-muted">{item.english}</p>
+        {item.notes && <p className="mt-2 text-xs leading-5 text-muted">{item.notes}</p>}
+      </div>
+    );
+  }
+
   return (
     <div className="rounded-xl border border-black/5 bg-white p-4">
       <p className="font-display text-lg font-semibold text-ink">{item.marathi}</p>
@@ -141,7 +152,9 @@ export default function LessonFlow({ lesson }: { lesson: Lesson }) {
                     ? "Read Devanagari first. Reveal romanization only when you need it."
                     : lesson.unit >= 9
                       ? "Devanagari is now primary, with romanization as support."
-                      : "Use romanization while you build familiarity with Devanagari."}
+                      : lesson.unit >= 5
+                        ? "Romanization and Devanagari now carry equal visual weight."
+                        : "Use romanization while you build familiarity with Devanagari."}
                 </p>
               </div>
               <span className="text-xs font-medium text-muted">{lesson.items.length} items</span>

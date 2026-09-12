@@ -2260,5 +2260,120 @@ export const intermediateCompletionLessons: Lesson[] = [
       { marathi: "Kripaya mala kalava", devanagari: "कृपया मला कळवा", english: "Please let me know" },
       { marathi: "Punha vichara", devanagari: "पुन्हा विचारा", english: "Ask again" }
     ]
+  }),
+  L({
+    slug: "future-negative-intention",
+    title: "Negative Plans & Intentions",
+    subtitle: "Say what you will not do, cannot do, or are not planning to do",
+    unit: 11,
+    unitTitle: "Future, intention & obligation",
+    objective: "Use practical negative future and intention patterns in plans and scheduling",
+    grammarSkills: ["future-negative", "intention-negative"],
+    teaching: [
+      {
+        title: "Future negative can use नाही with a future/intention form",
+        explanation: "For practical conversation, learn common chunks such as jaanar nahi, jamnaar nahi, and karu shaknaar nahi.",
+        examples: [
+          { marathi: "Mi udya jaanar nahi", devanagari: "मी उद्या जाणार नाही", english: "I am not going tomorrow" },
+          { marathi: "Mala sahala jamnaar nahi", devanagari: "मला सहाला जमणार नाही", english: "Six o'clock will not work for me" },
+          { marathi: "Mi aaj purna karu shaknaar nahi", devanagari: "मी आज पूर्ण करू शकणार नाही", english: "I will not be able to finish today" }
+        ]
+      }
+    ],
+    checks: [
+      {
+        question: "Which phrase means “I am not going tomorrow”?",
+        options: ["Mi udya jaanar nahi", "Mi udya gelo nahi", "Mi udya jaat nahi"],
+        answer: 0,
+        explanation: "Jaanar nahi gives a negative future/intention reading here.",
+        skill: "future-negative"
+      },
+      {
+        question: "Which phrase means “Six will not work for me”?",
+        options: ["Mala sahala jamnaar nahi", "Mi sahala gelo nahi", "Saha vaajle"],
+        answer: 0,
+        explanation: "Jamnaar nahi is a common scheduling negative.",
+        skill: "intention-negative"
+      }
+    ],
+    reading: {
+      title: "A schedule that will not work",
+      devanagari: "उद्या मला सकाळी बाहेर जाता येणार नाही कारण माझा ऑनलाइन क्लास आहे. दुपारी मी मोकळा असेन, पण तीन वाजता भेटणं मला जमणार नाही. चार वाजता मात्र मी येऊ शकेन.",
+      romanized: "Udya mala sakaali baaher jaata yenaar nahi kaaran maajha online class aahe. Dupari mi mokla asen, pan teen vaajta bhetna mala jamnaar nahi. Chaar vaajta maatra mi yeu shaken.",
+      english: "Tomorrow I will not be able to go out in the morning because I have an online class. I will be free in the afternoon, but meeting at three will not work for me. I will be able to come at four.",
+      questions: [
+        {
+          question: "Which time works for the speaker?",
+          options: ["Four o'clock", "Three o'clock", "Morning"],
+          answer: 0,
+          explanation: "The final sentence says the speaker can come at four.",
+          skill: "reading-schedule"
+        }
+      ]
+    },
+    listening: {
+      title: "Cannot finish today",
+      devanagari: "मी आज हे काम पूर्ण करू शकणार नाही. मला अजून दोन तास लागतील, म्हणून मी उद्या सकाळी पाठवेन.",
+      romanized: "Mi aaj he kaam purna karu shaknaar nahi. Mala ajun don taas laagtil, mhanun mi udya sakaali pathaven.",
+      english: "I will not be able to finish this work today. I need two more hours, so I will send it tomorrow morning.",
+      maxReplays: 2,
+      questions: [
+        {
+          question: "When will the work be sent?",
+          options: ["Tomorrow morning", "Tonight", "Next week"],
+          answer: 0,
+          explanation: "The result of the delay is sending it tomorrow morning.",
+          skill: "listening-future-negative"
+        }
+      ]
+    },
+    production: {
+      prompt: "Write 4–5 sentences about what you cannot or will not do tomorrow, then offer an alternative.",
+      minSentences: 4,
+      support: ["Mi ... jaanar nahi", "Mala ... jamnaar nahi", "Mi ... karu shaknaar nahi", "Pan ... chalel", "Mhanun ..."],
+      requiredPatterns: ["negative future/intention", "alternative"],
+      modelAnswer: {
+        romanized: "Mi udya sakaali baaher jaanar nahi. Mala daha vaajta bhetna jamnaar nahi. Mi te kaam sakaali purna karu shaknaar nahi. Pan dupari don vaajta chalel. Mhanun aapan dupari bhetu.",
+        devanagari: "मी उद्या सकाळी बाहेर जाणार नाही. मला दहा वाजता भेटणं जमणार नाही. मी ते काम सकाळी पूर्ण करू शकणार नाही. पण दुपारी दोन वाजता चालेल. म्हणून आपण दुपारी भेटू.",
+        english: "I am not going out tomorrow morning. Meeting at ten will not work for me. I will not be able to finish that work in the morning. But two in the afternoon works. So we can meet in the afternoon."
+      }
+    },
+    scenario: {
+      title: "Decline and offer another time",
+      context: "A friend suggests a time you cannot make.",
+      startStep: "s1",
+      steps: [
+        {
+          id: "s1",
+          speaker: "Friend",
+          line: "उद्या सकाळी दहा वाजता भेटू?",
+          prompt: "Decline and offer an alternative.",
+          options: [
+            { text: "मला दहाला जमणार नाही. दुपारी दोन वाजता चालेल का?", feedback: "Good — negative schedule plus alternative.", acceptable: true, nextStep: "s2" },
+            { text: "मी काल दहाला गेलो नाही.", feedback: "That is past, not tomorrow's schedule.", acceptable: false, nextStep: "s2" },
+            { text: "मला चहा आवडतो.", feedback: "Unrelated.", acceptable: false, nextStep: "s2" }
+          ]
+        },
+        {
+          id: "s2",
+          speaker: "Friend",
+          line: "हो, दोन वाजता चालेल.",
+          prompt: "Confirm.",
+          options: [
+            { text: "ठीक आहे, मग दोन वाजता भेटू.", feedback: "Good confirmation.", acceptable: true },
+            { text: "मी जाणार नाही.", feedback: "That cancels rather than confirms.", acceptable: false },
+            { text: "किती पैसे?", feedback: "Wrong context.", acceptable: false }
+          ]
+        }
+      ]
+    },
+    items: [
+      { marathi: "Jaanar nahi", devanagari: "जाणार नाही", english: "Will not go / not going" },
+      { marathi: "Jamnaar nahi", devanagari: "जमणार नाही", english: "Will not work / cannot make it" },
+      { marathi: "Karu shaknaar nahi", devanagari: "करू शकणार नाही", english: "Will not be able to do" },
+      { marathi: "Pan ... chalel", devanagari: "पण ... चालेल", english: "But ... will work" },
+      { marathi: "Maatra", devanagari: "मात्र", english: "However / though / specifically" },
+      { marathi: "Mokla / mokli", devanagari: "मोकळा / मोकळी", english: "Free / available (male / female)" }
+    ]
   })
 ];

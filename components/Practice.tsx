@@ -66,14 +66,14 @@ export default function Practice({ items }: { items: VocabItem[] }) {
       }
       if (result === "unconfigured") {
         warnedFallback.current = true;
-        speakWithBrowser(current.marathi);
+        speakWithBrowser(current.devanagari);
         setSpeakStatus("fallback");
         return;
       }
       throw new Error("azure error");
     } catch {
       // Fall back to the browser voice rather than leaving the button dead.
-      speakWithBrowser(current.marathi);
+      speakWithBrowser(current.devanagari);
       setSpeakStatus("fallback");
     }
   }

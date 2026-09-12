@@ -12,11 +12,9 @@ export default function ReviewPage() {
 
   return (
     <div>
-      <Link href="/" className="text-sm font-medium text-primary">
-        ← Learning path
-      </Link>
+      <Link href="/" className="text-sm font-medium text-primary">← Learning path</Link>
       <div className="mt-5">
-        <ReviewDashboard items={items} />
+        <ReviewDashboard items={items} lessons={lessons} />
       </div>
     </div>
   );

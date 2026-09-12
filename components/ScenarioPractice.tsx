@@ -16,9 +16,22 @@ export default function ScenarioPractice({
   const [history, setHistory] = useState<{ speaker: string; line: string }[]>([]);
   const [feedback, setFeedback] = useState<string | null>(null);
   const [finished, setFinished] = useState(false);
+  const [customReply, setCustomReply] = useState("");
   const step = steps.get(stepId);
 
   if (!step) return null;
+
+  function advance(nextStep?: string) {
+    window.setTimeout(() => {
+      if (nextStep) {
+        setStepId(nextStep);
+        setFeedback(null);
+        setCustomReply("");
+      } else {
+        setFinished(true);
+      }
+    }, 650);
+  }
 
   function choose(index: number) {
     if (feedback || finished || !step) return;
@@ -31,15 +44,25 @@ export default function ScenarioPractice({
     ]);
     setFeedback(option.feedback);
     recordSkillResult(`scenario-${lessonSlug}`, option.acceptable, "scenario");
+    advance(option.nextStep);
+  }
 
-    window.setTimeout(() => {
-      if (option.nextStep) {
-        setStepId(option.nextStep);
-        setFeedback(null);
-      } else {
-        setFinished(true);
-      }
-    }, 650);
+  function useCustomReply() {
+    if (!customReply.trim() || feedback || finished || !step) return;
+    const currentStep = step;
+    const nextStep =
+      currentStep.options.find((option) => option.acceptable && option.nextStep)?.nextStep ||
+      currentStep.options.find((option) => option.nextStep)?.nextStep;
+
+    setHistory((current) => [
+      ...current,
+      { speaker: currentStep.speaker, line: currentStep.line },
+      { speaker: "You", line: customReply.trim() },
+    ]);
+    setFeedback(
+      "Your own reply is kept as production practice. Compare it with the acceptable examples above rather than treating this as automatic grammar grading."
+    );
+    advance(nextStep);
   }
 
   function restart() {
@@ -47,6 +70,7 @@ export default function ScenarioPractice({
     setHistory([]);
     setFeedback(null);
     setFinished(false);
+    setCustomReply("");
   }
 
   return (
@@ -89,6 +113,27 @@ export default function ScenarioPractice({
               </button>
             ))}
           </div>
+
+          <div className="mt-4 border-t border-black/5 pt-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted">Or answer in your own Marathi</p>
+            <div className="mt-2 flex flex-col gap-2 sm:flex-row">
+              <input
+                value={customReply}
+                onChange={(event) => setCustomReply(event.target.value)}
+                disabled={Boolean(feedback)}
+                placeholder="Type your reply..."
+                className="min-w-0 flex-1 rounded-lg border border-black/10 bg-offwhite px-3 py-2 text-sm text-ink outline-none focus:border-primary/40"
+              />
+              <button
+                onClick={useCustomReply}
+                disabled={!customReply.trim() || Boolean(feedback)}
+                className="rounded-lg border border-primary/20 px-3 py-2 text-sm font-semibold text-primary disabled:opacity-40"
+              >
+                Use my reply
+              </button>
+            </div>
+          </div>
+
           {feedback && <p className="mt-3 rounded-lg bg-offwhite p-3 text-sm text-muted">{feedback}</p>}
         </div>
       )}
@@ -96,7 +141,7 @@ export default function ScenarioPractice({
       {finished && (
         <div className="mt-4 rounded-lg bg-primary/5 p-4">
           <p className="text-sm font-semibold text-primary">Scenario complete</p>
-          <p className="mt-1 text-sm text-muted">Try it again and choose a different response where possible.</p>
+          <p className="mt-1 text-sm text-muted">Try it again and choose or write a different response.</p>
           <button
             onClick={restart}
             className="mt-3 rounded-lg border border-black/10 px-3 py-2 text-sm font-semibold text-ink"

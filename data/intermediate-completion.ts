@@ -558,6 +558,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       { marathi: "Mala ... pahije", devanagari: "मला ... पाहिजे", english: "I want / need ..." },
       { marathi: "Mala ... karaycha aahe", devanagari: "मला ... करायचा आहे", english: "I want / need to do ..." },
       { marathi: "Mala ... karav lagel", devanagari: "मला ... करावं लागेल", english: "I will have to do ..." },
+      { marathi: "Mala ... karaychi garaj nahi", devanagari: "मला ... करायची गरज नाही", english: "I do not need to do ..." },
       { marathi: "Aadhi", devanagari: "आधी", english: "First / before" },
       { marathi: "Tyanantar", devanagari: "त्यानंतर", english: "After that" },
       { marathi: "Mala vel nahi", devanagari: "मला वेळ नाही", english: "I do not have time" }
@@ -680,6 +681,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     items: [
       { marathi: "Mi ... karu shakto", devanagari: "मी ... करू शकतो", english: "I can do ... (male speaker)" },
       { marathi: "Mi ... karu shakte", devanagari: "मी ... करू शकते", english: "I can do ... (female speaker)" },
+      { marathi: "Mala Marathi vaachta yete", devanagari: "मला मराठी वाचता येते", english: "I can / know how to read Marathi" },
       { marathi: "... karta yet nahi", devanagari: "... करता येत नाही", english: "It cannot be done / one cannot do it" },
       { marathi: "Chalel ka?", devanagari: "चालेल का?", english: "Is it okay?" },
       { marathi: "Parvaangi", devanagari: "परवानगी", english: "Permission" },
@@ -799,7 +801,11 @@ export const intermediateCompletionLessons: Lesson[] = [
       { marathi: "Gharajaval", devanagari: "घराजवळ", english: "Near the house" },
       { marathi: "College-kade", devanagari: "कॉलेजकडे", english: "Toward / to the college" },
       { marathi: "Mitrabarobar", devanagari: "मित्राबरोबर", english: "With a friend" },
-      { marathi: "Cafe-samor", devanagari: "कॅफेसमोर", english: "In front of the café" }
+      { marathi: "Cafe-samor", devanagari: "कॅफेसमोर", english: "In front of the café" },
+      { marathi: "Tablevar", devanagari: "टेबलावर", english: "On the table" },
+      { marathi: "Tumchyaasathi", devanagari: "तुमच्यासाठी", english: "For you (respectful/plural)" },
+      { marathi: "Projectbaddal", devanagari: "प्रोजेक्टबद्दल", english: "About the project" },
+      { marathi: "Stationpaasun", devanagari: "स्टेशनपासून", english: "From the station" }
     ]
   }),
 
@@ -2471,7 +2477,8 @@ export const intermediateCompletionLessons: Lesson[] = [
       { marathi: "Nako", devanagari: "नको", english: "Don't want / no" },
       { marathi: "Chalel ka?", devanagari: "चालेल का?", english: "Is it okay?" },
       { marathi: "Ajun ek", devanagari: "अजून एक", english: "One more" },
-      { marathi: "Bill dya", devanagari: "बिल द्या", english: "Please give the bill" }
+      { marathi: "Bill dya", devanagari: "बिल द्या", english: "Please give the bill" },
+      { marathi: "Mala shengdanyachi allergy aahe", devanagari: "मला शेंगदाण्याची अॅलर्जी आहे", english: "I have a peanut allergy", notes: "Language for communicating an existing allergy; not medical advice." }
     ]
   }),
 

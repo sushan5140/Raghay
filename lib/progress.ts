@@ -20,11 +20,24 @@ export type SkillStat = {
   dueAt: number;
 };
 
+export type AssessmentAttempt = {
+  attempts: number;
+  lastAttempt: number;
+  usageCorrect: number;
+  usageTotal: number;
+  readingCorrect?: number;
+  readingTotal?: number;
+  listeningCorrect?: number;
+  listeningTotal?: number;
+};
+
 export type ProgressMap = Record<string, PhraseStat>;
 export type SkillProgressMap = Record<string, SkillStat>;
+export type AssessmentProgressMap = Record<string, AssessmentAttempt>;
 
 const PHRASE_KEY = "marathi-mate-phrase-progress";
 const SKILL_KEY = "marathi-mate-skill-progress";
+const ASSESSMENT_KEY = "marathi-mate-assessment-progress";
 const LAST_LESSON_KEY = "marathi-mate-last-lesson";
 
 const HOUR = 60 * 60 * 1000;
@@ -63,6 +76,33 @@ export function readSkillProgress(): SkillProgressMap {
   } catch {
     return {};
   }
+}
+
+
+export function readAssessmentProgress(): AssessmentProgressMap {
+  if (typeof window === "undefined") return {};
+  try {
+    const parsed = JSON.parse(localStorage.getItem(ASSESSMENT_KEY) || "{}");
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+export function recordAssessmentAttempt(
+  slug: string,
+  result: Omit<AssessmentAttempt, "attempts" | "lastAttempt">
+) {
+  if (typeof window === "undefined") return;
+  const progress = readAssessmentProgress();
+  const current = progress[slug];
+  progress[slug] = {
+    attempts: (current?.attempts || 0) + 1,
+    lastAttempt: Date.now(),
+    ...result,
+  };
+  localStorage.setItem(ASSESSMENT_KEY, JSON.stringify(progress));
+  window.dispatchEvent(new Event("marathi-mate-assessment-progress"));
 }
 
 export function recordPhraseResult(item: VocabItem, correct: boolean) {

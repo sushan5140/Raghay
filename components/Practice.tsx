@@ -2,6 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import type { VocabItem } from "@/data/lessons";
+import { recordPhraseResult } from "@/lib/progress";
 
 type SpeakStatus = "idle" | "loading" | "playing" | "fallback" | "error";
 
@@ -78,6 +79,7 @@ export default function Practice({ items }: { items: VocabItem[] }) {
   }
 
   function next(wasCorrect: boolean) {
+    recordPhraseResult(current, wasCorrect);
     setScore((s) => ({ correct: s.correct + (wasCorrect ? 1 : 0), seen: s.seen + 1 }));
     setRevealed(false);
     setSpeakStatus("idle");

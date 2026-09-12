@@ -46,10 +46,10 @@ export default function LearningPath({ lessons }: { lessons: Lesson[] }) {
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-              Beginner path
+              Beginner → intermediate foundations
             </p>
             <h1 className="mt-2 font-display text-3xl font-semibold text-ink">
-              Start speaking Marathi
+              Build practical Marathi step by step
             </h1>
             <p className="mt-2 max-w-xl text-sm leading-6 text-muted">
               Learn useful Marathi in small steps: hear it, understand it, then practice it.

@@ -283,7 +283,7 @@ export const intermediateCompletionLessons: Lesson[] = [
     reading: {
       title: "A changed plan",
       devanagari: "काल मी चित्रपटाला जाणार होतो, पण माझ्याकडे वेळ नव्हता. म्हणून मी गेलो नाही. त्याऐवजी मी घरी राहिलो आणि अभ्यास केला.",
-      romanized: "Kaal mi chitrapataala jaanar hoto, pan maajhyaakade vel navhta. Mhanun mi gelo nahi. Tyaaaivaji mi ghari rahilo ani abhyas kela.",
+      romanized: "Kaal mi chitrapataala jaanar hoto, pan maajhyaakade vel navhta. Mhanun mi gelo nahi. Tyaaivaji mi ghari rahilo ani abhyas kela.",
       english: "Yesterday I was going to go to a movie, but I did not have time. So I did not go. Instead, I stayed home and studied.",
       questions: [
         {
@@ -314,10 +314,10 @@ export const intermediateCompletionLessons: Lesson[] = [
     production: {
       prompt: "Write 4 sentences about a plan that did not happen.",
       minSentences: 4,
-      support: ["Mi ... jaanar hoto/hote", "Pan ...", "Mhanun ... nahi", "Tyaaaivaji ..."],
+      support: ["Mi ... jaanar hoto/hote", "Pan ...", "Mhanun ... nahi", "Tyaaivaji ..."],
       requiredPatterns: ["negative past", "reason or contrast"],
       modelAnswer: {
-        romanized: "Mi bazaarat jaanar hoto, pan paus hota. Mhanun mi gelo nahi. Tyaaaivaji mi ghari rahilo. Mi online kharedi keli.",
+        romanized: "Mi bazaarat jaanar hoto, pan paus hota. Mhanun mi gelo nahi. Tyaaivaji mi ghari rahilo. Mi online kharedi keli.",
         devanagari: "मी बाजारात जाणार होतो, पण पाऊस होता. म्हणून मी गेलो नाही. त्याऐवजी मी घरी राहिलो. मी ऑनलाइन खरेदी केली.",
         english: "I was going to go to the market, but it was raining. So I did not go. Instead I stayed home. I shopped online."
       }
@@ -327,7 +327,7 @@ export const intermediateCompletionLessons: Lesson[] = [
       { marathi: "Mi gele nahi", devanagari: "मी गेले नाही", english: "I did not go (female speaker)" },
       { marathi: "Vel navhta", devanagari: "वेळ नव्हता", english: "There was no time" },
       { marathi: "Mi pohachlo nahi", devanagari: "मी पोहोचलो नाही", english: "I did not arrive (male speaker)" },
-      { marathi: "Tyaaaivaji", devanagari: "त्याऐवजी", english: "Instead" },
+      { marathi: "Tyaaivaji", devanagari: "त्याऐवजी", english: "Instead" },
       { marathi: "Mhanun", devanagari: "म्हणून", english: "So / therefore" }
     ]
   }),
@@ -935,8 +935,8 @@ export const intermediateCompletionLessons: Lesson[] = [
     ],
     reading: {
       title: "What I have with me",
-      devanagari: "माझ्याकडे आज दोन पुस्तके, एक पेन आणि एक नोटबुक आहे. माझं मोठं पुस्तक घरी आहे, पण माझी छोटी वही बॅगेत आहे.",
-      romanized: "Maajhyaakade aaj don pustake, ek pen ani ek notebook aahe. Maajha motha pustak ghari aahe, pan maajhi chhoti vahi baget aahe.",
+      devanagari: "माझ्याकडे आज दोन पुस्तके, एक पेन आणि एक नोटबुक आहेत. माझं मोठं पुस्तक घरी आहे, पण माझी छोटी वही बॅगेत आहे.",
+      romanized: "Maajhyaakade aaj don pustake, ek pen ani ek notebook aahet. Maajha motha pustak ghari aahe, pan maajhi chhoti vahi baget aahe.",
       english: "Today I have two books, a pen, and a notebook with me. My big book is at home, but my small notebook is in the bag.",
       questions: [
         {
@@ -1189,8 +1189,8 @@ export const intermediateCompletionLessons: Lesson[] = [
     },
     listening: {
       title: "How much is enough?",
-      devanagari: "दोन कप चहा पुरेसा आहे. मला जास्त नको. थोडं पाणी मात्र आणा.",
-      romanized: "Don cup chaha puresa aahe. Mala jast nako. Thoda paani maatra aana.",
+      devanagari: "दोन कप चहा पुरेसे आहेत. मला जास्त नको. थोडं पाणी मात्र आणा.",
+      romanized: "Don cup chaha purese aahet. Mala jast nako. Thoda paani maatra aana.",
       english: "Two cups of tea are enough. I do not want more. Please bring a little water though.",
       maxReplays: 2,
       questions: [

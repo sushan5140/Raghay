@@ -26,7 +26,9 @@ export default function LessonPage({ params }: { params: { slug: string } }) {
             className="rounded-lg border border-black/5 bg-white p-4"
           >
             <p className="font-medium text-ink">{item.marathi}</p>
-            <p className="text-sm text-muted">{item.english}</p>
+            <p className="text-sm text-muted">
+              {item.devanagari} · {item.english}
+            </p>
           </div>
         ))}
       </div>

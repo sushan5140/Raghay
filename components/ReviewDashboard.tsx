@@ -89,6 +89,8 @@ export default function ReviewDashboard({
     listening: "Listening",
     scenario: "Conversation",
     assessment: "Assessment",
+    speaking: "Speaking",
+    conversation: "Conversation",
   };
 
   return (

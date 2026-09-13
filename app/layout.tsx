@@ -21,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/speaking" className="whitespace-nowrap text-muted transition hover:text-ink">Speak</Link>
               <Link href="/listening" className="whitespace-nowrap text-muted transition hover:text-ink">Listen</Link>
               <Link href="/conversation" className="whitespace-nowrap text-muted transition hover:text-ink">Conversation</Link>
+              <Link href="/partner" className="whitespace-nowrap text-muted transition hover:text-ink">Partner</Link>
               <Link href="/mastery" className="whitespace-nowrap text-primary transition hover:opacity-80">Mastery</Link>
               <Link href="/review" className="whitespace-nowrap text-muted transition hover:text-ink">Review</Link>
             </nav>

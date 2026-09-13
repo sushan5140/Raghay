@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { conversationScenarios } from "@/data/conversation";
 import {
   playMarathi,
@@ -31,7 +31,12 @@ export default function ConversationCoach() {
   const [showEnglish, setShowEnglish] = useState(false);
   const [finished, setFinished] = useState(false);
   const [speechError, setSpeechError] = useState<string | null>(null);
+  const [speechSupported, setSpeechSupported] = useState(false);
   const recognitionRef = useRef<{ stop: () => void; abort: () => void } | null>(null);
+
+  useEffect(() => {
+    setSpeechSupported(supportsSpeechRecognition());
+  }, []);
 
   const scenario = useMemo(
     () => conversationScenarios.find((item) => item.slug === selectedSlug) || conversationScenarios[0],
@@ -267,7 +272,7 @@ export default function ConversationCoach() {
                 disabled={Boolean(feedback)}
                 className={`rounded-lg px-4 py-2 text-sm font-semibold ${recording ? "bg-terracotta text-white" : "border border-primary/20 text-primary"} disabled:opacity-40`}
               >
-                {recording ? "■ Stop" : supportsSpeechRecognition() ? "🎙 Speak response" : "🎙 Mic unavailable"}
+                {recording ? "■ Stop" : speechSupported ? "🎙 Speak response" : "🎙 Mic unavailable"}
               </button>
               <button
                 onClick={submitReply}

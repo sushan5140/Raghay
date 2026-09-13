@@ -1,43 +1,108 @@
 # Marathi Mate
 
-Marathi Mate is a zero-to-functional-intermediate Marathi learning app built with Next.js.
+Marathi Mate is a zero-to-conversational-independence Marathi learning app built with Next.js.
 
 Live app: https://raghay.vercel.app/
 
-## Course
+## Current course
 
-The current course contains **16 units and 47 lessons**. It moves from first phrases into connected intermediate Marathi rather than stopping at vocabulary drills.
+The guided course now contains **20 units and 55 lessons**, moving from absolute beginner Marathi through functional intermediate and into upper-intermediate conversational independence.
 
-The path includes:
+The app combines:
 
 - Romanized Marathi + Devanagari
 - staged transition to Devanagari-first reading
 - grammar and sentence-pattern teaching
-- Marathi neural pronunciation
+- Marathi TTS pronunciation
 - mixed recall exercises
 - reading comprehension
 - passage and dialogue listening
+- long-form natural listening
 - multi-turn practical scenarios
+- free-response guided conversation
+- microphone speech recognition where the browser supports Marathi
+- shadowing / speaking practice
 - guided and independent writing
-- adaptive phrase / grammar / reading / listening review
-- course checkpoints
-- final intermediate assessment
+- adaptive review
+- six-domain mastery tracking
+- course checkpoints and assessments
 
-Later lessons cover practical intermediate areas including:
+## Conversational Independence systems
 
-- completed past and past negation
-- future, negative future, plans, wants, needs, and obligation
-- ability and permission
-- postpositions, recipient patterns, and possession
-- comparison, quantity, and degree
-- cause/result, contrast, concession, and conditions
-- relative/correlative patterns
-- longer listening and Devanagari-first practical reading
-- study/work, travel, café, shopping, directions, invitations, and everyday appointment language
+### Speaking Lab — /speaking
+
+12 progressive shadowing drills provide:
+
+- Marathi model audio
+- Devanagari-first target text
+- optional romanization and English
+- browser microphone speech recognition when available
+- typed fallback
+- recognition-match scoring
+- pattern-transfer prompts for creating a new sentence instead of copying the model
+
+The score is explicitly a speech-recognition match, not a phonetic pronunciation certification.
+
+### Natural Listening — /listening
+
+Four longer learner-oriented tracks target roughly 2–4 minutes of connected input.
+
+The flow is:
+
+1. listen without transcript
+2. answer the main-idea question
+3. optionally reveal transcript
+4. answer detail / sequence / inference questions
+5. review the English summary only if needed
+
+Tracks can use segmented alternating Marathi voices.
+
+### Conversation Mode — /conversation
+
+Eight longer guided conversation scenarios include:
+
+- college / study
+- weekend planning
+- travel problems
+- café interactions
+- shopping / exchanges
+- meeting someone new
+- explaining a delay
+- opinion / recommendation
+
+Learners can respond by voice or text. The session keeps the conversation history and adapts support based on response length, target-language coverage, and use of repair strategies.
+
+### Mastery — /mastery
+
+Mastery combines evidence from six domains:
+
+- Vocabulary
+- Grammar
+- Reading
+- Listening
+- Speaking
+- Conversation
+
+It also generates a **Today’s 10-minute Marathi session** with listening, shadowing, conversation, and review.
+
+## Upper-intermediate course layer
+
+Units 17–20 add practical language for:
+
+- reported speech
+- habitual past
+- certainty, doubt, and possibility
+- advice and recommendation
+- polite disagreement
+- linked-action / participial patterns
+- paragraph organisation
+- informal vs respectful register
+- independent 80–150 word production
+- conversation repair and paraphrasing
 
 ## Lesson flow
 
-Lessons use a step-based experience instead of one long page:
+Structured lessons use:
 
 1. Learn
 2. Understand
@@ -46,29 +111,38 @@ Lessons use a step-based experience instead of one long page:
 5. Produce
 6. Review
 
-Not every early lesson needs every step; later intermediate lessons use the full flow.
+Not every beginner lesson needs every step. Later lessons use the full sequence.
 
 ## Adaptive review
 
-Learning state is currently local-first.
+Learning state is local-first.
 
-The app tracks completed lessons, phrase history, grammar skills, reading/listening mistakes, scenario performance, spaced-review due times, assessment attempts, the last active lesson, and production drafts.
+The app tracks:
 
-The /review page surfaces what is actually weak or due.
+- completed lessons
+- phrase correct / incorrect history
+- grammar skill performance
+- reading mistakes
+- listening mistakes
+- scenario performance
+- speaking attempts
+- conversation quality
+- spaced-review due times
+- assessment attempts
+- last active lesson
+- writing drafts
 
 ## Assessments
 
 Checkpoint routes live under /checkpoints/[slug].
 
-The course includes foundation, connected-speech, time-control, relationship/comparison, linking-ideas, independent-comprehension, functional-independence, and final-intermediate assessments.
+The curriculum includes the completed intermediate checkpoints plus a **Conversational Independence Checkpoint** after Unit 20.
 
-The final assessment combines grammar/usage, Devanagari reading, listening, and connected writing.
+Open writing remains self-checked using requirements and model comparison rather than pretending simple string matching can reliably grade unrestricted Marathi.
 
-Open writing is self-checked using requirements and model comparison. Marathi Mate does not pretend simple string matching can reliably grade unrestricted Marathi.
+## Pronunciation and speech
 
-## Pronunciation
-
-app/api/tts/route.ts uses Azure AI Speech Marathi neural voices:
+app/api/tts/route.ts uses Azure AI Speech Marathi neural voices when configured:
 
 - mr-IN-AarohiNeural
 - mr-IN-ManoharNeural
@@ -78,9 +152,9 @@ Environment variables:
 AZURE_SPEECH_KEY=your_key
 AZURE_SPEECH_REGION=your_region
 
-The browser voice remains a fallback when Azure is unavailable.
+When Azure is unavailable, the client falls back to browser Marathi speech using Devanagari with the mr-IN language tag.
 
-Listening practice also supports replay limits, hidden transcripts, client audio caching, segmented dialogue playback, and alternating Marathi neural voices for supported dialogues.
+Microphone transcription uses the browser SpeechRecognition / webkitSpeechRecognition API when available. Browser support varies, so all speaking and conversation systems retain typed fallback.
 
 ## Run locally
 
@@ -91,25 +165,30 @@ Then open http://localhost:3000.
 
 ## Important files
 
-- data/lessons.ts — core course model + Units 1–9
-- data/intermediate-completion.ts — full intermediate curriculum extension
-- data/assessments.ts — checkpoints and final assessment
-- components/LessonFlow.tsx — step-based lesson experience
-- components/ReadingLab.tsx — staged reading comprehension
-- components/ListeningLab.tsx — cached passage/dialogue listening
-- components/ScenarioPractice.tsx — branched multi-turn conversation practice
-- components/ProductionTask.tsx — connected learner writing
-- components/ReviewDashboard.tsx — adaptive cross-skill review
-- lib/progress.ts — local progress and spacing logic
-- docs/FULL_INTERMEDIATE_AUDIT_PLAN.md — authoritative milestone plan
-- docs/LANGUAGE_QA.md — language consistency audit
+- data/lessons.ts — lesson model + core course
+- data/intermediate-completion.ts — Units 10–16
+- data/upper-intermediate.ts — Units 17–20
+- data/speaking.ts — shadowing drills
+- data/conversation.ts — longer conversation scenarios
+- data/natural-listening.ts — long-form listening tracks
+- data/assessments.ts — checkpoints
+- components/SpeakingLab.tsx
+- components/ConversationCoach.tsx
+- components/NaturalListeningLab.tsx
+- components/MasteryDashboard.tsx
+- lib/speech.ts — browser speech recognition + Marathi playback helpers
+- lib/progress.ts — local mastery / spacing / speaking / conversation progress
+- docs/FULL_INTERMEDIATE_AUDIT_PLAN.md
+- docs/CONVERSATIONAL_INDEPENDENCE_PLAN.md
+- docs/LANGUAGE_QA.md
 
-## After the intermediate milestone
+## Intentionally later
 
-Intentionally post-intermediate work:
+The next phase can focus on true upper-intermediate / natural-media immersion:
 
+- substantially more authentic native audio/video
+- speech recording playback and acoustic pronunciation analysis
+- richer unscripted AI conversation
+- advanced grammar and idiomatic language
 - Supabase accounts and cross-device sync
-- advanced grammar beyond the functional-intermediate scope
-- speech recognition / pronunciation scoring
-- richer authentic-media listening
 - native-speaker editorial polish

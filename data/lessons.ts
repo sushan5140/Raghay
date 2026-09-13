@@ -1,4 +1,5 @@
 import { intermediateCompletionLessons } from "./intermediate-completion";
+import { upperIntermediateLessons } from "./upper-intermediate";
 
 export type VocabItem = {
   marathi: string;
@@ -1229,6 +1230,7 @@ export const lessons: Lesson[] = [
     ]
   },
   ...intermediateCompletionLessons,
+  ...upperIntermediateLessons,
 ];
 
 export function getLesson(slug: string) {

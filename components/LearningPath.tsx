@@ -113,6 +113,24 @@ export default function LearningPath({ lessons }: { lessons: Lesson[] }) {
         </div>
       </section>
 
+      <section className="mt-7 rounded-2xl border border-terracotta/20 bg-terracotta/5 p-5 sm:p-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">Separate quick-access section</p>
+            <h2 className="mt-1 font-display text-2xl font-semibold text-ink">Partner Marathi 💬</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-muted">
+              Daily check-ins, “I miss you”, “I love you”, meals, care, teasing, apologies, plans, and short partner conversations — kept separate from the main course.
+            </p>
+          </div>
+          <Link
+            href="/partner"
+            className="shrink-0 rounded-lg bg-terracotta px-4 py-2.5 text-sm font-semibold text-white transition hover:opacity-95"
+          >
+            Open Partner Marathi →
+          </Link>
+        </div>
+      </section>
+
       <section className="mt-7">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Conversational independence</p>
         <h2 className="mt-1 font-display text-2xl font-semibold text-ink">Use the Marathi you have learned</h2>

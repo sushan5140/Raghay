@@ -1,6 +1,6 @@
 import type { VocabItem } from "@/data/lessons";
 
-export type SkillKind = "grammar" | "reading" | "listening" | "scenario" | "assessment";
+export type SkillKind = "grammar" | "reading" | "listening" | "scenario" | "assessment" | "speaking" | "conversation";
 
 export type PhraseStat = {
   correct: number;
@@ -33,11 +33,30 @@ export type AssessmentAttempt = {
 
 export type ProgressMap = Record<string, PhraseStat>;
 export type SkillProgressMap = Record<string, SkillStat>;
+export type SpeakingAttempt = {
+  attempts: number;
+  totalScore: number;
+  bestScore: number;
+  lastAttempt: number;
+};
+
+export type ConversationStat = {
+  sessions: number;
+  turns: number;
+  successfulTurns: number;
+  totalQuality: number;
+  lastSession: number;
+};
+
 export type AssessmentProgressMap = Record<string, AssessmentAttempt>;
+export type SpeakingProgressMap = Record<string, SpeakingAttempt>;
+export type ConversationProgressMap = Record<string, ConversationStat>;
 
 const PHRASE_KEY = "marathi-mate-phrase-progress";
 const SKILL_KEY = "marathi-mate-skill-progress";
 const ASSESSMENT_KEY = "marathi-mate-assessment-progress";
+const SPEAKING_KEY = "marathi-mate-speaking-progress";
+const CONVERSATION_KEY = "marathi-mate-conversation-progress";
 const LAST_LESSON_KEY = "marathi-mate-last-lesson";
 
 const HOUR = 60 * 60 * 1000;
@@ -78,6 +97,83 @@ export function readSkillProgress(): SkillProgressMap {
   }
 }
 
+
+
+export function readSpeakingProgress(): SpeakingProgressMap {
+  if (typeof window === "undefined") return {};
+  try {
+    const parsed = JSON.parse(localStorage.getItem(SPEAKING_KEY) || "{}");
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+export function recordSpeakingAttempt(id: string, score: number) {
+  if (typeof window === "undefined") return;
+  const progress = readSpeakingProgress();
+  const current = progress[id] || { attempts: 0, totalScore: 0, bestScore: 0, lastAttempt: 0 };
+  progress[id] = {
+    attempts: current.attempts + 1,
+    totalScore: current.totalScore + score,
+    bestScore: Math.max(current.bestScore, score),
+    lastAttempt: Date.now(),
+  };
+  localStorage.setItem(SPEAKING_KEY, JSON.stringify(progress));
+  window.dispatchEvent(new Event("marathi-mate-speaking-progress"));
+  recordSkillResult("speech-recognition-match", score >= 70, "speaking");
+}
+
+export function readConversationProgress(): ConversationProgressMap {
+  if (typeof window === "undefined") return {};
+  try {
+    const parsed = JSON.parse(localStorage.getItem(CONVERSATION_KEY) || "{}");
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+export function recordConversationTurn(slug: string, quality: number) {
+  if (typeof window === "undefined") return;
+  const progress = readConversationProgress();
+  const current = progress[slug] || {
+    sessions: 0,
+    turns: 0,
+    successfulTurns: 0,
+    totalQuality: 0,
+    lastSession: 0,
+  };
+  progress[slug] = {
+    ...current,
+    turns: current.turns + 1,
+    successfulTurns: current.successfulTurns + (quality >= 60 ? 1 : 0),
+    totalQuality: current.totalQuality + quality,
+    lastSession: Date.now(),
+  };
+  localStorage.setItem(CONVERSATION_KEY, JSON.stringify(progress));
+  window.dispatchEvent(new Event("marathi-mate-conversation-progress"));
+  recordSkillResult("guided-conversation", quality >= 60, "conversation");
+}
+
+export function recordConversationSession(slug: string) {
+  if (typeof window === "undefined") return;
+  const progress = readConversationProgress();
+  const current = progress[slug] || {
+    sessions: 0,
+    turns: 0,
+    successfulTurns: 0,
+    totalQuality: 0,
+    lastSession: 0,
+  };
+  progress[slug] = {
+    ...current,
+    sessions: current.sessions + 1,
+    lastSession: Date.now(),
+  };
+  localStorage.setItem(CONVERSATION_KEY, JSON.stringify(progress));
+  window.dispatchEvent(new Event("marathi-mate-conversation-progress"));
+}
 
 export function readAssessmentProgress(): AssessmentProgressMap {
   if (typeof window === "undefined") return {};

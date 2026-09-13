@@ -33,8 +33,10 @@ function skillDomain(kind: SkillKind, progress: ReturnType<typeof readSkillProgr
 
 export default function MasteryDashboard() {
   const [tick, setTick] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const refresh = () => setTick((value) => value + 1);
     const events = [
       "storage",
@@ -50,6 +52,16 @@ export default function MasteryDashboard() {
 
   const domains = useMemo<Domain[]>(() => {
     void tick;
+    if (!mounted) {
+      return [
+        { key: "vocabulary", label: "Vocabulary", score: null, attempts: 0, href: "/review", description: "Phrase recall and useful chunks" },
+        { key: "grammar", label: "Grammar", score: null, attempts: 0, href: "/", description: "Tense, relations, connectors, nuance" },
+        { key: "reading", label: "Reading", score: null, attempts: 0, href: "/", description: "Devanagari comprehension" },
+        { key: "listening", label: "Listening", score: null, attempts: 0, href: "/listening", description: "Gist, detail, sequence, inference" },
+        { key: "speaking", label: "Speaking", score: null, attempts: 0, href: "/speaking", description: "Shadowing and recognition match" },
+        { key: "conversation", label: "Conversation", score: null, attempts: 0, href: "/conversation", description: "Free response and staying in Marathi" },
+      ];
+    }
     const phrases = readPhraseProgress();
     const skills = readSkillProgress();
     const speaking = readSpeakingProgress();
@@ -125,7 +137,7 @@ export default function MasteryDashboard() {
         description: "Free response and staying in Marathi",
       },
     ];
-  }, [tick]);
+  }, [tick, mounted]);
 
   const weakest = domains
     .filter((domain) => domain.score !== null && domain.attempts >= 2)

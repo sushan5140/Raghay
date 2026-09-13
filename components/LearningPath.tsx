@@ -68,13 +68,13 @@ export default function LearningPath({ lessons }: { lessons: Lesson[] }) {
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-              Zero → functional intermediate
+              Zero → conversational independence
             </p>
             <h1 className="mt-2 font-display text-3xl font-semibold text-ink">
-              Build Marathi from first phrases to connected speech
+              Build Marathi from first phrases to independent conversation
             </h1>
             <p className="mt-2 max-w-xl text-sm leading-6 text-muted">
-              Grammar, Devanagari, listening, reading, practical scenarios, independent production, and adaptive review now live in one continuous path.
+              Move from structured lessons into speaking, longer listening, free conversation, Devanagari-first reading, and evidence-based mastery.
             </p>
           </div>
 
@@ -109,6 +109,33 @@ export default function LearningPath({ lessons }: { lessons: Lesson[] }) {
               {dueCount ? `${dueCount} items due` : "Review is clear"}
             </p>
             <p className="mt-1 text-sm text-muted">Phrases + grammar + reading + listening →</p>
+          </Link>
+        </div>
+      </section>
+
+      <section className="mt-7">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Conversational independence</p>
+        <h2 className="mt-1 font-display text-2xl font-semibold text-ink">Use the Marathi you have learned</h2>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <Link href="/speaking" className="rounded-xl border border-black/5 bg-white p-4 transition hover:border-primary/25">
+            <p className="text-xs font-semibold uppercase tracking-wide text-terracotta">Speak</p>
+            <p className="mt-2 font-display text-lg font-semibold text-ink">Speaking Lab</p>
+            <p className="mt-1 text-sm leading-5 text-muted">Shadow, use the microphone, compare recognition, then adapt the pattern.</p>
+          </Link>
+          <Link href="/listening" className="rounded-xl border border-black/5 bg-white p-4 transition hover:border-primary/25">
+            <p className="text-xs font-semibold uppercase tracking-wide text-terracotta">Listen</p>
+            <p className="mt-2 font-display text-lg font-semibold text-ink">Natural Listening</p>
+            <p className="mt-1 text-sm leading-5 text-muted">2–4 minute learner tracks with gist before transcript and detail after.</p>
+          </Link>
+          <Link href="/conversation" className="rounded-xl border border-black/5 bg-white p-4 transition hover:border-primary/25">
+            <p className="text-xs font-semibold uppercase tracking-wide text-terracotta">Respond</p>
+            <p className="mt-2 font-display text-lg font-semibold text-ink">Conversation Mode</p>
+            <p className="mt-1 text-sm leading-5 text-muted">5–10 minute guided conversations with voice or free typed replies.</p>
+          </Link>
+          <Link href="/mastery" className="rounded-xl border border-primary/15 bg-primary/5 p-4 transition hover:border-primary/30">
+            <p className="text-xs font-semibold uppercase tracking-wide text-primary">Measure</p>
+            <p className="mt-2 font-display text-lg font-semibold text-ink">Mastery</p>
+            <p className="mt-1 text-sm leading-5 text-muted">Vocabulary, grammar, reading, listening, speaking, and conversation.</p>
           </Link>
         </div>
       </section>

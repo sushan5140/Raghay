@@ -394,6 +394,111 @@ export const assessments: Assessment[] = [
         english: "I wanted to meet friends on Saturday. But it had been raining since morning. So we did not go out. If the rain had stopped, we would have gone to a café, but it did not stop. Finally we talked online and watched a movie. I think the day still went well even though the plan changed."
       }
     }
+  },
+  {
+    slug: "conversational-independence",
+    title: "Conversational Independence Checkpoint",
+    subtitle: "Upper-intermediate stance, retelling, connected listening, and independent writing",
+    afterUnit: 20,
+    final: true,
+    questions: [
+      {
+        question: "Which sentence reports information from another person?",
+        options: [
+          "Shikshakanni saangitla ki udya test aahe.",
+          "Udya test aahe ka?",
+          "Mi udya test lihito."
+        ],
+        answer: 0,
+        explanation: "Saangitla ki introduces reported information.",
+        skill: "reported-speech"
+      },
+      {
+        question: "Which sentence expresses uncertainty rather than certainty?",
+        options: ["Kadaachit paus yeil.", "Paus nakki yeil.", "Paus aala."],
+        answer: 0,
+        explanation: "Kadaachit means maybe/perhaps.",
+        skill: "possibility"
+      },
+      {
+        question: "Which response disagrees politely?",
+        options: [
+          "Tumcha mudda samajto, pan majha mat vegla aahe.",
+          "Tumhi chukicha aahat.",
+          "Nahi. Bas."
+        ],
+        answer: 0,
+        explanation: "It acknowledges the other view before disagreeing.",
+        skill: "polite-disagreement"
+      },
+      {
+        question: "Which form links two actions naturally?",
+        options: ["Ghari yeun mi abhyas kela.", "Ghari ani mi ani abhyas.", "Mi ghari pan abhyas."],
+        answer: 0,
+        explanation: "Yeun links the completed action to what followed.",
+        skill: "linked-actions"
+      }
+    ],
+    reading: {
+      title: "Learning to stay in the conversation",
+      devanagari: "मराठी शिकताना मला आधी प्रत्येक वाक्य अचूक बोलायचं असायचं. त्यामुळे बोलण्याआधी मी खूप विचार करायचो आणि संभाषणाचा वेग कमी व्हायचा. नंतर एका शिक्षकाने सांगितलं की चुका झाल्या तरी आधी अर्थ पोहोचवणं महत्त्वाचं आहे. तेव्हापासून मी शब्द अडला तर दुसऱ्या शब्दांत सांगण्याचा प्रयत्न करतो. कदाचित माझी प्रत्येक वाक्यरचना परिपूर्ण नसते, पण आता मी संभाषण थांबवत नाही. माझ्या मते हा बदल vocabulary वाढण्यापेक्षा जास्त महत्त्वाचा होता.",
+      romanized: "Marathi shiktaana mala aadhi pratyek vaakya achuk bolaaycha asaaycha. Tyamule bolnyaaadhi mi khup vichaar karaaycho ani sambhaashanacha veg kami vhaycha. Nantar eka shikshakaane saangitla ki chuka jhalya tari aadhi arth pohachavna mahatvacha aahe. Tevhaapasun mi shabda adla tar dusrya shabdaat saangaaycha prayatna karto. Kadaachit majhi pratyek vaakyarachana paripurna naste, pan aata mi sambhaashan thaambavat nahi. Majhya mate ha badal vocabulary vaadhnyaapeksha jast mahatvacha hota.",
+      english: "The learner used to overthink perfect sentences. A teacher encouraged prioritizing meaning, so the learner began paraphrasing missing words and staying in the conversation. The learner considers this change more important than simply growing vocabulary.",
+      questions: [
+        {
+          question: "What changed the learner's behavior most?",
+          options: [
+            "Prioritizing meaning and paraphrasing instead of stopping",
+            "Memorizing a dictionary",
+            "Avoiding conversation until grammar was perfect"
+          ],
+          answer: 0,
+          explanation: "The learner now keeps the conversation moving even with imperfect language.",
+          skill: "reading-independent"
+        },
+        {
+          question: "How certain is the learner that every sentence is perfect?",
+          options: ["Not completely certain", "Completely certain", "The text never mentions it"],
+          answer: 0,
+          explanation: "Kadaachit and the following contrast explicitly reduce certainty.",
+          skill: "reading-stance"
+        }
+      ]
+    },
+    listening: {
+      title: "A recommendation with nuance",
+      devanagari: "माझ्या मते नवीन भाषा शिकताना रोज थोडं बोलणं खूप उपयोगी आहे. काही लोक म्हणतात की आधी पूर्ण grammar शिकली पाहिजे आणि मग बोलायला सुरुवात करावी. त्यांचा मुद्दा समजतो, कारण basic grammar माहित असेल तर चुका कमी होऊ शकतात. पण मी पूर्णपणे सहमत नाही. जर आपण बोलायला खूप उशीर केला तर उत्तर तयार करण्याचा सरावच होत नाही. म्हणून मी सुचवेन की grammar शिकत असतानाच छोटे बोलण्याचे सराव सुरू ठेवा. कदाचित सुरुवातीला वाक्यं साधी असतील, पण हळूहळू confidence वाढेल.",
+      romanized: "Majhya mate navin bhaasha shiktaana roj thoda bolna khup upayogi aahe. Kahi lok mhantaat ki aadhi purna grammar shikli paahije ani mag bolaayla suruvaat karaavi. Tyancha mudda samajto, karan basic grammar mahit asel tar chuka kami hou shaktaat. Pan mi purnapane sahamat nahi. Jar aapan bolaayla khup ushir kela tar uttar tayaar karanyacha saraavach hot nahi. Mhanun mi suchaven ki grammar shikat astaanaach chhote bolnyache saraav suru theva. Kadaachit suruvatila vaakya saadhi astil, pan haluhalu confidence vaadhel.",
+      english: "The speaker recommends speaking while learning grammar, acknowledging the opposing view but arguing that delayed speaking prevents response-building practice.",
+      maxReplays: 2,
+      questions: [
+        {
+          question: "Does the speaker reject grammar study?",
+          options: ["No, the speaker recommends combining grammar with speaking", "Yes, completely", "The speaker only recommends reading"],
+          answer: 0,
+          explanation: "The argument is for combination, not rejection.",
+          skill: "listening-stance"
+        },
+        {
+          question: "What risk comes from delaying speaking too long?",
+          options: ["You do not practice building answers", "You forget the alphabet", "You become too formal"],
+          answer: 0,
+          explanation: "That is the main reason for starting small speaking practice early.",
+          skill: "listening-inference"
+        }
+      ]
+    },
+    production: {
+      prompt: "Write 8–12 sentences giving your opinion on the best way to improve Marathi. Include one reported idea, one point of uncertainty, one polite disagreement, one recommendation, and a conclusion.",
+      minSentences: 8,
+      support: ["... saangitla ki ...", "Kadaachit ...", "Tumcha mudda samajto, pan ...", "Mi suchaven ki ...", "Shevti ..."],
+      requiredPatterns: ["reported idea", "uncertainty", "polite disagreement", "recommendation", "conclusion"],
+      modelAnswer: {
+        romanized: "Majhya mate Marathi sudhaaraayla fakta ekach paddhat puresi nahi. Eka shikshakaane mala saangitla ki roj bhaasha aikli tar patterns lavkar lakshaat yetaat. Mala vaatta te barobar aahe. Kahi loka mhantaat ki grammar purna jhalyavarach bolayla hava. Tyancha mudda samajto, pan mi purnapane sahamat nahi. Kadaachit suruvatila jast chuka hotil, pan bolnyacha saraav lavkar suru kela tar response speed vaadhte. Mi suchaven ki roj thoda aikava, don-teen vaakya shadow karaavi, ani mag swatah uttar dyaava. Chukla tar punha saanga. Shevti, regular active use mala vocabulary-only abhyasaapeksha jast upayogi vaatto.",
+        devanagari: "माझ्या मते मराठी सुधारायला फक्त एकच पद्धत पुरेशी नाही. एका शिक्षकाने मला सांगितलं की रोज भाषा ऐकली तर patterns लवकर लक्षात येतात. मला वाटतं ते बरोबर आहे. काही लोक म्हणतात की grammar पूर्ण झाल्यावरच बोलायला हवं. त्यांचा मुद्दा समजतो, पण मी पूर्णपणे सहमत नाही. कदाचित सुरुवातीला जास्त चुका होतील, पण बोलण्याचा सराव लवकर सुरू केला तर response speed वाढते. मी सुचवेन की रोज थोडं ऐकावं, दोन-तीन वाक्यं shadow करावी, आणि मग स्वतः उत्तर द्यावं. चुकलं तर पुन्हा सांगा. शेवटी, regular active use मला vocabulary-only अभ्यासापेक्षा जास्त उपयोगी वाटतो.",
+        english: "A connected recommendation that reports another idea, expresses uncertainty, politely disagrees, recommends an active routine, and concludes."
+      }
+    }
   }
 ];
 

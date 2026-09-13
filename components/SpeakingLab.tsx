@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { speakingDrills } from "@/data/speaking";
 import {
   playMarathi,
@@ -21,7 +21,12 @@ export default function SpeakingLab() {
   const [showEnglish, setShowEnglish] = useState(false);
   const [customAnswer, setCustomAnswer] = useState("");
   const [speechError, setSpeechError] = useState<string | null>(null);
+  const [speechSupported, setSpeechSupported] = useState(false);
   const recognitionRef = useRef<{ stop: () => void; abort: () => void } | null>(null);
+
+  useEffect(() => {
+    setSpeechSupported(supportsSpeechRecognition());
+  }, []);
 
   const drill = useMemo(
     () => speakingDrills.find((item) => item.id === selectedId) || speakingDrills[0],
@@ -175,10 +180,10 @@ export default function SpeakingLab() {
               </div>
               <button
                 onClick={recording ? () => recognitionRef.current?.stop() : startMic}
-                disabled={!supportsSpeechRecognition() && recording}
+                disabled={!speechSupported && !recording}
                 className={`rounded-lg px-4 py-2 text-sm font-semibold ${recording ? "bg-terracotta text-white" : "border border-primary/20 text-primary"}`}
               >
-                {recording ? "■ Stop" : "🎙 Start microphone"}
+                {recording ? "■ Stop" : speechSupported ? "🎙 Start microphone" : "🎙 Mic unavailable"}
               </button>
             </div>
 

@@ -127,3 +127,138 @@ Do not report this milestone complete until:
 ## Reporting rule
 
 Continue through the full milestone without phase-by-phase reports. Report only when the milestone is complete and verified, or if genuine user action is required.
+
+
+---
+
+# Milestone Status — COMPLETE
+
+The Conversational Independence milestone has been implemented and verified.
+
+## Delivered
+
+### Speaking Lab
+- 12 progressive Marathi shadowing drills
+- model Marathi audio
+- Devanagari-first presentation
+- optional romanization / English
+- browser Marathi speech recognition where supported
+- typed fallback
+- recognition-match scoring
+- local speaking-attempt persistence
+- transfer prompts that require changing the model instead of only copying it
+
+The speaking score is intentionally described as a speech-recognition match rather than a phonetic pronunciation grade.
+
+### Guided Conversation
+- 8 longer practical scenarios
+- each targets roughly 5–9 minutes when the learner answers in connected speech
+- free text or microphone input
+- conversation history retained throughout the session
+- functional response scoring
+- support automatically expands after weak responses and stays reduced after stronger responses
+- repair phrases such as asking for repetition / slower speech are recognised as useful conversational behaviour
+- scenario session / turn quality persisted locally
+
+Scenarios cover:
+- college
+- weekend plans
+- travel problems
+- café service
+- shopping / exchange
+- meeting someone new
+- explaining a delay
+- opinions / recommendations
+
+### Natural Listening
+- 4 long-form learner-oriented listening tracks
+- roughly 2–4 minute target duration depending on voice / browser playback
+- segmented playback
+- multiple speakers where appropriate
+- maximum two full plays
+- gist question before transcript
+- transcript reveal only after the first attempt
+- detail / sequence / inference questions
+- results feed the listening mastery domain
+
+### Upper-intermediate language
+Units 17–20 add 8 lessons covering:
+- reported speech
+- habitual past
+- certainty / doubt / possibility
+- advice
+- polite disagreement
+- linked-action / participial patterns
+- paragraph organisation
+- informal / respectful register
+- conversation repair
+- independent 80–150 word production
+
+The guided course now contains 20 units and 55 lessons.
+
+### Mastery
+A new six-domain dashboard tracks:
+- Vocabulary
+- Grammar
+- Reading
+- Listening
+- Speaking
+- Conversation
+
+It calculates domain scores only from actual learner evidence and includes a daily 10-minute session:
+- 2 min listening
+- 2 min speaking
+- 3 min conversation
+- 3 min adaptive review
+
+### Assessment
+- existing intermediate checkpoints preserved
+- Conversational Independence Checkpoint added after Unit 20
+- total assessment/checkpoint routes: 9
+
+## Technical verification
+
+Final implementation build verified:
+- Next.js 14.2.35 production build compiled successfully
+- lint / type validity checks passed
+- 74 static pages generated
+- 55 lesson paths generated
+- 9 checkpoint paths generated
+- /speaking generated
+- /listening generated
+- /conversation generated
+- /mastery generated
+- /review preserved
+- stable production URL remains https://raghay.vercel.app/
+- production deployment reached READY
+- no alias error
+- live HTTP 200 verified for:
+  - homepage
+  - Speaking Lab
+  - Natural Listening
+  - Conversation Mode
+  - Mastery
+  - Review
+  - representative Unit 17 lesson
+  - representative Unit 20 lesson
+  - Conversational Independence Checkpoint
+- no production runtime errors reported during the final verification window
+
+## Speech support note
+
+Microphone transcription uses the browser SpeechRecognition / webkitSpeechRecognition API with mr-IN when available. Browser support varies, therefore typed fallback is permanent and intentional.
+
+Azure Marathi neural speech remains supported by the existing TTS route. If production Azure credentials are absent, browser Marathi speech using Devanagari + mr-IN remains the fallback.
+
+## Intentionally outside this milestone
+
+The following belong to the next milestone rather than being blockers:
+- truly unscripted LLM conversation
+- acoustic pronunciation / phoneme scoring
+- learner voice recording playback
+- authentic native media at substantially higher speed
+- advanced idioms / colloquial registers
+- Supabase cross-device accounts and sync
+- native-speaker editorial polish
+
+All completion criteria in this document are now satisfied.

@@ -31,6 +31,8 @@ export const partnerCategories: PartnerCategory[] = [
       { marathi: "Gharii pohachlis ka?", devanagari: "घरी पोहोचलीस का?", english: "Did you reach home? (to a female)" },
       { marathi: "Jevlaas ka?", devanagari: "जेवलास का?", english: "Did you eat? / Had lunch or dinner? (to a male)" },
       { marathi: "Jevlis ka?", devanagari: "जेवलीस का?", english: "Did you eat? / Had lunch or dinner? (to a female)" },
+      { marathi: "Dupaarcha jevan jhala ka?", devanagari: "दुपारचं जेवण झालं का?", english: "Did you have lunch?" },
+      { marathi: "Ratricha jevan jhala ka?", devanagari: "रात्रीचं जेवण झालं का?", english: "Did you have dinner?" },
       { marathi: "Aajcha divas kasa gela?", devanagari: "आजचा दिवस कसा गेला?", english: "How was your day?" },
       { marathi: "Thaklaas ka?", devanagari: "थकलास का?", english: "Are you tired? (to a male)" },
       { marathi: "Thaklis ka?", devanagari: "थकलीस का?", english: "Are you tired? (to a female)" }
@@ -73,6 +75,7 @@ export const partnerCategories: PartnerCategory[] = [
     phrases: [
       { marathi: "Mi tuzha raag karte / karto", devanagari: "मी तुझ्यावर रागावलोय / रागावलेय", english: "I'm angry with you", note: "More natural than literally saying 'I hate you' in many everyday arguments." },
       { marathi: "Mala tu avadt nahis aata", devanagari: "मला तू आवडत नाहीस आता", english: "I don't like you right now" },
+      { marathi: "Mi tuzha tiraskar karto / karte", devanagari: "मी तुझा तिरस्कार करतो / करते", english: "I hate you", note: "Very strong and serious. In everyday close relationships, Marathi speakers are more likely to express anger with raag/annoyance phrases instead." },
       { marathi: "Mala tuzha raag yetoy", devanagari: "मला तुझा राग येतोय", english: "I'm getting annoyed with you" },
       { marathi: "Tu khup irritate kartos", devanagari: "तू खूप इरिटेट करतोस", english: "You annoy me a lot (to a male)" },
       { marathi: "Tu khup irritate kartes", devanagari: "तू खूप इरिटेट करतेस", english: "You annoy me a lot (to a female)" },
@@ -107,6 +110,21 @@ export const partnerCategories: PartnerCategory[] = [
       { marathi: "Kuthe jau ya?", devanagari: "कुठे जाऊ या?", english: "Where should we go?" },
       { marathi: "Tu sang, mala chalel", devanagari: "तू सांग, मला चालेल", english: "You decide, I'm okay with it" },
       { marathi: "Mala tuzhyabarobar vel ghalvayla avadto", devanagari: "मला तुझ्याबरोबर वेळ घालवायला आवडतो", english: "I like spending time with you" }
+    ]
+  },
+  {
+    id: "relationship-words",
+    title: "Relationship words",
+    description: "Useful labels and terms you may see or hear when talking about a relationship.",
+    phrases: [
+      { marathi: "Jodidar", devanagari: "जोडीदार", english: "Partner / life partner" },
+      { marathi: "Priyakar", devanagari: "प्रियकर", english: "Boyfriend / male romantic partner", note: "A Marathi word; everyday speakers also commonly use the English word boyfriend." },
+      { marathi: "Preyasi", devanagari: "प्रेयसी", english: "Girlfriend / female romantic partner", note: "A literary/formal Marathi word; everyday speakers also commonly use the English word girlfriend." },
+      { marathi: "Boyfriend", devanagari: "बॉयफ्रेंड", english: "Boyfriend" },
+      { marathi: "Girlfriend", devanagari: "गर्लफ्रेंड", english: "Girlfriend" },
+      { marathi: "Aapla naata", devanagari: "आपलं नातं", english: "Our relationship" },
+      { marathi: "Naata", devanagari: "नातं", english: "Relationship / bond" },
+      { marathi: "Khaas vyakti", devanagari: "खास व्यक्ती", english: "Special person" }
     ]
   },
   {

@@ -44,13 +44,26 @@ export const partnerCategories: PartnerCategory[] = [
     description: "Warm relationship phrases without needing long sentences.",
     phrases: [
       { marathi: "Mala tujhi aathavan yete", devanagari: "मला तुझी आठवण येते", english: "I miss you" },
+      { marathi: "Mala tujhi khup aathavan yete", devanagari: "मला तुझी खूप आठवण येते", english: "I miss you a lot" },
+      { marathi: "Aaj divasbhar tujhi aathavan aali", devanagari: "आज दिवसभर तुझी आठवण आली", english: "I missed you / thought of you all day" },
+      { marathi: "Mi tuzha vichar karat hoto / hote", devanagari: "मी तुझा विचार करत होतो / होते", english: "I was thinking about you (male / female speaker)" },
       { marathi: "Mala tu khup avadtos", devanagari: "मला तू खूप आवडतोस", english: "I like you a lot (to a male)" },
       { marathi: "Mala tu khup avadtes", devanagari: "मला तू खूप आवडतेस", english: "I like you a lot (to a female)" },
       { marathi: "Mi tuzhyavar prem karto", devanagari: "मी तुझ्यावर प्रेम करतो", english: "I love you (male speaker)" },
       { marathi: "Mi tuzhyavar prem karte", devanagari: "मी तुझ्यावर प्रेम करते", english: "I love you (female speaker)" },
+      { marathi: "Majha tuzhyavar khup prem aahe", devanagari: "माझं तुझ्यावर खूप प्रेम आहे", english: "I love you so much / I have a lot of love for you", note: "Natural and speaker-gender neutral." },
+      { marathi: "Mihi tuzhyavar prem karto / karte", devanagari: "मीही तुझ्यावर प्रेम करतो / करते", english: "I love you too (male / female speaker)" },
       { marathi: "Tu majhyasathi khup khaas aahes", devanagari: "तू माझ्यासाठी खूप खास आहेस", english: "You are very special to me" },
+      { marathi: "Tu majhyasathi khup mahatvacha / mahatvachi aahes", devanagari: "तू माझ्यासाठी खूप महत्त्वाचा / महत्त्वाची आहेस", english: "You are very important to me (to a male / female)" },
+      { marathi: "Tuzhyashi bolun mala anand hoto", devanagari: "तुझ्याशी बोलून मला आनंद होतो", english: "Talking to you makes me happy" },
       { marathi: "Tuzhyashi bolun changla vatata", devanagari: "तुझ्याशी बोलून चांगलं वाटतं", english: "I feel good after talking to you" },
-      { marathi: "Tu aahes mhanun divas changla jato", devanagari: "तू आहेस म्हणून दिवस चांगला जातो", english: "My day goes better because you're there", note: "Warm and affectionate rather than formal." }
+      { marathi: "Mala tuzhyashi bolaycha aahe", devanagari: "मला तुझ्याशी बोलायचं आहे", english: "I want to talk to you" },
+      { marathi: "Mala tula bhetaycha aahe", devanagari: "मला तुला भेटायचं आहे", english: "I want to see / meet you" },
+      { marathi: "Mi tuzhya messagechi vaat paahat hoto / hote", devanagari: "मी तुझ्या मेसेजची वाट पाहत होतो / होते", english: "I was waiting for your message (male / female speaker)" },
+      { marathi: "Tuzha message aala ki changla vatata", devanagari: "तुझा मेसेज आला की चांगलं वाटतं", english: "I feel happy when your message comes" },
+      { marathi: "Tu bolala / bolalis ki majha mood changla hoto", devanagari: "तू बोललास / बोललीस की माझा मूड चांगला होतो", english: "My mood gets better when you talk to me (to a male / female)" },
+      { marathi: "Tu aahes mhanun divas changla jato", devanagari: "तू आहेस म्हणून दिवस चांगला जातो", english: "My day goes better because you're there", note: "Warm and affectionate rather than formal." },
+      { marathi: "Aapan bollo ki mala shaant vatata", devanagari: "आपण बोललो की मला शांत वाटतं", english: "I feel calmer when we talk" }
     ]
   },
   {

@@ -5,23 +5,30 @@ import { partnerCategories, partnerDialogues } from "@/data/partner-marathi";
 import { playMarathi } from "@/lib/speech";
 
 export default function PartnerMarathi() {
-  const [activeCategory, setActiveCategory] = useState(partnerCategories[0].id);
+  const [activeCategory, setActiveCategory] = useState("all");
   const [query, setQuery] = useState("");
   const [showRomanization, setShowRomanization] = useState(true);
   const [playing, setPlaying] = useState<string | null>(null);
 
-  const category = partnerCategories.find((item) => item.id === activeCategory) || partnerCategories[0];
+  const category = partnerCategories.find((item) => item.id === activeCategory) || null;
 
   const filtered = useMemo(() => {
+    const source = activeCategory === "all"
+      ? partnerCategories.flatMap((group) =>
+          group.phrases.map((item) => ({ ...item, categoryTitle: group.title }))
+        )
+      : (category?.phrases || []).map((item) => ({ ...item, categoryTitle: category?.title || "" }));
+
     const q = query.trim().toLowerCase();
-    if (!q) return category.phrases;
-    return category.phrases.filter((item) =>
-      [item.marathi, item.devanagari, item.english, item.note || ""]
+    if (!q) return source;
+
+    return source.filter((item) =>
+      [item.marathi, item.devanagari, item.english, item.note || "", item.categoryTitle]
         .join(" ")
         .toLowerCase()
         .includes(q)
     );
-  }, [category, query]);
+  }, [activeCategory, category, query]);
 
   async function play(text: string, key: string) {
     if (playing) return;
@@ -81,6 +88,19 @@ export default function PartnerMarathi() {
         </div>
 
         <div className="mt-4 flex gap-2 overflow-x-auto pb-2">
+          <button
+            onClick={() => {
+              setActiveCategory("all");
+              setQuery("");
+            }}
+            className={`whitespace-nowrap rounded-full px-3 py-2 text-xs font-semibold transition ${
+              activeCategory === "all"
+                ? "bg-primary text-white"
+                : "border border-black/10 bg-white text-ink"
+            }`}
+          >
+            All
+          </button>
           {partnerCategories.map((item) => (
             <button
               key={item.id}
@@ -100,8 +120,14 @@ export default function PartnerMarathi() {
         </div>
 
         <div className="mt-4 rounded-xl border border-black/5 bg-offwhite p-4">
-          <p className="font-display text-lg font-semibold text-ink">{category.title}</p>
-          <p className="mt-1 text-sm text-muted">{category.description}</p>
+          <p className="font-display text-lg font-semibold text-ink">
+            {activeCategory === "all" ? "All phrases" : category?.title}
+          </p>
+          <p className="mt-1 text-sm text-muted">
+            {activeCategory === "all"
+              ? "Search or browse every Partner Marathi phrase from every category in one place."
+              : category?.description}
+          </p>
         </div>
 
         <div className="mt-4 grid gap-3">
@@ -114,6 +140,11 @@ export default function PartnerMarathi() {
                     <p className="mt-1 text-sm leading-6 text-primary">{item.marathi}</p>
                   )}
                   <p className="mt-2 text-sm leading-6 text-muted">{item.english}</p>
+                  {activeCategory === "all" && (
+                    <p className="mt-2 text-[11px] font-semibold uppercase tracking-wide text-terracotta">
+                      {item.categoryTitle}
+                    </p>
+                  )}
                   {item.note && (
                     <p className="mt-2 rounded-lg bg-offwhite px-3 py-2 text-xs leading-5 text-muted">{item.note}</p>
                   )}
